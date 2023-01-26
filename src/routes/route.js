@@ -1,9 +1,12 @@
-import home from "../view/home.js";
+import cakebook from "../view/cakebook.js";
 
 import register from "../view/register.js";
 
+import login from "../view/login.js";
+
 const routes = {
-  home,
+  login,
+  cakebook,
   register,
 };
 

@@ -11,8 +11,8 @@ myFunction();
 console.log(app);
 
 const init = () => {
-authController(window.location.pathname);
-window.addEventListener('hashchange', () => authController(window.location.pathname));
+  authController(window.location.pathname);
+  window.addEventListener('hashchange', () => authController(window.location.pathname));
 };
 
 window.addEventListener('load', init);

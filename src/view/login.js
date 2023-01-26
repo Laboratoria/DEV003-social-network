@@ -1,26 +1,26 @@
 export default () => {
   const viewLogin = `
-
    <div id= "container">
-   <!--<img class = "fondoLogin" src = "images/fondoLogin.png">-->
-   <div id= "container1">
+    <!--<img class = "fondoLogin" src = "images/fondoLogin.png">-->
+    <div id= "container1">
       <h1>cakeBook</h1>
-      <input class= "usuario" type="text" placeholder="Usuario">
-      <input class= "contraseña" type="text" id="contraseña"  placeholder="Contraseña">
-      <button type = "submit" class="loginButton"><strong>INICIAR SESIÓN</strong></button>
-      <button  class="registerButton"><strong>REGISTRARSE</strong></button>
-      <p>Ingresar con:</p>
-      <div class = "logo">
-        <img src = "images/logo2.png">
+      <div class= "form-btn">
+      <input class= "input-users" type="text" placeholder="Usuario">
+      <input class= "input-users" type="text" id="contraseña"  placeholder="Contraseña">
+      <button type = "submit" class="log-button" id="login"><strong>INICIAR SESIÓN</strong></button>
+      <button  class="log-button" id="register"><strong>REGISTRARSE</strong></button>
+      <div class="login-google">
+      <span>Ingresar con:</span>
+      <button id="btn-google-register"> 
+      <img class = "logo" src = "/img/Logo2.png">
+      </button>
       </div>
       </div>
-    </div>
-    <footer>
- <p>Copyright 2023 | Alejandra, Andry, Itza</p> 
- </footer>
+     </div>
+  </div>
   `;
 
-  const divElement = document.createElement('div');
+  const divElement = document.getElementById('main');
   divElement.innerHTML = viewLogin;
 
   return divElement;

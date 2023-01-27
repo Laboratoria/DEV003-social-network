@@ -1,8 +1,8 @@
-import cakebook from "../view/cakebook.js";
+import cakebook from '../view/cakebook.js';
 
-import register from "../view/register.js";
+import register from '../view/register.js';
 
-import login from "../view/login.js";
+import login from '../view/login.js';
 
 const routes = {
   login,

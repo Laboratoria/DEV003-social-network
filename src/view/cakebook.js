@@ -31,6 +31,9 @@ export default () => {
 
   const divElement = document.getElementById('main');
   divElement.innerHTML = viewTimeline;
+  const linkElement = document.getElementById('link');
+  linkElement.setAttribute('href', '/cakebook.css');
 
+  divElement.innerHTML = viewHome;
   return divElement;
 };

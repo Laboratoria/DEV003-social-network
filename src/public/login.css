@@ -5,8 +5,8 @@
 .login-container {
   align-items: flex-end;
   display: flex;
-  height: 100vh;
   justify-content: center;
+  height: 100%;
 }
 
 .img-container {
@@ -24,7 +24,7 @@
   width: 100%;
 }
 
-#container1 {
+.container1 {
   display: flex;
   width: 100%;
   max-width: 30em;
@@ -55,15 +55,20 @@ h1 {
 
 .input-users {
   display: flex;
-  width: 18em;
-  padding: 0.6em 0.6em;
+  width: 20em;
+  padding: 0.7em 0.7em;
   border-radius: 0.5em;
   background-color: #f1cdd7;
   border: none;
-  color: #584e51;
+  color: #432e37;
+  font-weight: 700;
+  font-size: 0.9em;
   justify-content: center;
   margin-bottom: 0.6em;
 }
+/* .input-users::placeholder {
+  color: #432e37;
+} */
 
 .log-button {
   display: flex;
@@ -71,12 +76,18 @@ h1 {
   height: 2.5em;
   padding: 0.7em 0.7em;
   border-radius: 1.5em;
-  background-color: #f7a8ca;
-  color: #432e37;
+  background-color: rgba(247, 168, 202, 0.8);
+  color: rgba(0, 0, 0, 0.6);
   border: none;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
   margin-bottom: 0.6em;
+}
+
+.log-button:hover {
+  background-color: #ff88bb;
+  cursor: pointer;
 }
 
 #login {
@@ -84,79 +95,36 @@ h1 {
 }
 
 .login-google {
-  margin-top: 0.8em;
+  margin-top: 1.3em;
 }
 
 .logo {
   display: flex;
   width: 20px;
   justify-content: center;
+  cursor: pointer;
 }
 
-.title{
-  background-color:#FDD4E5;
-  margin: 0;
-  padding: 0em;
-}
+@media screen and (min-width: 1023px) {
+  .login-container {
+    align-items: center;
+  }
 
-.containerTimeline{
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 2em; 
-  font-family: 'Montserrat', sans-serif;
-}
-.myPosts{
-  display: flex;
-  background-color: #F5EFF0;
-  border-radius: 1em;
-  margin-bottom: 0.7em;
-  flex-direction: column;
-}
-.friendsPosts{
-  display: flex;
-  background-color: #ECF2F4;
-  border-radius: 1em;
-  flex-direction: row;
-}
-.friendsText{
-  align-items: flex-end;
-}
-.userPicBtn{
-  height: 5em;
-  width: 5em;
-  border-radius: 6em;
-  background: none;
-  border: none;
-  margin-top: 0.7em;
-  margin-bottom: 0.7em;
-}
-.imgUser{
-  height: 5em;
-  width: 5em;
-}
+  .container1 {
+    max-width: 45em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
 
-h2{
-  color:#FF88BB;
-  font-size: 0.9em;
-  margin-left: 0.7em;
-  margin-right: 0.7em;
-}
+  h1 {
+    margin-top: 1em;
+  }
 
-p{
-  color:#432E37;
-  font-size: 0.9em;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
-}
-.menu{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 17em;
-}
-.imgBtn{
-    justify-content: center;
-    height: 2.5em;
-    width: 2.5em;
+  .form-btn {
+    padding-top: 2.5em;
+  }
+
+  .input-users {
+    width: 25em;
+  }
 }

@@ -1,5 +1,5 @@
 export default () => {
-  const viewTimeline = `
+  const viewTimeline = /* html */ `
   <div id="container">
   <!--<img class = "fondoLogin" src = "images/fondoLogin.png">-->
   <div class="title">
@@ -21,10 +21,11 @@ export default () => {
   </div>
   </div>
   <div class="menu">
-  <button type="button" class="btnMenu" id="homeBtn"><img src="./img/homeIcon.png" alt="" class="imgBtn"></button>
-  <button type="button" class="btnMenu" id="searchBtn"><img src="./img/searchIcon.png" alt="" class="imgBtn"></button>
-  <button type="button" class="btnMenu" id="postBtn"><img src="./img/postIcon.png" alt="" class="imgBtn"></button>
-  <button type="button" class="btnMenu" id="friendsBtn"><img src="./img/friendsIcon.png" alt="" class="imgBtn"></button>
+  <button type="button" class="btnMenu" id="homeBtn"><i class="fas fa-home"></i></button>
+  <button type="button" class="btnMenu" id="searchBtn"><i class="fas fa-search"></i></button>
+  <button type="button" class="btnMenu" id="postBtn"><i class="fas fa-plus"></i></button>
+  <button type="button" class="btnMenu" id="friendsBtn"><i class="fas fa-users"></i></button>
+  <button type="button" class="btnMenu" id="perfilBtn"><i class="fas fa-user-circle"></i></button>
   </div>
 </div>
   `;

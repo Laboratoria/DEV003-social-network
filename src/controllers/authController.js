@@ -1,16 +1,21 @@
 import { routes } from '../routes/route.js';
 
 const authController = (route) => {
-  const container = document.getElementById('main');
-  container.innerHTML = '';
+  const containerMain = document.getElementById('main');
+  containerMain.innerHTML = '';
+  let component = null;
   if (route === '/') {
-    container.appendChild(routes.login());
+    component = routes.login;
   } else if (route === '/register') {
-    container.appendChild(routes.register());
+    component = routes.register;
   } else if (route === '/cakebook') {
-    container.appendChild(routes.cakebook());
+    component = routes.cakebook;
   }
-  return container;
+
+  containerMain.appendChild(component.view());
+  component.init();
+
+  return containerMain;
 };
 
 export { authController };

@@ -35,7 +35,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.form-btn {
+.form-login {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -134,7 +134,7 @@ border-color:rgba(162, 160, 160, 0.3);
     margin-top: 1em;
   }
 
-  .form-btn {
+  .form-login {
     padding-top: 2.5em;
   }
 

@@ -1,6 +1,5 @@
 export default () => {
   const viewLogin = /* html */ `
-   <div class="login-container">
     <div class="img-container">
       <picture>
         <source media="(max-width: 599px)" srcset="/img/back-login.png" />
@@ -10,27 +9,36 @@ export default () => {
     </div>
     <div class= "container1">
       <h1>cakeBook</h1>
-      <div class= "form-btn">
+      <form class= "form-login" id="form-login">
         <input class= "input-users" type="text" name="username" id="username" placeholder="Usuario">
         <input class= "input-users" type="password" name="password" id="password"  placeholder="Contraseña">
         <button class="log-button" id="login">INICIAR SESIÓN</button>
-        <button class="log-button" id="register">REGISTRARSE</button>
+        <button type="button" class="log-button" id="register">REGISTRARSE</button>
         <div class="login-google">
-          <button id="btn-google-register"> 
+          <button type="button" id="btn-google-register"> 
             <div class="login-google">
               <span><img class = "logo" src = "/img/Logo2.png"></span>
               <span class="spn-google">Ingresar con Google</span>
             </div>
           </button>
         </div>
-      </div>
+      </form>
     </div>
-  </div>
   `;
   const linkElement = document.getElementById('link');
   linkElement.setAttribute('href', '/login.css');
-  const mainElement = document.getElementById('main');
-  mainElement.innerHTML = viewLogin;
 
-  return mainElement;
+  const loginContainer = document.createElement('div');
+  loginContainer.classList.add('login-container');
+  loginContainer.innerHTML = viewLogin;
+  return loginContainer;
+};
+
+export const init = () => {
+  const formLogin = document.getElementById('form-login');
+
+  formLogin.addEventListener('submit', e => {
+    e.preventDefault();
+    console.log('submiting');
+  });
 };

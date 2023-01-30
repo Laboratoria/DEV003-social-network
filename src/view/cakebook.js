@@ -38,3 +38,5 @@ export default () => {
   divElement.innerHTML = viewTimeline;
   return divElement;
 };
+
+export const init = () => {};

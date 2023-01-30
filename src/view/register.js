@@ -1,6 +1,5 @@
 export default () => {
   const viewRegister = /* html */ `
-  <div class="login-container">
     <div class="img-container">
       <picture>
         <source media="(max-width: 599px)" srcset="/img/back-login.png" />
@@ -34,12 +33,14 @@ export default () => {
       <button class="log-button" id="register">REGISTRARTE</button> 
     </div>
   </div>
-</div>
 `;
   const linkElement = document.getElementById('link');
   linkElement.setAttribute('href', '/register.css');
-  const mainElement = document.getElementById('main');
-  mainElement.innerHTML = viewRegister;
 
-  return mainElement;
+  const registerContainer = document.createElement('div');
+  registerContainer.classList.add('login-container');
+  registerContainer.innerHTML = viewRegister;
+  return registerContainer;
 };
+
+export const init = () => {};

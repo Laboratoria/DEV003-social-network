@@ -10,7 +10,7 @@ export default () => {
     <div class= "container1">
       <h1>cakeBook</h1>
       <form class= "form-login" id="form-login">
-        <input class= "input-users" type="text" name="username" id="username" placeholder="Usuario">
+        <input class= "input-users" type="email" name="userEmail" id="userEmail" placeholder="Usuario">
         <input class= "input-users" type="password" name="password" id="password"  placeholder="Contraseña">
         <button class="log-button" id="login">INICIAR SESIÓN</button>
         <button type="button" class="log-button" id="register">REGISTRARSE</button>
@@ -39,6 +39,8 @@ export const init = () => {
 
   formLogin.addEventListener('submit', e => {
     e.preventDefault();
-    console.log('submiting');
+    const email = document.getElementById('userEmail').value;
+    const password = document.getElementById('password').value;
+    console.log(email, password);
   });
 };

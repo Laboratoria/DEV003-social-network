@@ -1,3 +1,7 @@
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+
+const auth = getAuth();
+
 export default () => {
   const viewRegister = /* html */ `
     <div class="img-container">
@@ -21,9 +25,9 @@ export default () => {
       </div>
     </button>
     </div>
-    <div class= "form-btn">
-      <input class= "input-users" type="text" name="username" id="username" placeholder="Correo electrónico">
-      <input class= "input-users" type="text" name="username" id="username" placeholder="Nombre y Apellido">
+    <form class="form-btn">
+      <input class= "input-users" type="text" name="email" id="userEmail" placeholder="Correo electrónico">
+      <input class= "input-users" type="text" name="fullName" id="userFullName" placeholder="Nombre y Apellido">
       <input class= "input-users" type="text" name="username" id="username" placeholder="Nombre de Usuario">
       <input class= "input-users" type="password" name="password" id="password"  placeholder="Contraseña">
       <div class="span-politica">
@@ -31,7 +35,7 @@ export default () => {
         <span>Política de privacidad y la Política de cookies.</span>
       </div>
       <button class="log-button" id="register">REGISTRARTE</button> 
-    </div>
+    </form>
   </div>
 `;
   const linkElement = document.getElementById('link');
@@ -43,4 +47,25 @@ export default () => {
   return registerContainer;
 };
 
-export const init = () => {};
+export const init = () => {
+  const form = document.querySelector('.form-btn');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = Object.fromEntries(new FormData(form));
+    console.log(data);
+
+    createUserWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log('Firebase User', user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  });
+};

@@ -16,9 +16,11 @@ export default () => {
         <button class="log-button" id="login">INICIAR SESIÓN</button>
         <button class="log-button" id="register">REGISTRARSE</button>
         <div class="login-google">
-          <span>Ingresar con:</span>
           <button id="btn-google-register"> 
-            <img class = "logo" src = "/img/Logo2.png">
+            <div class="login-google">
+              <span><img class = "logo" src = "/img/Logo2.png"></span>
+              <span class="spn-google">Ingresar con Google</span>
+            </div>
           </button>
         </div>
       </div>

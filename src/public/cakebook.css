@@ -1,162 +1,85 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  .login-container {
-    align-items: flex-end;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-  }
-  
-  .img-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
-  
-  .img-container img {
-    height: 100vh;
-    width: 100%;
-  }
-  
-  #container1 {
-    display: flex;
-    width: 100%;
-    max-width: 30em;
-    background-color: rgb(231, 217, 225, 0.4);
-    border-radius: 1em;
-    flex-direction: column;
-    margin: 0 1em 1em;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .form-btn {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-top: 1.5em;
-    padding-bottom: 2em;
-  }
-  
-  h1 {
-    display: flex;
-    font-size: 2.5em;
-    font-family: 'Inter', sans-serif;
-    color: #ff88bb;
-    justify-content: center;
-    margin-top: 1.5em;
-  }
-  
-  .input-users {
-    display: flex;
-    width: 18em;
-    padding: 0.6em 0.6em;
-    border-radius: 0.5em;
-    background-color: #f1cdd7;
-    border: none;
-    color: #584e51;
-    justify-content: center;
-    margin-bottom: 0.6em;
-  }
-  
-  .log-button {
-    display: flex;
-    width: 12em;
-    height: 2.5em;
-    padding: 0.7em 0.7em;
-    border-radius: 1.5em;
-    background-color: #f7a8ca;
-    color: #432e37;
-    border: none;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0.6em;
-  }
-  
-  #login {
-    margin-top: 1em;
-  }
-  
-  .login-google {
-    margin-top: 0.8em;
-  }
-  
-  .logo {
-    display: flex;
-    width: 20px;
-    justify-content: center;
-  }
-  
-  .title{
-    background-color:#FDD4E5;
-    margin: 0;
-    padding: 0em;
-  }
-  
-  .containerTimeline{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 2em; 
-    font-family: 'Montserrat', sans-serif;
-  }
-  .myPosts{
-    display: flex;
-    background-color: #F5EFF0;
-    border-radius: 1em;
-    margin-bottom: 0.7em;
-    flex-direction: column;
-  }
-  .friendsPosts{
-    display: flex;
-    background-color: #ECF2F4;
-    border-radius: 1em;
-    flex-direction: row;
-  }
-  .friendsText{
-    align-items: flex-end;
-  }
-  .userPicBtn{
-    height: 5em;
-    width: 5em;
-    border-radius: 6em;
-    background: none;
-    border: none;
-    margin-top: 0.7em;
-    margin-bottom: 0.7em;
-  }
-  .imgUser{
-    height: 5em;
-    width: 5em;
-  }
-  
-  h2{
-    color:#FF88BB;
-    font-size: 0.9em;
-    margin-left: 0.7em;
-    margin-right: 0.7em;
-  }
-  
-  p{
-    color:#432E37;
-    font-size: 0.9em;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
-  }
-  .menu{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 17em;
-  }
-  .imgBtn{
-      justify-content: center;
-      height: 2.5em;
-      width: 2.5em;
-  }
+  box-sizing: border-box;
+}
+
+h1 {
+  display: flex;
+  font-size: 2.5em;
+  font-family: 'Inter', sans-serif;
+  color: #ff88bb;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+.title {
+  background-color: #fdd4e5;
+  margin: 0;
+  padding: 0em;
+}
+
+.containerTimeline {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 2em;
+  font-family: 'Montserrat', sans-serif;
+}
+.myPosts {
+  display: flex;
+  background-color: #f5eff0;
+  border-radius: 1em;
+  margin-bottom: 0.7em;
+  flex-direction: column;
+}
+.friendsPosts {
+  display: flex;
+  background-color: #ecf2f4;
+  border-radius: 1em;
+  flex-direction: row;
+}
+.friendsText {
+  align-items: flex-end;
+}
+.userPicBtn {
+  height: 5em;
+  width: 5em;
+  border-radius: 6em;
+  background: none;
+  border: none;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+.imgUser {
+  height: 5em;
+  width: 5em;
+}
+
+h2 {
+  color: #ff88bb;
+  font-size: 0.9em;
+  margin-left: 0.7em;
+  margin-right: 0.7em;
+}
+
+p {
+  color: #432e37;
+  font-size: 0.9em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 17em;
+}
+
+.imgBtn {
+  justify-content: center;
+  height: 2.5em;
+  width: 2.5em;
+}
+
+i {
+  font-size: 2.5em;
+}

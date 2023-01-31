@@ -62,8 +62,7 @@ export const init = () => {
         console.log('Firebase User', user);
        // alert('guardado exitosamente');
        // form.reset();
-       // window.location.href = '/';
-        // ..
+       window.location.href = '/';
       })
       .catch((error) => {
         const errorCode = error.code;

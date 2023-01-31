@@ -60,12 +60,17 @@ export const init = () => {
         // Signed in
         const user = userCredential.user;
         console.log('Firebase User', user);
-        // ...
+        alert('guardado exitosamente');
+        form.reset();
+        window.location.href = '/';
+        // ..
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        form.reset();
+        alert('ocurrió un error');
       });
   });
 };

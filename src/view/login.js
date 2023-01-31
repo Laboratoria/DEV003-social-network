@@ -1,5 +1,5 @@
 export default () => {
-  const viewLogin = /* html */ `
+  const viewLogin = `
     <div class="img-container">
       <picture>
         <source media="(max-width: 599px)" srcset="/img/back-login.png" />
@@ -10,8 +10,8 @@ export default () => {
     <div class= "container1">
       <h1>cakeBook</h1>
       <form class= "form-login" id="form-login">
-        <input class= "input-users" type="email" name="userEmail" id="userEmail" placeholder="Usuario">
-        <input class= "input-users" type="password" name="password" id="password"  placeholder="Contraseña">
+        <input class= "input-users" type="email" name="userEmail" id="userEmail" placeholder="Correo electrónico" required>
+        <input class= "input-users" type="password" name="password" id="password"  placeholder="Contraseña" required>
         <button class="log-button" id="login">INICIAR SESIÓN</button>
         <button type="button" class="log-button" id="register">REGISTRARSE</button>
         <div class="login-google">
@@ -35,12 +35,19 @@ export default () => {
 };
 
 export const init = () => {
-  const formLogin = document.getElementById('form-login');
+  const buttonLogin = document.getElementById('form-login');
+  const buttonRegister = document.getElementById('register');
 
-  formLogin.addEventListener('submit', e => {
+  buttonLogin.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('userEmail').value;
     const password = document.getElementById('password').value;
     console.log(email, password);
+    window.location.href = '/cakebook';
+  });
+
+  buttonRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = '/register';
   });
 };

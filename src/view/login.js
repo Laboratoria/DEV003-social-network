@@ -1,3 +1,7 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+
 export default () => {
   const viewLogin = `
     <div class="img-container">
@@ -43,7 +47,24 @@ export const init = () => {
     const email = document.getElementById('userEmail').value;
     const password = document.getElementById('password').value;
     console.log(email, password);
-    window.location.href = '/cakebook';
+
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        window.location.href = '/cakebook';
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        //const errorMessage = error.message;
+        console.log(errorCode);
+        if (errorCode == "auth/wrong-password"){
+        alert('Contraseña inválida');
+        };
+        if (errorCode == "auth/user-not-found"){
+        alert('Correo no registrado');
+        };
+      });
   });
 
   buttonRegister.addEventListener('click', (e) => {

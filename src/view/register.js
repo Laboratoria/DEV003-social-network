@@ -26,7 +26,7 @@ export default () => {
     </button>
     </div>
     <form class="form-btn">
-      <input class= "input-users" type="text" name="email" id="userEmail" placeholder="Correo electrónico">
+      <input class= "input-users" type="email" name="email" id="userEmail" placeholder="Correo electrónico">
       <input class= "input-users" type="text" name="fullName" id="userFullName" placeholder="Nombre y Apellido">
       <input class= "input-users" type="text" name="username" id="username" placeholder="Nombre de Usuario">
       <input class= "input-users" type="password" name="password" id="password"  placeholder="Contraseña">
@@ -60,9 +60,9 @@ export const init = () => {
         // Signed in
         const user = userCredential.user;
         console.log('Firebase User', user);
-        alert('guardado exitosamente');
-        form.reset();
-        window.location.href = '/';
+       // alert('guardado exitosamente');
+       // form.reset();
+       // window.location.href = '/';
         // ..
       })
       .catch((error) => {
@@ -70,7 +70,24 @@ export const init = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
         form.reset();
-        alert('ocurrió un error');
+        //errores correo
+        if (errorCode == "auth/missing-email") {
+          alert('Por favor, introduce un correo');
+        };
+        if (errorCode == "auth/invalid-email") {
+          alert('Correo inválido');
+        };
+        if (errorCode == "auth/email-already-in-use") {
+          alert('Correo ya registrado');
+        };
+        //errores contraseña
+        if (errorCode == "auth/weak-password") {
+          alert('Por favor, introduce una contraseña que contenga más de 6 carácteres');
+        };
+        if (errorCode == "auth/internal-error") {
+          alert('Por favor, introduce una contraseña');
+        };
+
       });
   });
 };

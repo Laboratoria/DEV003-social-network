@@ -37,7 +37,6 @@ export default () => {
 </div>
   `;
 
-
   const linkElement = document.getElementById('link');
   linkElement.setAttribute('href', '/cakebook.css');
   const cakebookContainer = document.createElement('div');
@@ -57,5 +56,13 @@ export const init = () => {
       .catch((error) => {
         console.log(error);
       });
+  });
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      console.log('sign in');
+    } else {
+      console.log('sign out');
+    }
   });
 };

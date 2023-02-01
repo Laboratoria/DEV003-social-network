@@ -1,6 +1,9 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
-const auth = getAuth();
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from 'firebase/auth';
 
 export default () => {
   const viewLogin = `
@@ -46,10 +49,8 @@ export const init = () => {
     e.preventDefault();
     const email = document.getElementById('userEmail').value;
     const password = document.getElementById('password').value;
-    console.log(email, password);
 
     const auth = getAuth();
-    
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -57,19 +58,48 @@ export const init = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        //const errorMessage = error.message;
         console.log(errorCode);
-        if (errorCode == "auth/wrong-password"){
-        alert('Contraseña inválida');
-        };
-        if (errorCode == "auth/user-not-found"){
-        alert('Correo no registrado');
-        };
+        if (errorCode === 'auth/wrong-password') {
+          alert('Contraseña inválida');
+        }
+        if (errorCode === 'auth/user-not-found') {
+          alert('Correo no registrado');
+        }
       });
   });
 
   buttonRegister.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = '/register';
+  });
+
+  const buttonGoogle = document.querySelector('#btn-google-register');
+  buttonGoogle.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('sign google');
+
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // Accounts successfully linked.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const user = result.user;
+        console.log('autenticado con google', credential, user);
+        window.location.href = '/cakebook';
+        // ...
+      })
+      .catch((error) => {
+        console.log(error, 'no se autentico el usuario');
+      });
+  });
+
+  const auth = getAuth();
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      console.log('sign in');
+    } else {
+      console.log('sign out');
+    }
   });
 };

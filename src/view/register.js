@@ -1,4 +1,5 @@
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+/* eslint-disable no-alert */
+import { getAuth,linkWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const auth = getAuth();
 
@@ -51,17 +52,14 @@ export const init = () => {
   const form = document.querySelector('.form-btn');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const data = Object.fromEntries(new FormData(form));
-    console.log(data);
-
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
         console.log('Firebase User', user);
-       // alert('guardado exitosamente');
-       // form.reset();
+       alert('guardado exitosamente');
+       form.reset();
        window.location.href = '/';
       })
       .catch((error) => {
@@ -70,23 +68,24 @@ export const init = () => {
         console.log(errorCode, errorMessage);
         form.reset();
         //errores correo
-        if (errorCode == "auth/missing-email") {
+        if (errorCode === 'auth/missing-email') {
           alert('Por favor, introduce un correo');
-        };
-        if (errorCode == "auth/invalid-email") {
+        }
+        if (errorCode === 'auth/invalid-email') {
           alert('Correo inválido');
-        };
-        if (errorCode == "auth/email-already-in-use") {
+        }
+        if (errorCode === 'auth/email-already-in-use') {
           alert('Correo ya registrado');
-        };
+        }
         //errores contraseña
-        if (errorCode == "auth/weak-password") {
-          alert('Por favor, introduce una contraseña que contenga más de 6 carácteres');
-        };
-        if (errorCode == "auth/internal-error") {
+        if (errorCode === 'auth/weak-password') {
+          alert(
+            'Por favor, introduce una contraseña que contenga más de 6 carácteres'
+          );
+        }
+        if (errorCode === 'auth/internal-error') {
           alert('Por favor, introduce una contraseña');
-        };
-
+        }
       });
   });
 };

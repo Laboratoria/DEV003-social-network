@@ -58,8 +58,8 @@ export const init = () => {
         // Signed in
         const user = userCredential.user;
         console.log('Firebase User', user);
-       // alert('guardado exitosamente');
-       // form.reset();
+       alert('guardado exitosamente');
+       form.reset();
        window.location.href = '/';
       })
       .catch((error) => {

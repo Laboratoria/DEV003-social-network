@@ -1,9 +1,16 @@
+import { getAuth, signOut } from 'firebase/auth';
+
+const auth = getAuth();
+
 export default () => {
   const viewTimeline = /* html */ `
   <div id="container">
   <!--<img class = "fondoLogin" src = "images/fondoLogin.png">-->
   <div class="title">
     <h1>cakeBook</h1>
+    <button type="button" id="signOut">
+    <i class="fas fa-sign-out-alt"></i>
+    </button>
   </div>
   <div class="containerTimeline">
   <div class="myPosts">
@@ -30,13 +37,25 @@ export default () => {
 </div>
   `;
 
-  const divElement = document.getElementById('main');
-  divElement.innerHTML = viewTimeline;
+
   const linkElement = document.getElementById('link');
   linkElement.setAttribute('href', '/cakebook.css');
-
-  divElement.innerHTML = viewTimeline;
-  return divElement;
+  const cakebookContainer = document.createElement('div');
+  cakebookContainer.classList.add('login-container');
+  cakebookContainer.innerHTML = viewTimeline;
+  return cakebookContainer;
 };
 
-export const init = () => {};
+export const init = () => {
+  const buttonSignOut = document.getElementById('signOut');
+  buttonSignOut.addEventListener('click', (e) => {
+    e.preventDefault();
+    signOut(auth)
+      .then(() => {
+        window.location.href = '/';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+};

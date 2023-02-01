@@ -49,6 +49,7 @@ export const init = () => {
     console.log(email, password);
 
     const auth = getAuth();
+    
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;

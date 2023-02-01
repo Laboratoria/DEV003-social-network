@@ -14,7 +14,6 @@ const authController = (route) => {
 
   containerMain.appendChild(component.view());
   component.init();
-
   return containerMain;
 };
 

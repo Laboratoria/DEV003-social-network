@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script type="module" src="sections/signup.js"></script>
-  <script type="module" src="sections/login.js"></script>
-  <script type="module" src="sections/home.js"></script>
-  <title>Beat</title>
-</head>
-
-<body>
-<div id="root">
-  <!-- SIGNUP -->
-  <section>
+export const signup = `
+<section>
     <img src="img/logo mapa de bits.png" alt="logo de la aplicación">
     <form>
       <h3>SIGN UP</h3>
@@ -41,8 +26,4 @@
       <a href="#">Inicia sesión acá.</a>
     </div>
   </section>
-</div>
-  <script type="module" src="main.js"></script>
-</body>
-
-</html>
+`;

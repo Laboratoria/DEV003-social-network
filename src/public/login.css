@@ -9,7 +9,7 @@
   height: 100%;
 }
 
-.img-container {
+.login-container .img-container {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -19,12 +19,12 @@
   z-index: -1;
 }
 
-.img-container img {
+.login-container .img-container img {
   height: 100vh;
   width: 100%;
 }
 
-.container1 {
+.login-container .container1 {
   display: flex;
   width: 90%;
   max-width: 30em;
@@ -35,7 +35,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.form-login {
+.login-container .form-login {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -44,7 +44,7 @@
   padding-bottom: 1.5em;
 }
 
-h1 {
+.login-container h1 {
   display: flex;
   font-size: 2.5em;
   font-family: 'Inter', sans-serif;
@@ -54,7 +54,7 @@ h1 {
 }
 
 
-.input-users {
+.login-container .input-users {
   display: flex;
   width: 19em;
   padding: 0.7em 0.7em;
@@ -69,7 +69,7 @@ h1 {
 }
 
 
-.log-button {
+.login-container .log-button {
   display: flex;
   width: 17em;
   height: 2.5em;
@@ -84,7 +84,7 @@ h1 {
   margin-bottom: 0.6em;
 }
 
-.log-button:hover {
+.login-container .log-button:hover {
   background-color: #ff88bb;
   cursor: pointer;
 }
@@ -93,7 +93,7 @@ h1 {
   margin-top: 1em;
 }
 
-.login-google {
+.login-container .login-google {
   margin-top: 0.3em;
   display: flex;
   align-items: center;
@@ -101,7 +101,7 @@ h1 {
   color: #432e37;
 }
 
-.logo {
+.login-container .logo {
   width: 25px;
   padding-right: 0.4em;
 }
@@ -125,20 +125,20 @@ border-color:rgba(162, 160, 160, 0.3);
     align-items: center;
   }
 
-  .container1 {
+  .login-container .container1 {
     padding-top: 3em;
     padding-bottom: 3em;
   }
 
-  h1 {
+  .login-container h1 {
     margin-top: 1em;
   }
 
-  .form-login {
+  .login-container .form-login {
     padding-top: 2.5em;
   }
 
-  .input-users {
+  .login-container .input-users {
     width: 25em;
   }
 }

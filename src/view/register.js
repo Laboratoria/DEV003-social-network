@@ -1,5 +1,7 @@
 /* eslint-disable no-alert */
-import { getAuth,linkWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+
+import { loginWithGoogle } from '../lib/google-auth';
 
 const auth = getAuth();
 
@@ -48,44 +50,45 @@ export default () => {
   return registerContainer;
 };
 
+function handleError(error) {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  console.log(errorCode, errorMessage);
+  const errors = {
+    'auth/missing-email': 'Por favor, introduce un correo.',
+    'auth/invalid-email': 'Correo inválido.',
+    'auth/email-already-in-use': 'Correo ya registrado.',
+    'auth/weak-password':
+      'Por favor, introduce una contraseña que contenga más de 6 carácteres.',
+    'auth/internal-error': 'Por favor, introduce una contraseña.',
+  };
+
+  const msgError = errors[errorCode] || 'Error, intente nuevamente.';
+  alert(msgError);
+}
+
+function registeredUser(userCredential) {
+  const form = document.querySelector('.form-btn');
+  // Signed in
+  const user = userCredential.user;
+  console.log('Firebase User', user);
+  alert('guardado exitosamente');
+  form.reset();
+}
+
+function registerWithEmailAndPassword(e) {
+  e.preventDefault();
+  const form = document.querySelector('.form-btn');
+  const data = Object.fromEntries(new FormData(form));
+  createUserWithEmailAndPassword(auth, data.email, data.password)
+    .then(registeredUser)
+    .catch(handleError);
+}
+
 export const init = () => {
   const form = document.querySelector('.form-btn');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(form));
-    createUserWithEmailAndPassword(auth, data.email, data.password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log('Firebase User', user);
-       alert('guardado exitosamente');
-       form.reset();
-       window.location.href = '/';
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-        form.reset();
-        //errores correo
-        if (errorCode === 'auth/missing-email') {
-          alert('Por favor, introduce un correo');
-        }
-        if (errorCode === 'auth/invalid-email') {
-          alert('Correo inválido');
-        }
-        if (errorCode === 'auth/email-already-in-use') {
-          alert('Correo ya registrado');
-        }
-        //errores contraseña
-        if (errorCode === 'auth/weak-password') {
-          alert(
-            'Por favor, introduce una contraseña que contenga más de 6 carácteres'
-          );
-        }
-        if (errorCode === 'auth/internal-error') {
-          alert('Por favor, introduce una contraseña');
-        }
-      });
-  });
+  form.addEventListener('submit', registerWithEmailAndPassword);
+
+  const buttonGoogle = document.querySelector('#btn-google-register');
+  buttonGoogle.addEventListener('click', loginWithGoogle);
 };

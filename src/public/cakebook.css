@@ -2,19 +2,44 @@
   box-sizing: border-box;
 }
 
-.cakebook-container h1 {
+.cakebook-container {
   display: flex;
-  font-size: 2.5em;
-  font-family: 'Inter', sans-serif;
-  color: #ff88bb;
-  justify-content: center;
-  margin-top: 1.5em;
+  flex-direction: column;
+  height: 100%;
 }
 
-.cakebook-container .title {
+
+.cakebook-container h1 {
+  display: flex;
+  font-size: 1.5em;
+  font-family: 'Inter', sans-serif;
+  color: #ff88bb;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 0.5em;
+}
+
+.cakebook-container .header {
   background-color: #fdd4e5;
-  margin: 0;
-  padding: 0em;
+  height: 10%;
+}
+
+.cakebook-container .nav{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  flex-direction: row;
+  margin-right: 0.5em;
+}
+
+.cakebook-container .signOut{
+  display: flex;
+  align-items: center;
+}
+
+.cakebook-container .btn-signOut{
+  display: flex;
+  
 }
 
 .cakebook-container .containerTimeline {
@@ -81,5 +106,5 @@
 }
 
 .cakebook-container i {
-  font-size: 2.5em;
+  font-size: 1em;
 }

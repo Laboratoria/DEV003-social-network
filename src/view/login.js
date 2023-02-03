@@ -1,8 +1,5 @@
 /* eslint-disable no-alert */
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 import { loginWithGoogle } from '../lib/google-auth';
 
@@ -33,8 +30,6 @@ export default () => {
       </form>
     </div>
   `;
-  const linkElement = document.getElementById('link');
-  linkElement.setAttribute('href', '/login.css');
 
   const loginContainer = document.createElement('div');
   loginContainer.classList.add('login-container');
@@ -50,7 +45,7 @@ function loginWithEmailAndPassword(e) {
   const auth = getAuth();
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
-      window.location.href = '/cakebook';
+      history.pushState(null, null, '/cakebook');
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -70,7 +65,7 @@ export const init = () => {
   const buttonRegister = document.getElementById('register');
   buttonRegister.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = '/register';
+    history.pushState(null, null, '/register');
   });
 
   const buttonGoogle = document.querySelector('#btn-google-register');
@@ -81,9 +76,7 @@ export const init = () => {
   const auth = getAuth();
   auth.onAuthStateChanged((user) => {
     if (user) {
-      console.log('sign in');
-    } else {
-      console.log('sign out');
+      history.pushState(null, null, '/cakebook');
     }
   });
 };

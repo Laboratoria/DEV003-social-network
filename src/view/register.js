@@ -3,8 +3,6 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 import { loginWithGoogle } from '../lib/google-auth';
 
-const auth = getAuth();
-
 export default () => {
   const viewRegister = /* html */ `
     <div class="img-container">
@@ -41,11 +39,9 @@ export default () => {
     </form>
   </div>
 `;
-  const linkElement = document.getElementById('link');
-  linkElement.setAttribute('href', '/register.css');
 
   const registerContainer = document.createElement('div');
-  registerContainer.classList.add('login-container');
+  registerContainer.classList.add('register-container');
   registerContainer.innerHTML = viewRegister;
   return registerContainer;
 };
@@ -78,6 +74,7 @@ function registeredUser(userCredential) {
 
 function registerWithEmailAndPassword(e) {
   e.preventDefault();
+  const auth = getAuth();
   const form = document.querySelector('.form-btn');
   const data = Object.fromEntries(new FormData(form));
   createUserWithEmailAndPassword(auth, data.email, data.password)
@@ -91,4 +88,11 @@ export const init = () => {
 
   const buttonGoogle = document.querySelector('#btn-google-register');
   buttonGoogle.addEventListener('click', loginWithGoogle);
+
+  const auth = getAuth();
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      history.pushState(null, null, '/cakebook');
+    }
+  });
 };

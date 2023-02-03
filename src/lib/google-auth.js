@@ -6,7 +6,7 @@ function handleError() {
 }
 
 function autenticGoogle() {
-  window.location.href = '/cakebook';
+  history.pushState(null, null, '/cakebook');
 }
 
 function loginWithGoogle(e) {

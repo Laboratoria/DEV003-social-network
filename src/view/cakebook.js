@@ -37,10 +37,8 @@ export default () => {
 </div>
   `;
 
-  const linkElement = document.getElementById('link');
-  linkElement.setAttribute('href', '/cakebook.css');
   const cakebookContainer = document.createElement('div');
-  cakebookContainer.classList.add('login-container');
+  cakebookContainer.classList.add('cakebook-container');
   cakebookContainer.innerHTML = viewTimeline;
   return cakebookContainer;
 };
@@ -51,7 +49,7 @@ export const init = () => {
     e.preventDefault();
     signOut(auth)
       .then(() => {
-        window.location.href = '/';
+        history.pushState(null, null, '/');
       })
       .catch((error) => {
         console.log(error);
@@ -59,10 +57,8 @@ export const init = () => {
   });
 
   auth.onAuthStateChanged((user) => {
-    if (user) {
-      console.log('sign in');
-    } else {
-      console.log('sign out');
+    if (!user) {
+      history.pushState(null, null, '/');
     }
   });
 };

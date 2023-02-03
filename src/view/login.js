@@ -1,9 +1,7 @@
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from 'firebase/auth';
+/* eslint-disable no-alert */
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+
+import { loginWithGoogle } from '../lib/google-auth';
 
 export default () => {
   const viewLogin = `
@@ -32,8 +30,6 @@ export default () => {
       </form>
     </div>
   `;
-  const linkElement = document.getElementById('link');
-  linkElement.setAttribute('href', '/login.css');
 
   const loginContainer = document.createElement('div');
   loginContainer.classList.add('login-container');
@@ -41,65 +37,46 @@ export default () => {
   return loginContainer;
 };
 
+function loginWithEmailAndPassword(e) {
+  e.preventDefault();
+  const email = document.getElementById('userEmail').value;
+  const password = document.getElementById('password').value;
+
+  const auth = getAuth();
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      history.pushState(null, null, '/cakebook');
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errors = {
+        'auth/wrong-password': 'Contraseña inválida',
+        'auth/user-not-found': 'Correo no registrado',
+      };
+      const msgError = errors[errorCode] || 'Error, intente nuavemente.';
+      alert(msgError);
+    });
+}
+
 export const init = () => {
   const buttonLogin = document.getElementById('form-login');
+  buttonLogin.addEventListener('submit', loginWithEmailAndPassword);
+
   const buttonRegister = document.getElementById('register');
-
-  buttonLogin.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('userEmail').value;
-    const password = document.getElementById('password').value;
-
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        window.location.href = '/cakebook';
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        console.log(errorCode);
-        if (errorCode === 'auth/wrong-password') {
-          alert('Contraseña inválida');
-        }
-        if (errorCode === 'auth/user-not-found') {
-          alert('Correo no registrado');
-        }
-      });
-  });
-
   buttonRegister.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href = '/register';
+    history.pushState(null, null, '/register');
   });
 
   const buttonGoogle = document.querySelector('#btn-google-register');
-  buttonGoogle.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('sign google');
+  buttonGoogle.addEventListener('click', loginWithGoogle);
 
-    const provider = new GoogleAuthProvider();
-    const auth = getAuth();
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        // Accounts successfully linked.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const user = result.user;
-        console.log('autenticado con google', credential, user);
-        window.location.href = '/cakebook';
-        // ...
-      })
-      .catch((error) => {
-        console.log(error, 'no se autentico el usuario');
-      });
-  });
+  // observatorio de estado
 
   const auth = getAuth();
   auth.onAuthStateChanged((user) => {
     if (user) {
-      console.log('sign in');
-    } else {
-      console.log('sign out');
+      history.pushState(null, null, '/cakebook');
     }
   });
 };

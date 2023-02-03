@@ -4,14 +4,17 @@ const auth = getAuth();
 
 export default () => {
   const viewTimeline = /* html */ `
-  <div id="container">
   <!--<img class = "fondoLogin" src = "images/fondoLogin.png">-->
-  <div class="title">
-    <h1>cakeBook</h1>
-    <button type="button" id="signOut">
-    <i class="fas fa-sign-out-alt"></i>
-    </button>
-  </div>
+  <header class="header">
+  <nav class="nav">
+  <h1>cakeBook</h1>
+    <div class="btn-signOut">
+      <button type="button" class="signOut" id="signOut">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </div>
+  </nav>
+  </header>
   <div class="containerTimeline">
   <div class="myPosts">
     <h2>¿Qué vamos a compartir hoy?</h2>
@@ -34,7 +37,6 @@ export default () => {
   <button type="button" class="btnMenu" id="friendsBtn"><i class="fas fa-users"></i></button>
   <button type="button" class="btnMenu" id="perfilBtn"><i class="fas fa-user-circle"></i></button>
   </div>
-</div>
   `;
 
   const cakebookContainer = document.createElement('div');

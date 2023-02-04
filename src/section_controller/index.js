@@ -1,5 +1,6 @@
 import { components } from '../sections/index.js';
 
+// eslint-disable-next-line consistent-return
 export const changeView = (route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
@@ -15,5 +16,4 @@ export const changeView = (route) => {
     default:
       break;
   }
-  console.log(route);
 };

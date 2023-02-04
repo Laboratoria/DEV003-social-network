@@ -1,3 +1,10 @@
-export const home = `
-<h1>HOME PAGE</h1>
-`;
+export default () => {
+  const home = `
+    <h1>HOME PAGE</h1>
+    `;
+
+  const divHome = document.createElement('div');
+  divHome.innerHTML = home;
+
+  return divHome;
+};

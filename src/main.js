@@ -1,5 +1,8 @@
-// Este es el punto de entrada de tu aplicacion
+// Este es el punto de entrada de Beat!
+import { changeView } from './section_controller/index.js';
 
-import { myFunction } from './lib/index.js';
+const init = () => {
+  window.addEventListener('hashchange', () => changeView(window.location.hash));
+};
 
-myFunction();
+window.addEventListener('load', init);

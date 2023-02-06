@@ -18,7 +18,8 @@ export default () => {
   <div class="containerTimeline">
   <div class="myPosts">
     <h2>¿Qué vamos a compartir hoy?</h2>
-    <p>post</p>
+    <textarea class="myPosts" id="post" placeholder="" ></textarea>
+    <button class="postBtn">Publicar</button>
   </div>
   <div class="friendsPosts">
     <div class="friendPic">
@@ -30,13 +31,15 @@ export default () => {
     </div>
   </div>
   </div>
-  <div class="menu">
+  <footer class="footer">
+  <nav class="menu">
   <button type="button" class="btnMenu" id="homeBtn"><i class="fas fa-home"></i></button>
   <button type="button" class="btnMenu" id="searchBtn"><i class="fas fa-search"></i></button>
   <button type="button" class="btnMenu" id="postBtn"><i class="fas fa-plus"></i></button>
   <button type="button" class="btnMenu" id="friendsBtn"><i class="fas fa-users"></i></button>
   <button type="button" class="btnMenu" id="perfilBtn"><i class="fas fa-user-circle"></i></button>
-  </div>
+  </nav>
+  </footer>
   `;
 
   const cakebookContainer = document.createElement('div');

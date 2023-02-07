@@ -31,16 +31,8 @@ export default () => {
     </div>
   </div>
   </div>
-  <footer class="footer">
-  <nav class="menu">
-  <button type="button" class="btnMenu" id="homeBtn"><i class="fas fa-home"></i></button>
-  <button type="button" class="btnMenu" id="searchBtn"><i class="fas fa-search"></i></button>
-  <button type="button" class="btnMenu" id="postBtn"><i class="fas fa-plus"></i></button>
-  <button type="button" class="btnMenu" id="friendsBtn"><i class="fas fa-users"></i></button>
-  <button type="button" class="btnMenu" id="perfilBtn"><i class="fas fa-user-circle"></i></button>
-  </nav>
-  </footer>
   `;
+  document.querySelector('.footer').style.display = 'flex';
 
   const cakebookContainer = document.createElement('div');
   cakebookContainer.classList.add('cakebook-container');
@@ -58,7 +50,7 @@ export const init = () => {
       })
       .catch((error) => {
         console.log(error);
-      });
+      }); document.querySelector('.footer').style.display = 'none';
   });
 
   auth.onAuthStateChanged((user) => {

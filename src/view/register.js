@@ -55,7 +55,7 @@ function handleError(error) {
     'auth/invalid-email': 'Correo inválido.',
     'auth/email-already-in-use': 'Correo ya registrado.',
     'auth/weak-password':
-      'Por favor, introduce una contraseña que contenga más de 6 carácteres.',
+    'Por favor, introduce una contraseña que contenga más de 6 carácteres.',
     'auth/internal-error': 'Por favor, introduce una contraseña.',
   };
 

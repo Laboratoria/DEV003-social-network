@@ -104,9 +104,10 @@
   margin-right: 1.5em;
 }
 
-.cakebook-container .footer{
+footer{
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 
 .cakebook-container .menu {

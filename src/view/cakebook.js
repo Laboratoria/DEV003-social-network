@@ -29,14 +29,22 @@ export default () => {
         <li><button class="postBtn">Publicar</button></li>
       </ul> 
     </div>
-    <div class="friendsPosts">
-      <div class="friendPic">
-        <button type="button" class="userPicBtn"><img src="./img/userPic.png" alt="" class="imgUser"></button>
+    <div class="myPosts">
+      <div class="header-post"> 
+        <div class="img-perfil">
+          <img src="./img/userPic.png" alt="" class="imgUser">
+        </div>
+        <h2 id="user-name">User-name</h2> 
       </div>
-      <div class="friendsText">
-        <h2>User</h2>
-        <p>post</p>
+      <div>
+      <img src="./img/image-post.png" alt="" class="imgUser">
+      <p>Aquí va el post</p>
       </div>
+      <ul class="nav-myPost">
+        <li><button class="postBtn">Liked</button></li>
+        <li><button class="postBtn">Editar</button></li>
+        <li><button class="postBtn">Eliminar</button></li> 
+      </ul> 
     </div>
   </div>
   </div>

@@ -1,8 +1,44 @@
 html, body {
   height: 100%;
-  margin: 0
+  margin: 0;
 }
 
 .main{
-  height: 100%;
+  height: vh;
+}
+
+.footer{
+  background-color: #ffff;
+  display: flex;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  border-top: 1px solid rgb(231, 217, 225, 0.4);
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: 2em;
+  margin-left: 2em; 
+}
+
+.btnMenu {
+  height: 2.5em;
+  width: 2.5em;
+  /* margin-right: 1em;
+  margin-left: 1em; */
+  border: none;
+  background: none;
+}
+
+.btnMenu:hover{
+  background: #fdd4e5;
+  box-shadow: 0 0 10px #fdd4e5, 0 0 40px #fdd4e5, 0 0 80px #fdd4e5;
+  border-radius: 50%;
+}
+
+i {
+  font-size: 1.5em;
 }

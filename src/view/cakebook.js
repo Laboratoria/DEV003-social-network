@@ -87,7 +87,8 @@ export const init = () => {
   // POSTS;
   const templatePosts = document.getElementById('posts');
   const containerListPosts = document.getElementById('list-posts');
-  const setupPosts = (data) => {
+  
+  const loadPosts = (data) => {
     if (data) {
       data.forEach((doc) => {
         const dataPost = doc.data();
@@ -111,7 +112,7 @@ export const init = () => {
   auth.onAuthStateChanged((user) => {
     if (user) {
       getDocs(collection(db, 'post')).then((querySnapshot) => {
-        setupPosts(querySnapshot);
+        loadPosts(querySnapshot);
         // querySnapshot.forEach((doc) => {
         //   console.log(doc.data());
         // });

@@ -1,5 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { initializeApp } from 'firebase/app';
-// import { getAuth } from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyA1E6v0tl-VMKi90Oqck7ywqNNbgBj6lBE',
@@ -12,3 +13,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+const auth = getAuth();
+export const signUp = (email, password) => createUserWithEmailAndPassword(auth, email, password)

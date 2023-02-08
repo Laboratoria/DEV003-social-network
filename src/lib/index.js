@@ -14,6 +14,6 @@ export const addRouteEvents = () => {
   };
 
   window.addEventListener('popstate', () =>
-    window.dispatchEvent(new Event('locationchange'))
+    window.dispatchEvent(new Event('locationchange')),
   );
 };

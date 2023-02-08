@@ -1,6 +1,16 @@
 import { getAuth, signOut } from 'firebase/auth';
+// import { getStorage } from 'firebase/storage';
+import {
+  getFirestore,
+  collection,
+  onSnapshot,
+  doc,
+  getDocs,
+} from 'firebase/firestore';
+import { db } from '../lib/firebase-app';
 
 const auth = getAuth();
+// const fs = getFirestore();
 
 export default () => {
   const viewTimeline = /* html */ `
@@ -29,24 +39,27 @@ export default () => {
         <li><button class="postBtn">Publicar</button></li>
       </ul> 
     </div>
-    <div class="myPosts">
-      <div class="header-post"> 
-        <div class="img-perfil">
-          <img src="./img/userPic.png" alt="" class="imgUser">
-        </div>
-        <h2 id="user-name">User-name</h2> 
-      </div>
-      <div>
-      <img src="./img/image-post.png" alt="" class="imgUser">
-      <p>Aquí va el post</p>
-      </div>
-      <ul class="nav-myPost">
-        <li><button class="postBtn">Liked</button></li>
-        <li><button class="postBtn">Editar</button></li>
-        <li><button class="postBtn">Eliminar</button></li> 
-      </ul> 
+    <div id="list-posts">
     </div>
-  </div>
+    <template id="posts">
+      <div class="myPosts">
+        <div class="header-post"> 
+          <div class="img-perfil">
+            <img src="./img/userPic.png" alt="" class="imgUser">
+          </div>
+          <h2 id="user-name">User-name</h2> 
+        </div>
+        <div>
+          <!-- <img src="./img/image-post.png" alt="" class="imgUser">-->
+          <p id="description">Aquí va el post</p>
+        </div>
+        <!--<ul class="nav-myPost">
+          <li><button class="postBtn">Liked</button></li>
+          <li><button class="postBtn">Editar</button></li>
+          <li><button class="postBtn">Eliminar</button></li> 
+        </ul>-->
+      </div>
+    </template>    
   </div>
   `;
   document.querySelector('.footer').style.display = 'flex';
@@ -67,11 +80,43 @@ export const init = () => {
       })
       .catch((error) => {
         console.log(error);
-      }); document.querySelector('.footer').style.display = 'none';
+      });
+    document.querySelector('.footer').style.display = 'none';
   });
 
+  // POSTS;
+  const templatePosts = document.getElementById('posts');
+  const containerListPosts = document.getElementById('list-posts');
+  const setupPosts = (data) => {
+    if (data) {
+      data.forEach((doc) => {
+        const dataPost = doc.data();
+        const cloneTemplatePosts = document.importNode(
+          templatePosts.content,
+          true
+        );
+        const h2title = cloneTemplatePosts.getElementById('user-name');
+        const pDescription = cloneTemplatePosts.getElementById('description');
+        h2title.textContent = dataPost.title;
+        pDescription.textContent = dataPost.description;
+        containerListPosts.appendChild(cloneTemplatePosts);
+      });
+    } else {
+      containerListPosts.textContent = 'No hay publicación';
+    }
+  };
+
+  // events
+  // list posts for auth state changes
   auth.onAuthStateChanged((user) => {
-    if (!user) {
+    if (user) {
+      getDocs(collection(db, 'post')).then((querySnapshot) => {
+        setupPosts(querySnapshot);
+        // querySnapshot.forEach((doc) => {
+        //   console.log(doc.data());
+        // });
+      });
+    } else {
       history.pushState(null, null, '/');
     }
   });

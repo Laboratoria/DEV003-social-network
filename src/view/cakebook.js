@@ -1,6 +1,5 @@
 import { getAuth, signOut } from 'firebase/auth';
-// import { getStorage } from 'firebase/storage';
-import { collection, getDocs, addDoc, doc, setDoc } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../lib/firebase-app';
 
 const auth = getAuth();
@@ -63,6 +62,19 @@ export default () => {
   return cakebookContainer;
 };
 
+//CREATE POSTS:
+function writePost() {
+  const btnPublish = document.getElementById('form-post');
+  const textPublication = document.getElementById('texto');
+  btnPublish.addEventListener('submit', (e) => {
+    e.preventDefault();
+    addDoc(collection(db, 'post'), {
+      title: 'post1',
+      description: textPublication.value,
+    }).then(() => btnPublish.reset());
+  });
+}
+
 export const init = () => {
   const buttonSignOut = document.getElementById('signOut');
   buttonSignOut.addEventListener('click', (e) => {
@@ -77,26 +89,14 @@ export const init = () => {
     document.querySelector('.footer').style.display = 'none';
   });
 
-  //create post;
-  function writePost() {
-    const btnPublish = document.getElementById('form-post');
-    const textPublication = document.getElementById('texto');
-    btnPublish.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const createPost = doc(db, 'post/id');
-      const docData = {
-        title: 'post1',
-        description: textPublication.value,
-      };
-      setDoc(createPost, docData);
-    });
-  }
+  writePost();
 
   // CARGAR POSTS;
   const templatePosts = document.getElementById('posts');
   const containerListPosts = document.getElementById('list-posts');
 
   const loadPosts = (data) => {
+    containerListPosts.textContent = '';
     if (data) {
       data.forEach((doc) => {
         const dataPost = doc.data();
@@ -115,16 +115,11 @@ export const init = () => {
     }
   };
 
-  // events
   // list posts for auth state changes
   auth.onAuthStateChanged((user) => {
     if (user) {
-      writePost();
-      getDocs(collection(db, 'post')).then((querySnapshot) => {
+      const unsub = onSnapshot(collection(db, 'post'), (querySnapshot) => {
         loadPosts(querySnapshot);
-        // querySnapshot.forEach((doc) => {
-        //   console.log(doc.data());
-        // });
       });
     } else {
       history.pushState(null, null, '/');

@@ -1,16 +1,9 @@
 import { getAuth, signOut } from 'firebase/auth';
 // import { getStorage } from 'firebase/storage';
-import {
-  getFirestore,
-  collection,
-  onSnapshot,
-  doc,
-  getDocs,
-} from 'firebase/firestore';
+import { collection, getDocs, addDoc, doc, setDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase-app';
 
 const auth = getAuth();
-// const fs = getFirestore();
 
 export default () => {
   const viewTimeline = /* html */ `
@@ -26,19 +19,19 @@ export default () => {
     </nav>
   </header>
   <div class="containerTimeline">
-    <div class="myPosts">
+    <form id="form-post" class="myPosts">
        <h2>¿Qué vamos a compartir hoy?</h2>
         <div class="header-post"> 
           <div class="img-perfil">
             <img src="./img/userPic.png" alt="" class="imgUser">
           </div>
-          <textarea class="myPosts" class="text-post" id="post" placeholder="" ></textarea>
+          <textarea class="myPosts" class="text-post" id="texto" placeholder="" ></textarea>
         </div>
       <ul class="nav-myPost">
-        <li><button class="postBtn">Foto</button></li>
-        <li><button class="postBtn">Publicar</button></li>
+        <li><button type="button" class="postBtn">Foto</button></li>
+        <li><button id="publicar" class="postBtn">Publicar</button></li>
       </ul> 
-    </div>
+    </form>
     <div id="list-posts">
     </div>
     <template id="posts">
@@ -84,10 +77,25 @@ export const init = () => {
     document.querySelector('.footer').style.display = 'none';
   });
 
-  // POSTS;
+  //create post;
+  function writePost() {
+    const btnPublish = document.getElementById('form-post');
+    const textPublication = document.getElementById('texto');
+    btnPublish.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const createPost = doc(db, 'post/id');
+      const docData = {
+        title: 'post1',
+        description: textPublication.value,
+      };
+      setDoc(createPost, docData);
+    });
+  }
+
+  // CARGAR POSTS;
   const templatePosts = document.getElementById('posts');
   const containerListPosts = document.getElementById('list-posts');
-  
+
   const loadPosts = (data) => {
     if (data) {
       data.forEach((doc) => {
@@ -111,6 +119,7 @@ export const init = () => {
   // list posts for auth state changes
   auth.onAuthStateChanged((user) => {
     if (user) {
+      writePost();
       getDocs(collection(db, 'post')).then((querySnapshot) => {
         loadPosts(querySnapshot);
         // querySnapshot.forEach((doc) => {

@@ -1,5 +1,5 @@
 import { getAuth, signOut } from 'firebase/auth';
-import { collection, addDoc, onSnapshot } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot, Timestamp } from 'firebase/firestore';
 import { db } from '../lib/firebase-app';
 
 const auth = getAuth();
@@ -44,6 +44,7 @@ export default () => {
         <div>
           <!-- <img src="./img/image-post.png" alt="" class="imgUser">-->
           <p id="description">Aquí va el post</p>
+          <p id="time" class="time">Time</p>
         </div>
         <!--<ul class="nav-myPost">
           <li><button class="postBtn">Liked</button></li>
@@ -69,8 +70,9 @@ function writePost() {
   btnPublish.addEventListener('submit', (e) => {
     e.preventDefault();
     addDoc(collection(db, 'post'), {
-      title: 'post1',
+      userName: auth.currentUser.displayName,
       description: textPublication.value,
+      time: Timestamp.fromDate(new Date()),
     }).then(() => btnPublish.reset());
   });
 }
@@ -102,12 +104,14 @@ export const init = () => {
         const dataPost = doc.data();
         const cloneTemplatePosts = document.importNode(
           templatePosts.content,
-          true
+          true,
         );
-        const h2title = cloneTemplatePosts.getElementById('user-name');
+        const h2userName = cloneTemplatePosts.getElementById('user-name');
         const pDescription = cloneTemplatePosts.getElementById('description');
-        h2title.textContent = dataPost.title;
+        const pTime = cloneTemplatePosts.getElementById('time');
+        h2userName.textContent = dataPost.userName;
         pDescription.textContent = dataPost.description;
+        pTime.textContent = dataPost.time?.toDate().toLocaleString() || '';
         containerListPosts.appendChild(cloneTemplatePosts);
       });
     } else {

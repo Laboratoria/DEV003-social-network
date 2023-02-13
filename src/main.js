@@ -1,8 +1,36 @@
 // Este es el punto de entrada de Beat!
-import { changeView } from './section_controller/index.js';
+import { signUp } from './components/signup.js';
+import { logIn } from './components/login.js';
+import { home } from './components/home.js';
 
-const init = () => {
-  window.addEventListener('hashchange', () => changeView(window.location.hash));
+// import artists from './components/artists.js';
+// import album from './components/album.js';
+
+const root = document.getElementById('root');
+
+export const routes = {
+  '/': signUp,
+  '/login': logIn,
+  '/home': home,
+  // '/artists': artists,
+  // '/album': album,
 };
 
-window.addEventListener('load', init);
+export const onNavigate = (pathname) => {
+  window.history.pushState(
+    {},
+    pathname,
+    window.location.origin + pathname,
+  );
+  root.removeChild(root.firstChild);
+  root.appendChild(routes[pathname]());
+};
+
+const component = routes[window.location.pathname];
+
+window.onpopstate = () => {
+  root.removeChild(root.firstChild);
+  root.append(component());
+};
+
+root.appendChild(component());

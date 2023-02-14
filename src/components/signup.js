@@ -4,7 +4,10 @@ export const signUp = () => {
   const div = document.createElement('div');
   const title = document.createElement('h2');
   const buttonSignUp = document.createElement('button');
+  buttonSignUp.id = 'signUpBtn';
   const buttonLogIn = document.createElement('button');
+  const inputEmail = document.createElement('input');
+  const inputPass = document.createElement('input');
 
   buttonSignUp.textContent = 'Crea una cuenta';
   buttonLogIn.textContent = 'Inicia Sesión';
@@ -14,7 +17,7 @@ export const signUp = () => {
     onNavigate('/login');
   });
 
-  div.append(title, buttonSignUp, buttonLogIn);
+  div.append(title, inputEmail, inputPass, buttonSignUp, buttonLogIn);
 
   return div;
 };

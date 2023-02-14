@@ -1,4 +1,43 @@
-.logoInicio {
-  max-width: 205px;
-  max-height: 205px;
+.sign-up-container {
+  background-color: linear-gradient(
+    180deg,
+    #e02394 0%,
+    #ae1d86 29.17%,
+    #330d65 100%
+  );
+}
+
+.logo {
+  width: 40%;
+}
+
+.sign-up-form {
+  width: 70%;
+  background-color: rgba(50, 13, 101, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.sign-up-title {
+  color: #ffffff;
+}
+
+.user-name {
+  color: #000000;
+}
+
+.email-address {
+  color: #000000;
+}
+
+.input-email {
+  width: 30%;
+}
+
+.password {
+  color: #000000;
+}
+
+.input-password {
+  width: 30%;
 }

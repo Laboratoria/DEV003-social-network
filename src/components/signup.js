@@ -2,17 +2,37 @@
 import { signUp as signUpFirebase } from '../lib-firebase';
 
 export const signUp = () => {
-  const div = document.createElement('div');
+  const divSignUp = document.createElement('div');
+  divSignUp.className = 'sign-up-container';
+  const logo = document.createElement('img');
+  logo.className = 'logo';
+  logo.src = 'img/logo mapa de bits.png';
+  const signUpForm = document.createElement('div');
+  signUpForm.className = 'sign-up-form';
   const title = document.createElement('h2');
+  title.textContent = 'SIGN UP';
+  title.className = 'sign-up-title';
+  const email = document.createElement('h4');
+  email.className = 'email-address';
+  email.textContent = 'Correo electrónico';
+  const inputEmail = document.createElement('input');
+  inputEmail.type = 'email';
+  inputEmail.required = true;
+  inputEmail.className = 'input-email';
+  const password = document.createElement('h4');
+  password.className = 'password';
+  password.textContent = 'Constraseña';
+  password.required = true;
+  const inputPass = document.createElement('input');
+  inputPass.type = 'password';
+  inputPass.required = 'true';
+  inputPass.className = 'input-password';
+  inputPass.minLength = 6;
   const buttonSignUp = document.createElement('button');
+  buttonSignUp.textContent = 'Crea una cuenta';
   buttonSignUp.id = 'signUpBtn';
   const buttonLogIn = document.createElement('button');
-  const inputEmail = document.createElement('input');
-  const inputPass = document.createElement('input');
-
-  buttonSignUp.textContent = 'Crea una cuenta';
   buttonLogIn.textContent = 'Inicia Sesión';
-  title.textContent = 'SIGN UP';
 
   buttonSignUp.addEventListener('click', () => {
     console.log('registrate');
@@ -31,9 +51,10 @@ export const signUp = () => {
     // onNavigate('/login');
   });
 
-  div.append(title, inputEmail, inputPass, buttonSignUp, buttonLogIn);
+  divSignUp.append(logo, signUpForm, email, inputEmail, password, inputPass);
+  signUpForm.appendChild(title, buttonSignUp, buttonLogIn);
 
-  return div;
+  return divSignUp;
 };
 
 // export const signUp = `

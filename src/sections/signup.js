@@ -2,7 +2,7 @@ export default () => {
   const signup = ` <section>
     <img class="logoInicio" src="img/logo mapa de bits.png" alt="logo de la aplicación">
     <form>
-      <h3>SIGN UP</h3>
+      <h3>SIGN UP JS</h3>
       <div>
         <label>Nombre de usuario</label>
         <input id= "nameInput" type="text">

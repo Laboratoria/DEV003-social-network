@@ -1,0 +1,119 @@
+* {
+margin: 0;
+padding: 0;
+/* box-sizing: border-box; */
+}
+
+:root {
+/* azul: 023047, turqueza: 219ebc, naranja: fb8500, celeste: 8ecae6; amarillo:ffb703*/
+ --theme-color: white;
+ --primary-color: #023047;
+ --secundary-color: #ffb703;
+ --text-color: white;
+ --background-color-buttons: #fb8500;
+ --background-view: #8ecae6;
+}
+
+/* vista login */
+body {
+    font-family: Helvetica;
+    background-color: var(--theme-color);
+    color: var(--primary-color);
+    /* padding-top: 0px; */
+}
+
+.loginContainer {
+
+    background-color: var(--background-view);
+    width: 336px;
+    height: 508px;
+    margin: auto;
+    margin-top: 120px;
+    box-shadow: var(--background-view);
+    /* padding: 20px 20px 20px 20px; */
+    /* background: #ffff; */
+    border: var(--primary-color);
+    text-align: center;
+    align-content: center;
+}
+.container {
+    background-image: url(Imagenes/Viajera.jpg);
+
+    padding-top: 35px;
+    background-color: var(--background-view);
+    width: 336px;
+    height: 508px;
+    margin: auto;
+    margin-top: 30px;
+    box-shadow: var(--background-view);
+    /* background: #ffff; */
+    border: var(--primary-color);
+    text-align: center;
+    align-content: center;
+}
+.logoTravellx {
+    padding-bottom: 5px;
+}
+
+.wellcomeLogReg {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.controls {
+    /* border-color: #023047; */
+    /* border-radius: 5%; */
+    height: 46px;
+    width: 280px;
+    margin: 0 auto;
+    padding-left: 14px;
+    margin-bottom: 8px;
+    margin-left: 28px;
+    margin-right: 28px;
+
+}
+
+.loginBtn {
+
+    height: 46px;
+    width: 280px;
+    background-color: var(--primary-color);
+    color: #ffff;
+    font-size: 16px;
+}
+
+.linkViewRegister {
+        display: block;
+        height: 46px;
+        width: 280px;
+        background-color: var(--background-color-buttons);
+        color: #ffff;
+        font-size: 16px;
+        border-radius: 10px;
+        /* padding: 5px 15px; */
+        padding-left: 14px;
+        margin-bottom: 8px;
+        margin-left: 28px;
+        margin-right: 28px;
+}
+.registerBtn {
+    height: 46px;
+    width: 280px;
+    background-color: var(--background-color-buttons);
+    color: #ffff;
+    font-size: 16px;
+
+}
+
+.text-center {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 450px;
+    /* margin: 0 auto; */
+    padding: 30px;
+}

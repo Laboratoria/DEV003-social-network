@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    background-color: #1D2532;
+    color: white;
+}
+
+.container-album {
+  width: 80%;
+  margin: 0 auto;
+  position:relative;
+   
+  }
+
+#title-option-album {
+    margin-top: 5%;
+    background-color: #330D65;
+    border-radius: 20rem 90rem 0rem 0rem;
+    width: 20%;
+   
+    text-align: center;
+    
+    padding: 1.25rem;
+  }
+
+#item-album {
+    
+    background-color: #330D65;
+    border-radius: 0rem 1rem 1rem 1rem;
+    width: 80%;
+   
+    
+    color: white;
+    padding: 1.25rem
+  }
+
+  .fa-solid fa-heart{
+    background-color: #E02394;
+  }
+  #img-album{
+    width: 140px;
+    height: 140px;
+    background-color:rgb(87, 83, 83);
+  }

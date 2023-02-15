@@ -1,26 +1,55 @@
 import { onNavigate } from '../router/utils';
 
 export const home = () => {
-  const div = document.createElement('div');
-  const title = document.createElement('h2');
-  const button = document.createElement('button');
-  const buttonBack = document.createElement('button');
-  const inputEmail = document.createElement('input');
-  const inputPass = document.createElement('input');
+  const homeDiv = document.createElement('div');
+  homeDiv.className = 'home-container';
+  const header = document.createElement('header');
+  header.className = 'header-home';
+  const logo = document.createElement('img');
+  logo.className = 'logo';
+  logo.src = 'img/logo mapa de bits.png';
+  const userIcon = document.createElement('img');
+  userIcon.className = 'user';
+  userIcon.src = 'img/user.png';
+  const categoryList = document.createElement('div');
+  categoryList.className = 'category-list';
+  const categories = document.createElement('div');
+  categories.className = 'category-container';
+  const favorites = document.createElement('div');
+  favorites.textContent = 'Favoritos';
+  favorites.className = 'favorites';
+  const trending = document.createElement('div');
+  trending.textContent = 'Tendencias';
+  trending.className = 'trending';
+  const album = document.createElement('a'); // este botón direcciona a álbum
+  album.textContent = 'Álbum';
+  album.className = 'albums';
+  album.setAttribute('href', 'http://localhost:5173/album');
+  const artists = document.createElement('div');
+  artists.textContent = 'Artistas';
+  artists.className = 'artists';
+  const genres = document.createElement('div');
+  genres.textContent = 'Géneros';
+  genres.className = 'genres';
 
-  button.textContent = 'Botón de Home';
+
+  const buttonBack = document.createElement('button');
   buttonBack.textContent = 'Botón de Regreso';
-  title.textContent = 'PÁGINA DE HOME';
-  button.addEventListener('click', () => {
-    onNavigate('/');
+
+
+  album.addEventListener('click', () => {
+    onNavigate('/album');
   });
   buttonBack.addEventListener('click', () => {
     onNavigate('/login');
   });
 
-  div.append(title, inputEmail, inputPass, button, buttonBack);
+  homeDiv.append(header, categoryList, buttonBack);
+  header.append(logo, userIcon);
+  categoryList.appendChild(categories);
+  categories.append(favorites, trending, album, artists, genres);
 
-  return div;
+  return homeDiv;
 };
 
 // export default () => {

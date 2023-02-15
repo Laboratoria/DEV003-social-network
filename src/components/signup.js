@@ -1,5 +1,6 @@
 // import { onNavigate } from '../main.js';
 import { signUp as signUpFirebase } from "../lib-firebase";
+import { loginWithGoogle } from "../lib-firebase";
 
 export const signUp = () => {
   const divSignUp = document.createElement("div");
@@ -72,6 +73,10 @@ export const signUp = () => {
       });
 
     // onNavigate('/login');
+  });
+
+  buttonLogIn.addEventListener("click", () => {
+    loginWithGoogle();
   });
 
   divSignUp.append(logo, signUpForm, buttonSignUp, bottomTextContainer);

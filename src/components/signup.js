@@ -29,10 +29,28 @@ export const signUp = () => {
   inputPass.className = 'input-password';
   inputPass.minLength = 6;
   const buttonSignUp = document.createElement('button');
-  buttonSignUp.textContent = 'Crea una cuenta';
+  // buttonSignUp.textContent = 'Crea una cuenta';
   buttonSignUp.id = 'signUpBtn';
+  buttonSignUp.className = 'sign-up-button';
+  const arrow = document.createElement('img');
+  arrow.className = 'arrow';
+  arrow.src = 'img/flechita.png';
+  const line = document.createElement('div');
+  line.className = 'line';
   const buttonLogIn = document.createElement('button');
-  buttonLogIn.textContent = 'Inicia Sesión';
+  buttonLogIn.textContent = 'Inicia Sesión con Google';
+  buttonLogIn.className = 'log-in-google';
+  const bottomTextContainer = document.createElement('div');
+  bottomTextContainer.className = 'bottom-text-container';
+  const bottomText = document.createElement('p');
+  bottomText.className = 'bottom-text';
+  bottomText.textContent = '¿Ya tienes una cuenta?';
+  const logInText = document.createElement('a');
+  logInText.textContent = 'Inicia sesión acá';
+  logInText.className = 'log-in-text';
+  logInText.setAttribute('href', 'http://localhost:5173/login');
+
+  // Event Listener y conexión a Firebase
 
   buttonSignUp.addEventListener('click', () => {
     console.log('registrate');
@@ -51,8 +69,10 @@ export const signUp = () => {
     // onNavigate('/login');
   });
 
-  divSignUp.append(logo, signUpForm, email, inputEmail, password, inputPass);
-  signUpForm.appendChild(title, buttonSignUp, buttonLogIn);
+  divSignUp.append(logo, signUpForm, buttonSignUp, bottomTextContainer);
+  signUpForm.append(title, email, inputEmail, password, inputPass, line, buttonLogIn);
+  buttonSignUp.appendChild(arrow);
+  bottomTextContainer.append(bottomText, logInText);
 
   return divSignUp;
 };

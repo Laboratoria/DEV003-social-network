@@ -3,51 +3,88 @@ import { onNavigate } from '../router/utils';
 export const home = () => {
   const homeDiv = document.createElement('div');
   homeDiv.className = 'home-container';
+
   const header = document.createElement('header');
   header.className = 'header-home';
-  const logo = document.createElement('img');
-  logo.className = 'logo';
-  logo.src = 'img/logo mapa de bits.png';
+
+  const logoHome = document.createElement('img');
+  logoHome.className = 'logoHome';
+  logoHome.src = 'img/logo mapa de bits.png';
+
   const userIcon = document.createElement('img');
   userIcon.className = 'user';
   userIcon.src = 'img/user.png';
+
   const categoryList = document.createElement('div');
   categoryList.className = 'category-list';
+
   const categories = document.createElement('div');
   categories.className = 'category-container';
+
+  const favDiv = document.createElement('div');
+  favDiv.className = 'fav-div';
+
   const favorites = document.createElement('div');
   favorites.textContent = 'Favoritos';
   favorites.className = 'favorites';
+
+  const favoritesImg = document.createElement('img');
+  favoritesImg.className = 'favorites-img';
+  favoritesImg.src = 'img/favoritos.png';
+
   const trending = document.createElement('div');
   trending.textContent = 'Tendencias';
   trending.className = 'trending';
+
   const album = document.createElement('a'); // este botón direcciona a álbum
   album.textContent = 'Álbum';
   album.className = 'albums';
   album.setAttribute('href', 'http://localhost:5173/album');
+
   const artists = document.createElement('div');
   artists.textContent = 'Artistas';
   artists.className = 'artists';
+
   const genres = document.createElement('div');
   genres.textContent = 'Géneros';
   genres.className = 'genres';
 
+  const songs = document.createElement('div');
+  songs.textContent = 'Canciones';
+  songs.className = 'songs';
 
-  const buttonBack = document.createElement('button');
-  buttonBack.textContent = 'Botón de Regreso';
+  const recommended = document.createElement('h4');
+  recommended.textContent = 'RECOMENDADOS';
+  recommended.className = 'recommended';
 
+  const recTitle = document.createElement('div');
+  recTitle.className = 'rec-title';
+
+  const recButton = document.createElement('div');
+  recButton.className = 'rec-button';
+
+  const recArrow = document.createElement('img');
+  recArrow.className = 'rec-arrow';
+  recArrow.src = 'img/flechita.png';
+
+  const recContainer = document.createElement('div');
+  recContainer.className = 'rec-container';
+
+  const recImg = document.createElement('div');
+  recImg.className = 'rec-img';
 
   album.addEventListener('click', () => {
     onNavigate('/album');
   });
-  buttonBack.addEventListener('click', () => {
-    onNavigate('/login');
-  });
 
-  homeDiv.append(header, categoryList, buttonBack);
-  header.append(logo, userIcon);
+  homeDiv.append(header, categoryList, recTitle, recContainer);
+  header.append(logoHome, userIcon);
   categoryList.appendChild(categories);
-  categories.append(favorites, trending, album, artists, genres);
+  favDiv.append(favoritesImg, favorites);
+  categories.append(favDiv, trending, album, artists, genres, songs);
+  recTitle.append(recommended, recButton);
+  recButton.appendChild(recArrow);
+  recContainer.appendChild(recImg);
 
   return homeDiv;
 };

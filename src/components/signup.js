@@ -4,49 +4,63 @@ import { signUp as signUpFirebase, loginWithGoogle } from '../lib-firebase';
 export const signUp = () => {
   const divSignUp = document.createElement('div');
   divSignUp.className = 'sign-up-container';
+
   const logo = document.createElement('img');
   logo.className = 'logo';
   logo.src = 'img/logo mapa de bits.png';
+
   const signUpForm = document.createElement('div');
   signUpForm.className = 'sign-up-form';
+
   const title = document.createElement('h2');
   title.textContent = 'SIGN UP';
   title.className = 'sign-up-title';
+
   const email = document.createElement('h4');
   email.className = 'email-address';
   email.textContent = 'Correo electrónico';
+
   const inputEmail = document.createElement('input');
   inputEmail.id = 'emailInput';
   inputEmail.type = 'mail';
   inputEmail.required = true;
   inputEmail.className = 'input-email';
+
   const password = document.createElement('h4');
   password.className = 'password';
   password.textContent = 'Constraseña';
   password.required = true;
+
   const inputPass = document.createElement('input');
   inputPass.id = 'passwordInput';
   inputPass.type = 'password';
   inputPass.required = 'true';
   inputPass.className = 'input-password';
   inputPass.minLength = 6;
+
   const buttonSignUp = document.createElement('button');
   // buttonSignUp.textContent = 'Crea una cuenta';
   buttonSignUp.id = 'signUpBtn';
   buttonSignUp.className = 'sign-up-button';
+
   const arrow = document.createElement('img');
   arrow.className = 'arrow';
   arrow.src = 'img/flechita.png';
+
   const line = document.createElement('div');
   line.className = 'line';
+
   const buttonLogIn = document.createElement('button');
   buttonLogIn.textContent = 'Inicia Sesión con Google';
   buttonLogIn.className = 'log-in-google';
+
   const bottomTextContainer = document.createElement('div');
   bottomTextContainer.className = 'bottom-text-container';
+
   const bottomText = document.createElement('p');
   bottomText.className = 'bottom-text';
   bottomText.textContent = '¿Ya tienes una cuenta?';
+
   const logInText = document.createElement('a');
   logInText.textContent = 'Inicia sesión acá';
   logInText.className = 'log-in-text';
@@ -57,15 +71,17 @@ export const signUp = () => {
   buttonSignUp.addEventListener('click', () => {
     const userEmail = document.getElementById('emailInput').value;
     const userPassword = document.getElementById('passwordInput').value;
-    console.log('registrate');
+    // console.log('registrate');
     signUpFirebase(userEmail, userPassword) // data para probar si está leyendo los datos
-      .then((userCredential) => {
-        // de acá para abajo es código copiado de la pag de firebase
+      .then((userCredential) => { // de acá para abajo es código copiado de la pag de firebase
+        console.log(userCredential);
+
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
       })
       .catch((error) => {
+        // console.log(error);
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..

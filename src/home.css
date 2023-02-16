@@ -6,6 +6,7 @@ body {
 
 .home-container {
     background-color: #1D2532;
+    z-index: -5;
 }
 
 .header-home {
@@ -54,11 +55,13 @@ body {
 .favorites-img {
     width: 40%;
     border-radius: 20px;
+    z-index: -1;
 }
 
 .favorites {
     text-align: center;
     color: #FFFFFF;
+    z-index: 5;
 }
 
 .trending {

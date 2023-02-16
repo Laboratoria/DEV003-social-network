@@ -1,7 +1,7 @@
 // Este es el punto de entrada de Beat!
-import { routes } from "./router/routes";
+import { routes } from './router/routes';
 
-const root = document.getElementById("root");
+const root = document.getElementById('root');
 
 const component = routes[window.location.pathname];
 

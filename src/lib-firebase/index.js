@@ -20,8 +20,8 @@ const app = initializeApp(firebaseConfig);
 // función de autenticación
 const auth = getAuth();
 export const signUp = (email, password) => createUserWithEmailAndPassword(auth, email, password);
-// función de google provider
 
+// función de google provider
 export function loginWithGoogle() {
   const provider = new GoogleAuthProvider();
   return signInWithRedirect(auth, provider);

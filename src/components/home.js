@@ -23,6 +23,7 @@ export const home = () => {
 
   // const favDiv = document.createElement('div');
   // favDiv.className = 'fav-div';
+
   const favoritesImg = document.createElement('img');
   favoritesImg.className = 'favorites-img';
   favoritesImg.src = 'img/favoritos.png';
@@ -78,9 +79,8 @@ export const home = () => {
 
   homeDiv.append(header, categoryList, recTitle, recContainer);
   header.append(logoHome, userIcon);
-  categoryList.appendChild(categories);
-  categories.append(favoritesImg, trending, album, artists, genres, songs);
-  favoritesImg.appendChild(favorites);
+  categoryList.append(categories, trending, album, artists, genres, songs);
+  categories.append(favorites, favoritesImg);
   recTitle.append(recommended, recButton);
   recButton.appendChild(recArrow);
   recContainer.appendChild(recImg);

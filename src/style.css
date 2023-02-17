@@ -5,6 +5,36 @@
 }
 
 body{
-    background-color: rgb(196, 196, 205);
+background-color: rgba(18, 56, 77, 1);
+margin: 50px;
+}
+
+h1{
     
+font:bold 30px Century,sans-serif;
+background-color: rgba(217, 217, 217, 1);
+width:350px;
+height:30px;
+top:13px;
+left:5px;
+border-radius:25px;
+text-align: center;
+}
+
+h2{
+
+ font:bold 30px Century,sans-serif;
+ background-color: rgba(217, 217, 217, 1);
+ margin-top: 100px;
+}
+.menuPrincipal{
+
+font:bold 30px Century,sans-serif;
+background-color: rgba(217, 217, 217, 1);
+width:350px;
+height:30px;
+border-radius:25px;
+text-align: center;
+margin:50px;
+
 }

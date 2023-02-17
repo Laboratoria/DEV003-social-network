@@ -1,15 +1,14 @@
-*{
+/* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
 }
 
-body{
+/* body{
 background-color: rgba(18, 56, 77, 1);
 margin: 50px;
-}
+ }  */
 
-h1{
+/* h1{
     
 font:bold 30px Century,sans-serif;
 background-color: rgba(217, 217, 217, 1);
@@ -19,22 +18,43 @@ top:13px;
 left:5px;
 border-radius:25px;
 text-align: center;
-}
+} */
 
-h2{
+/* h2{
 
  font:bold 30px Century,sans-serif;
  background-color: rgba(217, 217, 217, 1);
  margin-top: 100px;
-}
-.menuPrincipal{
+}  */
 
-font:bold 30px Century,sans-serif;
-background-color: rgba(217, 217, 217, 1);
+
+/* .menu{
+font:bold 15px Century,sans-serif;
+background-color: rgba(18, 56, 77, 1);
 width:350px;
-height:30px;
+height:500px;
 border-radius:25px;
 text-align: center;
 margin:50px;
 
-}
+} */
+/* .menuPrincipal{
+
+width: 200px;
+margin:30px;
+border-radius: 4px;
+margin-top: 20px;
+padding: 10px 0px 10px 0px;
+background-color: rgba(217, 217, 217, 1)
+
+} */
+/* .texto{
+width: 200px;
+margin:30px;
+border-radius: 4px;
+margin-top: 20px;
+background-color: rgba(217, 217, 217, 1)
+display:inline-block;
+padding: 10px;
+
+} */

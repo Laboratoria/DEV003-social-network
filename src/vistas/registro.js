@@ -3,13 +3,13 @@
  export default () => {
     const registro = `
     <div>
-     <div>
-      <h1>ESTE SERA EL TITULO</h1>
+     <header>
+      <h1>ANIMAL LOVERS</h1>
+     </header>
+     <div class="imagen">
+      <img src='imagenes RS/CAMAPAÑA DE VACUNA.jpg' alt="">
      </div>
-     <div>
-      <img alt='Logo'/>
-     </div>
-     <div>
+     <div class="formulario">
       <p>NOMBRES</p>
       <input class="texto"></input>
       <p>APELLIDOS</p>
@@ -19,7 +19,10 @@
       <p>CONTRASEÑA</p>
       <input class="texto"></input>
      </div>
-     <div> crear boton de registrar </div>
+     <div> 
+     <button name="favorito" type="button">REGISTRARSE</button>
+    
+     </div>
     </div>
     `;
   

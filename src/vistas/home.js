@@ -1,10 +1,14 @@
 // formulario para que el usuario ingrese correo y contraseña 15.02
 export default () => {
   const home = `
-    <h2 class="texto-center">¡Bienvenido a nuestra página!</h2>
-    <figure class="texto-Center">
-    <img class="image" scr="/imagenes RS/CAMAPAÑA DE VACUNA.jpg" alt="Conejo codeando"
-    </figure>`
+  <header>
+      <h1>ANIMAL LOVERS</h1>
+  </header>
+  <h2 class="texto-center">Vets Vetwork</h2>
+
+  <div class="logo">
+    <img src="imagenes RS/imagen logo 2.jpg" alt="">
+  </div>`
 
   const divElement = document.createElement("div");
 //   divElement.classlist.add("position")

@@ -5,9 +5,8 @@
 // // myFunction();
 
 //RECARGA PARA LA PAGINA
-import {changeView} from './controler/routers.js';
+import { changeView } from "./controler/routers.js";
 const inicial = () => {
-window.addEventListener("hashchange",() =>changeView(window.location.hash))
-}
-window.addEventListener("load",inicial)
-
+  window.addEventListener("hashchange", () => changeView(window.location.hash));
+};
+window.addEventListener("load", inicial);

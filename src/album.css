@@ -12,8 +12,8 @@ body{
 
 
 .container-album {
-  width: 90%;
-  margin: 0 auto;
+  width: 95%;
+  margin: auto;
   
   /* position:relative; */
    
@@ -29,7 +29,7 @@ body{
     background-color: #330D65;
     border-radius: 20rem 90rem 0rem 0rem; 
     width: 6.094rem;
-    height: 5%;
+    height: 4%;
     padding: 1rem 1rem 1rem  2rem;
     
   }
@@ -38,35 +38,51 @@ body{
     background: #330D65;
     border-right: 0.2rem solid rgba(224, 35, 148, 0.7);
     border-radius: 0 1rem 1rem 1rem;
+    padding: 2rem 1rem 1rem  1.5rem;  /* para que apareciera el hover */
     
   }
 
   .item-album{
-    width: 90%;
-    padding: 2rem 1rem 1rem  2rem;
-    display: flex;
+    width: 95%;
+    padding: 0rem 1rem 1rem  0.5rem;
+    display:flex;
+    margin: auto;
   }
 
+  /* .item-album:hover{
+    background-color: #330D65;
+    height: 4.5rem;
+    width: 96%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62));
+    box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+  }  */
+
   .img-album{
-    width: 4.90rem;
-    height: 3.90rem;
+    width: 5.90rem;
+    height: 4.90rem;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62));
     box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
     border-radius: 0.625rem;
   }
   .name-Album{
-    padding: 0.5rem 1rem 1rem  2rem;
+    padding: 1rem 1rem 1rem  2rem;
   }
 
   .item-album-icons{
-    padding: 0.7rem 0rem 0rem  3rem;
-    
-  
-
-  }
+   margin: auto;
+   display: flex;
+ }
 
   .img-chat-bubble{
-    
+  }
+
+  .img-heart{
+    padding: 0rem 0rem 0rem  0.6rem;
+  }
+
+  .more-options{
+    padding: 0rem 0rem 0rem  0.2rem;
   }
 
 

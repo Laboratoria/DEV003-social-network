@@ -39,7 +39,7 @@ export const album = () => {
   imgHeart.src = 'img/Vector.png';
 
   const moreOptions = document.createElement('img');
-  moreOptions.className = 'moreOptions';
+  moreOptions.className = 'more-options';
   moreOptions.src = 'img/more-vert.png';
 
   sectionAlbum.append(titleMenuAlbum, containerAlbum);

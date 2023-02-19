@@ -44,112 +44,105 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
-/* 
-.fav-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-.favorites-img {
-    /* Location of the image */
-    background-image: url(img/favoritos.png); 
-   /* Background image is centered vertically and horizontally at all times */ 
-   background-position: center center;
-    /* Background image doesn't tile */
-    background-repeat: no-repeat;
-    /* Background image is fixed in the viewport so that it doesn't move when the content's height is greater than the image's height */ 
-   background-attachment: fixed; 
-   /* This is what makes the background image rescale based on the container's size */ 
-   background-size: cover; 
-   /* Set a background color that will be displayed while the background image is loading */ 
-   background-color: #464646;
-    }
-
 .favorites {
+    background-image: url(img/favoritos.png);
     text-align: center;
     color: #FFFFFF;
+    padding: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10%;
+    width: 20%;
+    height: 15%;
+    margin: 1%;
+
 }
 
 .trending {
     background-image: url(img/tendencias.png);
-    padding: 10%;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
     text-align: center;
     color: #FFFFFF;
-    text-decoration: none;
+    padding: 10%;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 10%;
+    width: 20%;
+    height: 15%;
+    margin: 1%;
 }
 
 .albums {
     background-image: url(img/albumes.png);
-    padding: 10%;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
     text-align: center;
     color: #FFFFFF;
-    text-decoration: none;
+    padding: 10%;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 10%;
+    width: 20%;
+    height: 15%;
+    margin: 1%;
 }
 
 .artists {
     background-image: url(img/artistas.png);
-    padding: 10%;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
     text-align: center;
     color: #FFFFFF;
-    text-decoration: none;
+    padding: 10%;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 10%;
+    width: 20%;
+    height: 15%;
+    margin: 1%;
 }
 
 .genres {
     background-image: url(img/generos.png);
-    padding: 10%;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
     text-align: center;
     color: #FFFFFF;
-    text-decoration: none;
+    padding: 10%;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 10%;
+    width: 20%;
+    height: 15%;
+    margin: 1%;
 }
 
 .songs {
     background-image: url(img/canciones.png);
-    padding: 10%;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
     text-align: center;
     color: #FFFFFF;
-    text-decoration: none;
+    padding: 10%;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 10%;
+    width: 20%;
+    height: 15%;
+    margin: 1%;
 }
 
 .recommended {
     color: #FFFFFF;
 }
 
-.rec-title {
+.rec-title { /*revisar acá*/
     display: flex;
     justify-content: space-between;
+    background-image: url(img/artistas.png);
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10%;
+    width: 10%;
 }
 
 .rec-button {

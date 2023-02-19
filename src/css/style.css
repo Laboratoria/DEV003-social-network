@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&family=Mulish:wght@400;700&display=swap');
+
+:root{
+  --red:#e90808;
+  --rojo:rgba(139, 5, 5, 0.886);
+  --negro:#000;
+  --gris:#EAEAEA;
+  --blanco:#fff;
+  --gray:rgb(204, 201, 201);
+  --titulos:'Arima Madurai',cursive;
+  --parrafos:'Mulish', sans-serif;
+}
+html{
+  box-sizing: border-box;
+  /*1rem = 10px*/
+  font-size: 62.5%;
+
+}
+body {
+  margin: 0;
+  background-image: url('../css/img/fire.jpg') ;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar{
+font-size: 2rem;
+font-family: Arial, Helvetica, sans-serif;
+color: var(--blanco);
+background-color: var(--red);
+padding: 10px;
+background-size: cover;
+}
+
+.navbar:hover{
+  color: var(--gray);
+}
+
+header{
+  display:flex;
+  height: 15px;
+  background-color: var(--red);
+  justify-content: space-between;
+
+}
+
+h1{
+  font-size: 4rem;
+  line-height: 4rem;
+  font-family: var(--titulos);
+  color: var(--blanco);
+  display: flex;
+   margin-left: 15px;
+}
+
+h2{
+  font-family: var(--parrafos);
+  color: var(--blanco);
+  font-size: 2rem;
+  margin-left: 15px;
+}
+
+h3{
+font-size: 4rem;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+font-size: 2rem;
+font-family: Arial, Helvetica, sans-serif; 
+}
+.rojo{
+  color:var(--rojo)
+}
+form{
+  background-color: var(--gris);
+  margin: 0 auto;
+  width:400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:1.3rem;
+  box-shadow:var(--gray) 0 2px 4px 2px;
+}
+
+input{
+  border: 2px solid var(--gris);
+  background: var(--blanco);
+  color: var(--negro);
+  outline: none;
+  border-radius: 15px;
+  width: 90%;
+  height: 3.5rem;
+  cursor: pointer;
+}
+
+input:focus{
+  border-color: var(--gray);
+}
+button{
+  border: 2px solid var(--negro);
+  border-radius: 10px;
+  color: var(--blanco);
+  background:var(--negro);
+  width: 90%;
+  height: 3.5rem;
+  cursor: pointer;
+}
+button:hover{
+  background: var(--gray);
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+

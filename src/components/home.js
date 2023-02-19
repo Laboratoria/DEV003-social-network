@@ -26,7 +26,6 @@ export const home = () => {
 
   const favoritesImg = document.createElement('img');
   favoritesImg.className = 'favorites-img';
-  favoritesImg.src = 'img/favoritos.png';
 
   const favorites = document.createElement('div');
   favorites.textContent = 'Favoritos';

@@ -4,8 +4,8 @@ import { signIn as signInFirebase } from "../lib-firebase";
 export const logIn = () => {
   const divLogin = document.createElement("div");
   divLogin.className = "login-container";
-  const title = document.createElement("h2");
   const button = document.createElement("button");
+  const inputEmail = document.createElement("input");
   const buttonBack = document.createElement("button");
 
   // LOGO
@@ -18,14 +18,14 @@ export const logIn = () => {
   loginForm.className = "login-form";
 
   // TITULO
+  const title = document.createElement("h2");
   title.textContent = "Sign In";
-  title.clasName = "sign-in-title";
+  title.className = "sign-in-title";
 
   // Email
   const email = document.createElement("h4");
   email.className = "email-address";
   email.textContent = "Correo electrónico";
-  const inputEmail = document.createElement("input");
   inputEmail.id = "emailInput";
   inputEmail.type = "mail";
   inputEmail.required = true;

@@ -1,0 +1,52 @@
+.login-container {
+  background-image: linear-gradient(
+    180deg,
+    #e02394 0%,
+    #ae1d86 29.17%,
+    #330d65 100%
+  );
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  width: 60%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.login-form {
+  width: 60%;
+  background-color: rgba(50, 13, 101, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+}
+
+.sign-in-title {
+  color: #ffffff;
+}
+
+.input-email {
+  width: 90%;
+}
+
+.arrow {
+  width: 100%;
+}
+
+.sign-in-button {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.5);
+  border-style: none;
+  border-radius: 50%;
+  margin-top: -5%;
+}
+
+.sign-in-button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}

@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithRedirect,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -25,6 +26,9 @@ const auth = getAuth();
 export const signUp = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password);
 //función de google provider
+
+export const signIn = (email, password) =>
+  signInWithEmailAndPassword(auth, email, password);
 
 export function loginWithGoogle() {
   const provider = new GoogleAuthProvider();

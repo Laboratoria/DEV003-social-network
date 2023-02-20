@@ -7,6 +7,7 @@ import {
   signInWithRedirect,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+// import { onNavigate } from '../router/utils';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA1E6v0tl-VMKi90Oqck7ywqNNbgBj6lBE",
@@ -23,15 +24,23 @@ const app = initializeApp(firebaseConfig);
 
 // función de autenticación
 const auth = getAuth();
-export const signUp = (email, password) =>
+// eslint-disable-next-line max-len
+export const signUpFirebase = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password);
-//función de google provider
 
 export const signIn = (email, password) =>
   signInWithEmailAndPassword(auth, email, password);
 
-export function loginWithGoogle() {
+// función de google provider
+export const loginWithGoogle = () => {
   const provider = new GoogleAuthProvider();
   return signInWithRedirect(auth, provider);
-}
-console.log(loginWithGoogle);
+};
+
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     onNavigate('/home');
+//   } else {
+//     onNavigate('/');
+//   }
+// });

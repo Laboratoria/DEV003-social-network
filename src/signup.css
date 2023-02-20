@@ -38,6 +38,17 @@
   color: #ffffff;
 }
 
+.error-content {
+  display: none;
+}
+
+#errorContent {
+  color: #E02394;
+  font-size: 80%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
 .input-email {
   width: 90%;
 }

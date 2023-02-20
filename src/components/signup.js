@@ -1,5 +1,5 @@
-// import { onNavigate } from '../main.js';
-import { signUp as signUpFirebase, loginWithGoogle } from '../lib-firebase';
+import { signUpFirebase, loginWithGoogle } from '../lib-firebase/index.js';
+import { onNavigate } from '../router/utils';
 
 export const signUp = () => {
   const divSignUp = document.createElement('div');
@@ -82,13 +82,13 @@ export const signUp = () => {
 
         // Signed in
         const user = userCredential.user;
-        // console.log(user);
+        console.log(user);
+
+        onNavigate('/home');
       })
       .catch((error) => {
-        // console.log(error);
         errorContent.style.display = 'block';
         const errorCode = error.code;
-        // const errorMessage = error.message;
 
         if (errorCode === 'auth/weak-password') {
           errorContent.innerHTML = 'La contraseña debe tener al menos 6 carácteres';
@@ -107,8 +107,7 @@ export const signUp = () => {
   });
 
   divSignUp.append(logo, signUpForm, buttonSignUp, bottomTextContainer);
-  signUpForm.append(title, errorContent, email, inputEmail, errorContent);
-  signUpForm.append(password, inputPass, line, buttonLogIn);
+  signUpForm.append(title, errorContent, email, inputEmail, password, inputPass, line, buttonLogIn);
   buttonSignUp.appendChild(arrow);
   bottomTextContainer.append(bottomText, logInText);
 

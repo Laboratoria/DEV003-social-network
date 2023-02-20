@@ -19,6 +19,9 @@ export const album = () => {
   const itemAlbum = document.createElement('div');
   itemAlbum.className = 'item-album';
 
+  const itemAlbum1 = document.createElement('div');
+  itemAlbum1.className = 'item-album';
+
   const imgAlbum = document.createElement('div');
   imgAlbum.className = 'img-album';
 
@@ -47,6 +50,8 @@ export const album = () => {
   containerItemAlbum.append(itemAlbum);
   itemAlbum.append(imgAlbum, nameAlbum, itemAlbumIcons);
   itemAlbumIcons.append(imgChatBuble, imgHeart, moreOptions);
+  
+
 
   return sectionAlbum;
 };

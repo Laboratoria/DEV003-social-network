@@ -1,8 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { initializeApp } from 'firebase/app';
 import {
-  getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect,
+  getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, onAuthStateChanged
 } from 'firebase/auth';
+import { onNavigate } from '../router/utils';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyA1E6v0tl-VMKi90Oqck7ywqNNbgBj6lBE',
@@ -22,7 +23,15 @@ const auth = getAuth();
 export const signUp = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
 // función de google provider
-export function loginWithGoogle() {
+export const loginWithGoogle = () => {
   const provider = new GoogleAuthProvider();
   return signInWithRedirect(auth, provider);
-}
+};
+
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     onNavigate('/home');
+//   } else {
+//     onNavigate('/');
+//   }
+// });

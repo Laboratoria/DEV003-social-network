@@ -20,6 +20,10 @@ export const signUp = () => {
   email.className = 'email-address';
   email.textContent = 'Correo electrónico';
 
+  const errorContent = document.createElement('p');
+  errorContent.id = 'errorContent';
+  errorContent.className = 'error-content';
+
   const inputEmail = document.createElement('input');
   inputEmail.id = 'emailInput';
   inputEmail.type = 'mail';
@@ -74,7 +78,7 @@ export const signUp = () => {
     // console.log('registrate');
     signUpFirebase(userEmail, userPassword) // data para probar si está leyendo los datos
       .then((userCredential) => { // de acá para abajo es código copiado de la pag de firebase
-        console.log(userCredential);
+        // console.log(userCredential);
 
         // Signed in
         const user = userCredential.user;
@@ -82,12 +86,20 @@ export const signUp = () => {
       })
       .catch((error) => {
         // console.log(error);
+        errorContent.style.display = 'block';
         const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+        // const errorMessage = error.message;
 
-    // onNavigate('/login');
+        if (errorCode === 'auth/weak-password') {
+          errorContent.innerHTML = 'La contraseña debe tener al menos 6 carácteres';
+        }
+        if (errorCode === 'auth/missing-email') {
+          errorContent.innerHTML = 'Llena todos los campos';
+        } else {
+          errorContent.innerHTML = 'Hubo un error';
+          console.log(error.code, error.message);
+        }
+      });
   });
 
   buttonLogIn.addEventListener('click', () => {
@@ -95,7 +107,8 @@ export const signUp = () => {
   });
 
   divSignUp.append(logo, signUpForm, buttonSignUp, bottomTextContainer);
-  signUpForm.append(title, email, inputEmail, password, inputPass, line, buttonLogIn);
+  signUpForm.append(title, errorContent, email, inputEmail, errorContent);
+  signUpForm.append(password, inputPass, line, buttonLogIn);
   buttonSignUp.appendChild(arrow);
   bottomTextContainer.append(bottomText, logInText);
 

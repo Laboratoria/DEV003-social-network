@@ -92,8 +92,7 @@ export const signUp = () => {
 
         if (errorCode === 'auth/weak-password') {
           errorContent.innerHTML = 'La contraseña debe tener al menos 6 carácteres';
-        }
-        if (errorCode === 'auth/missing-email') {
+        } else if (errorCode === 'auth/missing-email') {
           errorContent.innerHTML = 'Llena todos los campos';
         } else {
           errorContent.innerHTML = 'Hubo un error';

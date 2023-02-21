@@ -8,13 +8,11 @@ describe('myFunction', () => {
   });
 });
 
-// describe('Autenticación', () => {
-//   it('firebase auth', () => {
-//     expect(signUpFirebase()
-//       .then(() => {
-//         'obj1',
-//         'obj2',
-//         'obj3',
-//       })).toEqual();
-//   });
-// });
+describe('Error', () => {
+  it('firebase error', () => {
+    document.body.append(signUp());
+    document.getElementById('signUpBtn').click();
+
+    expect(document.getElementById('errorContent').innerHTML).toEqual('Llena todos los campos');
+  });
+});

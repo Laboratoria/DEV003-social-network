@@ -38,15 +38,22 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
-.category-container {
+.category-container1 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 10%;
-    margin-bottom: 10%;
+}
+
+.category-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .favorites {

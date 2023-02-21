@@ -18,8 +18,11 @@ export const home = () => {
   const categoryList = document.createElement('div');
   categoryList.className = 'category-list';
 
-  const categories = document.createElement('div');
-  categories.className = 'category-container';
+  const categoriesColumn1 = document.createElement('div');
+  categoriesColumn1.className = 'category-container1';
+
+  const categoriesColumn2 = document.createElement('div');
+  categoriesColumn2.className = 'category-container2';
 
   const favorites = document.createElement('div');
   favorites.textContent = 'Favoritos';
@@ -72,8 +75,9 @@ export const home = () => {
 
   homeDiv.append(header, categoryList, recTitle, recContainer);
   header.append(logoHome, userIcon);
-  categoryList.appendChild(categories);
-  categories.append(favorites, trending, album, artists, genres, songs);
+  categoryList.append(categoriesColumn1, categoriesColumn2);
+  categoriesColumn1.append(favorites, trending, album);
+  categoriesColumn2.append(artists, genres, songs);
   recTitle.append(recommended, recButton);
   recButton.appendChild(recArrow);
   recContainer.appendChild(recImg);

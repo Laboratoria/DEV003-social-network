@@ -8,6 +8,6 @@ export const routes = {
   '/login': logIn,
   '/home': home,
   '/album': album,
-  // '/reviews': reviews,
+  //'/reviews': reviews,
   
 };

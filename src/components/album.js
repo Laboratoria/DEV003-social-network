@@ -2,7 +2,18 @@ export const album = () => {
   const sectionAlbum = document.createElement('div');
   sectionAlbum.className = 'main-container-album';
 
-  const titleMenuAlbum = document.createElement('h1');
+  const header = document.createElement('header');
+  header.className = 'header-home';
+
+  const logoHome = document.createElement('img');
+  logoHome.className = 'logoHome';
+  logoHome.src = 'img/logo mapa de bits.png';
+
+  const userIcon = document.createElement('img');
+  userIcon.className = 'user';
+  userIcon.src = 'img/user.png';
+
+  const titleMenuAlbum = document.createElement('h3');
   titleMenuAlbum.className = 'title-menu-album';
   titleMenuAlbum.textContent = 'Lista de álbumes';
 
@@ -45,10 +56,12 @@ export const album = () => {
   moreOptions.className = 'more-options';
   moreOptions.src = 'img/more-vert.png';
 
-  sectionAlbum.append(titleMenuAlbum, containerAlbum);
+  sectionAlbum.append(header, titleMenuAlbum, containerAlbum);
+  header.append(logoHome, userIcon);
   containerAlbum.append(titleOptionAlbum, containerItemAlbum);
   containerItemAlbum.append(itemAlbum);
   itemAlbum.append(imgAlbum, nameAlbum, itemAlbumIcons);
   itemAlbumIcons.append(imgChatBuble, imgHeart, moreOptions);
+  containerItemAlbum.append(itemAlbum);
   return sectionAlbum;
 };

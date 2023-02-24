@@ -32,10 +32,9 @@ export const home = () => {
   trending.textContent = 'Tendencias';
   trending.className = 'trending';
 
-  const album = document.createElement('a'); // este botón direcciona a álbum
+  const album = document.createElement('div'); // este botón direcciona a álbum
   album.textContent = 'Álbum';
   album.className = 'albums';
-  album.setAttribute('href', 'http://localhost:5173/album');
 
   const artists = document.createElement('div');
   artists.textContent = 'Artistas';

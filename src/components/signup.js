@@ -1,7 +1,7 @@
 import { signUpFirebase, loginWithGoogle } from '../lib-firebase/index.js';
 import { onNavigate } from '../router/utils';
 
-export const signUp = () => {
+export const signUp = (props = {}) => {
   const divSignUp = document.createElement('div');
   divSignUp.className = 'sign-up-container';
 
@@ -65,17 +65,17 @@ export const signUp = () => {
   bottomText.className = 'bottom-text';
   bottomText.textContent = '¿Ya tienes una cuenta?';
 
-  const logInText = document.createElement('a');
+  const logInText = document.createElement('p');
   logInText.textContent = 'Inicia sesión acá';
   logInText.className = 'log-in-text';
-  logInText.setAttribute('href', 'http://localhost:5173/login');
+  logInText.id = 'logInText';
 
   // Event Listener y conexión a Firebase
 
   buttonSignUp.addEventListener('click', () => {
     const userEmail = document.getElementById('emailInput').value;
     const userPassword = document.getElementById('passwordInput').value;
-    // console.log('registrate');
+
     signUpFirebase(userEmail, userPassword) // data para probar si está leyendo los datos
       .then((userCredential) => { // de acá para abajo es código copiado de la pag de firebase
         // console.log(userCredential);
@@ -98,11 +98,20 @@ export const signUp = () => {
           errorContent.innerHTML = 'Hubo un error';
           console.log(error.code, error.message);
         }
+      })
+      .finally(() => {
+        if (props.testSignUpCallback) {
+          props.testSignUpCallback();
+        }
       });
   });
 
   buttonLogIn.addEventListener('click', () => {
     loginWithGoogle();
+  });
+
+  logInText.addEventListener('click', () => {
+    onNavigate('/login');
   });
 
   divSignUp.append(logo, signUpForm, buttonSignUp, bottomTextContainer);

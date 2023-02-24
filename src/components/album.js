@@ -1,3 +1,5 @@
+import { onNavigate } from '../router/utils';
+
 export const album = () => {
   const sectionAlbum = document.createElement('div');
   sectionAlbum.className = 'main-container-album';
@@ -28,6 +30,7 @@ export const album = () => {
   const nameAlbum = document.createElement('p');
   nameAlbum.className = 'name-Album';
   nameAlbum.textContent = 'Nombre';
+  nameAlbum.id = 'albumName';
 
   const itemAlbumIcons = document.createElement('div');
   itemAlbumIcons.className = 'item-album-icons';
@@ -45,10 +48,15 @@ export const album = () => {
   moreOptions.className = 'more-options';
   moreOptions.src = 'img/more-vert.png';
 
+  nameAlbum.addEventListener('click', () => {
+    onNavigate('/review');
+  });
+
   sectionAlbum.append(titleMenuAlbum, containerAlbum);
   containerAlbum.append(titleOptionAlbum, containerItemAlbum);
   containerItemAlbum.append(itemAlbum);
   itemAlbum.append(imgAlbum, nameAlbum, itemAlbumIcons);
   itemAlbumIcons.append(imgChatBuble, imgHeart, moreOptions);
+
   return sectionAlbum;
 };

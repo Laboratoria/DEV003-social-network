@@ -1,18 +1,39 @@
-// importamos la funcion que vamos a testear
 import { signUp } from '../src/components/signup.js';
-// import { signUpFirebase } from '../src/lib-firebase/index.js';
+import { signUpFirebase } from '../src/lib-firebase/index.js';
+// eslint-disable-next-line prefer-promise-reject-errors
+jest.mock('../src/lib-firebase/index.js', () => ({
+  signUpFirebase: jest.fn(),
+}));
 
-describe('myFunction', () => {
+describe('Sign Up Function', () => {
   it('debería ser una función', () => {
     expect(typeof signUp).toBe('function');
   });
 });
 
-describe('Error', () => {
-  it('firebase error', () => {
-    document.body.append(signUp());
-    document.getElementById('signUpBtn').click();
+describe('Sign Up Form', () => {
+  beforeEach(() => {
+    document.body.innerHTML = '';
+  });
+  it('should show error when user didnt fill all the fields', (done) => {
+    signUpFirebase.mockRejectedValueOnce({ code: 'auth/missing-email' });
 
-    expect(document.getElementById('errorContent').innerHTML).toEqual('Llena todos los campos');
+    const testCallback = () => {
+      expect(document.getElementById('errorContent').innerHTML).toEqual('Llena todos los campos');
+      done();
+    };
+
+    document.body.append(signUp({ testCallback }));
+
+    document.getElementById('signUpBtn').click();
+  });
+  it('should show error when user use weak password', (done) => {
+    signUpFirebase.mockRejectedValueOnce({ code: 'auth/weak-password' });
+    const testCallback = () => {
+      expect(document.getElementById('errorContent').innerHTML).toEqual('La contraseña debe tener al menos 6 carácteres');
+      done();
+    };
+    document.body.append(signUp({ testCallback }));
+    document.getElementById('signUpBtn').click();
   });
 });

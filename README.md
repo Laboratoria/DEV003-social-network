@@ -100,4 +100,6 @@ Es responsive, se visualiza sin problemas desde distintos tamaños de pantallas:
 
 #### Listado de problemas:
 
-* la función de SignUp se tarda demasiado en testearse, por lo que se opta por agregar el método de finally dentro de la promesa, para definir cuándo termina de testearse dicha función.
+× la función de SignUp se tarda demasiado en testearse, por lo que se opta por agregar el método de finally dentro de la promesa, para definir cuándo termina de testearse dicha función.
+× debe mostrar error cuando el usuario no llene todos los campos.
+× debe mostrar error cuando la constraseña tenga menos de 6 caracteres.

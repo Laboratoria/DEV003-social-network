@@ -27,6 +27,7 @@ describe('Sign Up Form', () => {
 
     document.getElementById('signUpBtn').click();
   });
+
   it('should show error when user use weak password', (done) => {
     signUpFirebase.mockRejectedValueOnce({ code: 'auth/weak-password' });
     const testCallback = () => {

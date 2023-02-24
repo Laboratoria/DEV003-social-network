@@ -3,54 +3,79 @@
     padding: 0;
 }
 
-/* body{
-background-color: rgba(18, 56, 77, 1);
-margin: 50px;
- }  */
+ /* body{
+ } */
 
-/* h1{
+ header{
+
+    border: 5px solid #340b4b;
+    padding: .5em;
+    border-radius: 25px;
+    background-color: rgb(158, 152, 190);
+    width: 670px;
+    height: 50px;
+    margin-left: 0px;
+    margin-top: auto;
+   } 
+
+   #logo{
+    border: 6px ridge rgb(82, 21, 128);   
+    -webkit-border-radius: 100%;
+    margin-top: 10px;
+    margin-left: 200px;
+    /* margin-right: 90px */
+   }
+ .cajaPrincipal{
     
-font:bold 30px Century,sans-serif;
-background-color: rgba(217, 217, 217, 1);
-width:350px;
-height:30px;
-top:13px;
-left:5px;
-border-radius:25px;
-text-align: center;
-} */
+    
+  background-color: aliceblue;
+  left: 400px;
+  width: 700px;
+  margin:auto;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 10px 0px 10px 0px;
+  line-height: 20px;
+  font-size: 16px;
+ } 
 
-header{
+ .formulario{
 
-font:bold 20px Candara,sans-serif;        
- background-color: rgba(217, 217, 217, 1);
- margin-top: 50px;
- text-align: center;
+    width: 400px;
+    height:350px;
+    line-height: 10px;
+    font-size: 20px;
+    padding: 300px 0px 0px 150px;
+    text-align: center;
+   }
+  
+#boton {
+ background-color: rgb(250, 246, 251);
+ text-align: center; 
+ border: 5px ridge rgb(82, 21, 128);   
+ margin-top: 20px;
+ margin-left: 280px;
+ font:bold 30px Candara;
 } 
-.imagen {
- margin-top: 50px;
- text-align: center;
-}
 
 h1{
+    
+  height:20px;
+  text-align: center;
+  font:bold 30px Candara; 
+  align-items: center; 
+  display: flex;
+  justify-content: center;
 
-    margin-top: 50px;
-    text-align: center;
-    font:bold 20px Candara,sans-serif;    
-    }
-h2{
+  }
+
+
+    /* h2{
 font:bold 20px Candara,sans-serif; 
 margin-top: 50px;
 text-align: center;
-}
+} */
 
-.logo{
- text-align: center;
- width: 100px;
- height: 0px;
- display: block;
- margin: auto;
-}
 
 /* .menu{
 font:bold 15px Century,sans-serif;
@@ -62,20 +87,8 @@ text-align: center;
 margin:50px;
 
 } */
-.formulario{
- left: 200px;
- width: 400px;
- margin:auto;
- border-radius: 15px;
- margin-top: 10px;
- padding: 10px 0px 10px 0px;
- line-height: 20px;
- font-size: 16px;
- text-align: center;
- 
- background-color: rgba(217, 217, 217, 1)
 
-} */
+
 /* .texto{
 width: 200px;
 margin:30px;
@@ -85,4 +98,4 @@ background-color: rgba(217, 217, 217, 1)
 display:inline-block;
 padding: 10px;
 
-} */
+} */ 

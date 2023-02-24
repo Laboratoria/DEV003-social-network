@@ -1,6 +1,7 @@
 import { onNavigate } from '../router/utils';
 
 export const reviews = () => {
+  // Elementos del DOM
   const divReview = document.createElement('div');
   divReview.className = 'review-container';
 
@@ -51,8 +52,7 @@ export const reviews = () => {
   postReviewButton.className = 'post-review-button';
   postReviewButton.textContent = 'Publicar';
 
-  // Event Listener y conexión a Firebase
-
+  // Event listeners
   buttonBackReview.addEventListener('click', () => {
     onNavigate('/album');
   });

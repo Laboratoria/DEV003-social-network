@@ -62,6 +62,5 @@ export const album = () => {
   containerItemAlbum.append(itemAlbum);
   itemAlbum.append(imgAlbum, nameAlbum, itemAlbumIcons);
   itemAlbumIcons.append(imgChatBuble, imgHeart, moreOptions);
-  containerItemAlbum.append(itemAlbum);
   return sectionAlbum;
 };

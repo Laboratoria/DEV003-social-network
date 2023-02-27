@@ -1,7 +1,4 @@
-//import { authCorreo } from '../lib/functionFireba';
-
-// import { authCorreo } from '../lib/functionFireba';
-
+import { authCorreo } from '../lib/functionFirebase';
 // formulario de datos a solicitud para registrace  registrarse
 export default () => {
   const registro = `
@@ -30,24 +27,31 @@ export default () => {
     `;
 
   const divElement = document.createElement('div');
-  divElement.innerHTML = registro;
+   divElement.innerHTML = registro;
 
   const botonRegistro = divElement.querySelector('#boton');
   botonRegistro.addEventListener('click', () => {
-    console.log(botonRegistro,'boton');
-  
-
-  const email = document.querySelector('#email').value;
-  const contraseña = document.querySelector('#contraseña').value;
- console.log(email,"email..")
- console.log(contraseña,"contraseña")
-
-  
-
-});
-
+    const email = document.querySelector('#email').value;
+    const contraseña = document.querySelector('#contraseña').value;
+    console.log(email, 'email');
+    console.log(contraseña, 'contraseña');
+    authCorreo(email, contraseña);
+    
+    // then((userCredential) => {
+    //   // Signed in
+    //   const user = userCredential.user;
+    //   // ...
+    //   //ejemplo para cambiar de pag//
+    //   //changeView('home');
+    //   console.log(user);
+    // })
+    // .catch((error) => {
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
+    //   console.log(errorCode);
+    //   console.log(errorMessage);
+    //   // ..
+    // });
+  });
   return divElement;
 };
-
-
-  

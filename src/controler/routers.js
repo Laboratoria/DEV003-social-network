@@ -5,17 +5,19 @@ export const changeView =(route) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
   switch (route) {
-    case '#/animalLovers': {
+    case '#/': {
+      return container.appendChild(componentes.home());
+    }
+    case '#/iniciar': {
       return container.appendChild(componentes.home());
     }
     case '#/registro': {
       return container.appendChild(componentes.registro());
     }
-    case '#/inicicarSesion': {
-      return container.appendChild(componentes.home());
-    }
     default:
       break;
   }
   console.log(route);
+
 };
+

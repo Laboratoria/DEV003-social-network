@@ -1,10 +1,12 @@
 // para crear objetos
 import registro from './registro.js';
-import iniciarSesion from './home.js';
+import login from './login.js';
+import muro from './muro.js';
 // import iniciarSesion from './home.js';
 // crear obejeto
 
 export const componentes = {
-  home: iniciarSesion,
- registro:registro
+ login: login,
+ registro:registro,
+ muro:muro
 };

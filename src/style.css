@@ -26,8 +26,6 @@
     /* margin-right: 90px */
    }
  .cajaPrincipal{
-    
-    
   background-color: aliceblue;
   left: 400px;
   width: 700px;
@@ -68,34 +66,44 @@ h1,h2{
   justify-content: center;
 
   }
+  .cajaMuro{
+    background-color: aliceblue;
+    left: 400px;
+    width: 700px;
+    margin:auto;
+    border-radius: 4px;
+    /* margin-top: 10px; */
+    padding: 10px px 10px 0px;
+    /* line-height: 20px; */ */
+    /* font-size: 16px; */ */
+   } 
+   #comentario{
+      left: 400px;
+      width: 80%;
+      padding: 12px 20px;
+      border: 1px solid #0d0c0c;
+      box-sizing: border-box;
+      font-size: var(--font-sm);
+      margin-top: 100px;
+      margin-left: 50px;
+      margin-right: 50px
+   } 
+   #botonA{
+     
+      padding: 20px 20px 12px 20px;
+      border: 1px solid hsl(0, 66%, 43%);
+      cursor:pointer;
+    }
+    #botonE{
+     
+      padding: 20px 20px 12px 20px;
+      border: 1px solid hsl(0, 66%, 43%);
+      cursor:pointer;
+    }
+    #botonC{
+   
+      padding: 20px 20px 12px 20px;
+      border: 1px solid hsl(0, 66%, 43%);
+      cursor:pointer;
 
-
-    /* h2{
-font:bold 20px Candara,sans-serif; 
-margin-top: 50px;
-text-align: center;
-} */
-
-
-/* .menu{
-font:bold 15px Century,sans-serif;
-background-color: rgba(18, 56, 77, 1);
-width:350px;
-height:500px;
-border-radius:25px;
-text-align: center;
-margin:50px;
-
-} */
-
-
-/* .texto{
-width: 200px;
-margin:30px;
-border-radius: 4px;
-margin-top: 20px;
-background-color: rgba(217, 217, 217, 1)
-display:inline-block;
-padding: 10px;
-
-} */ 
+   }

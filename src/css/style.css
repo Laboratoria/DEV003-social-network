@@ -232,6 +232,20 @@ footer {
   display: inline-block;
   font-family: var(--parrafos);
   font-size: 3rem;
-  position: absolute;
+  position: absolute;  
+}
+@media(max-width:400px){
+  .person{
    
+  }
+}
+.person{
+  
+}
+.enviar{
+
+}
+
+.TextUser{
+
 }

@@ -11,7 +11,7 @@ export default () => {
       <div class="formGroup">
       <input type="text" id="userEmail" placeholder="Email"></div>
       <div class="formGroup">
-      <input type="password" id="registerrPassword" placeholder="Contraseña" required></div>     
+      <input type="password" id="registerPassword" placeholder="Contraseña" required></div>     
       <button id="register">Registrate</button>
       </div>
       </form>`;
@@ -23,15 +23,14 @@ export default () => {
     // console.log(form, 'Hola');
     const userEmail = document.querySelector('#userEmail').value;
     const registerPassword = document.querySelector('#registerPassword').value;
-    console.log(userEmail, 'userEmail');
-    console.log(userEmail, 'registerPassword');
-  
+    // console.log(userEmail, 'userEmail');
+    // console.log(userEmail, 'registerPassword');
+    location.href = '/#/';
     createUser(userEmail, registerPassword).then((userCredential) => {
       // Signed in
-      window.location.hash = '#/wall';
 
       const user = userCredential.user;
-      console.log(user);
+      // console.log(user);
       // window.location
     })
       .catch((error) => {

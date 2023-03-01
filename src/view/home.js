@@ -1,4 +1,4 @@
-import { createUser } from '../lib/firebase';
+import { authIngreso } from '../lib/firebase';
 
 export default () => {
   const viewHome = `
@@ -9,9 +9,9 @@ export default () => {
       <div class="formContainer">
       <h3>Bienvenidos</h3>
       <div class="formGroup">
-      <input type="text" id="email" placeholder="Email"></div>
+      <input type="text" id="email2" placeholder="Email"></div>
       <div class="formGroup">
-      <input type="password" id="password" placeholder="Contraseña" required></div>     
+      <input type="password" id="password2" placeholder="Contraseña" required></div>     
       <button id="initialize" class="inicioSesion" type="submit">INICIAR SESION</button>
       <p>¿No tienes una cuenta?  <a href="#/register" class="rojo">Regístrate</a></p></div>        
       </form>`;
@@ -20,15 +20,15 @@ export default () => {
   divElemt.innerHTML = viewHome;
 
   const formInicio = divElemt.querySelector('#initialize');
-  formInicio.addEventListener('submit', (e) => {
+  formInicio.addEventListener('click', (e) => {
     e.preventDefault();
     // console.log(formInicio, 'Hola');
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
+    const email = document.querySelector('#email2').value;
+    const password = document.querySelector('#password2').value;
     console.log(email, 'email');
     console.log(email, 'password');
-    createUser(email, 'password');
+    authIngreso(email, password);
   });
-  console.log(divElemt);
+  //console.log(divElemt);
   return divElemt;
 };

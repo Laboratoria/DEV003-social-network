@@ -19,10 +19,25 @@ export default () => {
           </div>
         </div>  
       </div>
+      
+      <input class="textUser" type="text" v-model="textUser">
+      <button class="enviar" @click="textUser">Enviar</button>
       <div class="chat"></div>
+
+      <button onclick="cerrar()"> CERRAR SESION</button>
+
       </section>`;
   const divElemt = document.createElement('div');
   divElemt.innerHTML = viewWall;
+
+  function cerrar() {
+    firebase.auth().signOut().then(() => {
+      console.log('Salir');
+    })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   return divElemt;
 };

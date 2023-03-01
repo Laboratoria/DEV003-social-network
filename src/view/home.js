@@ -16,7 +16,6 @@ export default () => {
       <p>¿No tienes una cuenta?  <a href="#/register" class="rojo">Regístrate</a></p></div>        
       </form>`;
   const divElemt = document.createElement('div');
-  divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
 
   const formInicio = divElemt.querySelector('#initialize');
@@ -26,7 +25,7 @@ export default () => {
     const email = document.querySelector('#email2').value;
     const password = document.querySelector('#password2').value;
     console.log(email, 'email');
-    console.log(email, 'password');
+    console.log(password, 'password');
     authIngreso(email, password);
   });
   //console.log(divElemt);

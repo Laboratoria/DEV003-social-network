@@ -25,20 +25,8 @@ export default () => {
     const registerPassword = document.querySelector('#registerPassword').value;
     // console.log(userEmail, 'userEmail');
     // console.log(userEmail, 'registerPassword');
-    location.href = '/#/';
-    createUser(userEmail, registerPassword).then((userCredential) => {
-      // Signed in
 
-      const user = userCredential.user;
-      // console.log(user);
-      // window.location
-    })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // console.log(errorCode);
-        // console.log(errorMessage);
-      });
+    createUser(userEmail, registerPassword);
   });
   return divElemt;
 };

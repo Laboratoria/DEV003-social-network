@@ -19,8 +19,8 @@ export default () => {
     <input class="texto" id="contraseña1"></input>
    </div>
    <div> 
-   <a href="#/muro"type="button"  id="botonI">INICIAR SESION</a>
-   <a href="#/registro"type="button"  id="boton">CREAR CUENTA</button>
+   <a href="#/muro"type="button"  id="botonInic">INICIAR SESION</a>
+   <a href="#/registro"type="button"  id="botonCrear">CREAR CUENTA</button>
    </div>
   </div>
   `;
@@ -29,7 +29,8 @@ export default () => {
   //   divElement.classlist.add("position")
   divElement.innerHTML = login;
   // buttonInicicar.addEventListener("click",())
-  const botonIngreso = divElement.querySelector('#botonI');
+  const botonIngreso = divElement.querySelector('#botonInic');
+  const botonCrear = divElement.querySelector('#botonCrear');
   botonIngreso.addEventListener("click", () => {
     const email = document.querySelector("#email1").value;
     const contraseña = document.querySelector('#contraseña1').value;

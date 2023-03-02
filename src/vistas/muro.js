@@ -1,23 +1,17 @@
 export default () => {
     const muro = `
-    <div class="cajaMuro">
+    <div class="cajaPrincipal">
      <header>
       <h1>ANIMAL LOVERS</h1>
        <div class="comentario"></div>
      </div>
      </header>
-     </nav>
-     <div>
+     <div class="cajaMuro">
      <input class="texto" id="comentario"></input>
-     </div>
-     <button type="button"  id="botonA">AÑADIR</button>
-     </div>
-     <div> 
+     <button type="button"  id="botonA">PUBLICAR</button>
      <button type="button"  id="botonE">ELIMINAR</button>
-     </div>
-     <div> 
      <button type="button"  id="botonC">COMENTAR</button>
-     </div>
+    </div>
     </div>
     `;
     const divElement = document.createElement('div');

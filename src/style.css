@@ -1,21 +1,28 @@
 {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
- /* body{
- } */
 
+:root{
+--color-boton:hsl(201, 37%, 55%);
+--padding:15px 32px;
+--color-caja:#5ec6dc;
+--border-radius:25px;
+--font-family:Verdana;
+--border:5px solid #58336d;
+--color-fondo:aliceblue;
+}
+ 
  header{
-
-    border: 5px solid #340b4b;
-    padding: .5em;
+    border:var(--border);
+    padding:.5em;
     border-radius: 25px;
-    background-color: rgb(158, 152, 190);
-    width: 670px;
-    height: 50px;
-    margin-left: 0px;
-    margin-top: auto;
+    background-color:var(--color-caja);
+    width:670px;
+    height:50px;
+    margin-left:0px;
+    margin-top:auto;
    } 
 
    #logo{
@@ -23,11 +30,10 @@
     -webkit-border-radius: 100%;
     margin-top: 10px;
     margin-left: 200px;
-    /* margin-right: 90px */
+    
    }
  .cajaPrincipal{
-  background-color: aliceblue;
-  left: 400px;
+  background-color:var(--color-fondo);
   width: 700px;
   margin:auto;
   border-radius: 4px;
@@ -38,7 +44,6 @@
  } 
 
  .formulario{
-
     width: 400px;
     height:350px;
     line-height: 10px;
@@ -47,63 +52,76 @@
     text-align: center;
    }
   
-#boton {
- background-color: rgb(250, 246, 251);
- text-align: center; 
- border: 5px ridge rgb(82, 21, 128);   
- margin-top: 20px;
- margin-left: 280px;
- font:bold 30px Candara;
-} 
+
 
 h1,h2{
-    
-  height:20px;
   text-align: center;
-  font:bold 30px Candara; 
+  font-family:var(--font-family); 
   align-items: center; 
   display: flex;
   justify-content: center;
 
   }
   .cajaMuro{
-    background-color: aliceblue;
-    left: 400px;
-    width: 700px;
-    margin:auto;
-    border-radius: 4px;
-    /* margin-top: 10px; */
-    padding: 10px px 10px 0px;
-    /* line-height: 20px; */ */
-    /* font-size: 16px; */ */
+      background-color:var(--color-fondo);
+      left: 400px; 
+      width: 700px;
+      margin:auto;
+      /* border-radius: 4px; */
+      /* margin-top: 10px; */
+      /* padding: 10px 0px 10px 0px; */
+      /* line-height: 20px; */
+      /* font-size: 16px; */
    } 
    #comentario{
-      left: 400px;
-      width: 80%;
-      padding: 12px 20px;
-      border: 1px solid #0d0c0c;
-      box-sizing: border-box;
-      font-size: var(--font-sm);
+     background-color:var(--color-fondo);
+      width: 600px;
+      padding: 30px 50px;
       margin-top: 100px;
-      margin-left: 50px;
-      margin-right: 50px
+      border-radius:var(--border-radius);
+      font-family:var(--font-family);
    } 
+   #botonRegis{
+    padding:var(--padding);
+    background-color:var(--color-boton);
+    border-radius:var(--border-radius);
+    font-family:var(--font-family);
+   } 
+   #botonInic{
+    padding:var(--padding);
+    background-color:var(--color-boton);
+    border-radius:var(--border-radius);
+    font-family:var(--font-family);
+   
+  }
+   #botonCrear{
+    padding:var(--padding);
+    background-color:var(--color-boton);
+    border-radius:var(--border-radius);
+    font-family:var(--font-family);
+   }
    #botonA{
-     
-      padding: 20px 20px 12px 20px;
-      border: 1px solid hsl(0, 66%, 43%);
-      cursor:pointer;
+      padding:var(--padding);
+      background:var(--color-boton);
+      border-radius:var(--border-radius);
+      font-family:var(--font-family);
+      margin-top: 50px;
+      position: relative;
+      right:-550px;
     }
     #botonE{
-     
-      padding: 20px 20px 12px 20px;
-      border: 1px solid hsl(0, 66%, 43%);
-      cursor:pointer;
+      padding:var(--padding);
+      background:var(--color-boton);
+      border-radius:var(--border-radius);
+      font-family:var(--font-family);
+      position: relative;
+      left:-130px;
     }
     #botonC{
-   
-      padding: 20px 20px 12px 20px;
-      border: 1px solid hsl(0, 66%, 43%);
-      cursor:pointer;
-
-   }
+      padding:var(--padding);
+      background:var(--color-boton);
+      border-radius:var(--border-radius);
+      font-family:var(--font-family);
+      position: relative;
+      left:-130px;
+    }

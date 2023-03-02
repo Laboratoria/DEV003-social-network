@@ -21,7 +21,7 @@ export default () => {
       <input class="texto" id="contraseña"></input>
      </div>
      <div> 
-     <a href="#/login"type="button"  id="boton">REGISTRAR</a>
+     <a href="#/login"type="button"  id="botonRegis">REGISTRAR</a>
      </div>
     </div>
     `;
@@ -29,7 +29,7 @@ export default () => {
   const divElement = document.createElement('div');
    divElement.innerHTML = registro;
 
-  const botonRegistro = divElement.querySelector('#boton');
+  const botonRegistro = divElement.querySelector('#botonRegis');
   botonRegistro.addEventListener('click', () => {
     const email = document.querySelector('#email').value;
     const contraseña = document.querySelector('#contraseña').value;

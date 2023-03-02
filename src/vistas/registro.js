@@ -21,7 +21,7 @@ export default () => {
       <input class="texto" id="contraseña"></input>
      </div>
      <div> 
-     <button type="button"  id="boton">REGISTRAR</button>
+     <a href="#/login"type="button"  id="boton">REGISTRAR</a>
      </div>
     </div>
     `;

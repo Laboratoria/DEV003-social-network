@@ -5,6 +5,7 @@ export default () => {
       <header><div class="navbar"><div class="logo">Chile Solidario</div></header>
       <h1 class="llamado" > Ingresa a nuestra comunidad</h1>
       <h2 class="bajada" > Red social de colaboración, comunica tus necesidades o tu capacidad de ayudar a los damnificados</h2>
+     
       <form id="formInicio" class="formInicio">
       <div class="formContainer">
       <h3>Bienvenidos</h3>
@@ -24,10 +25,10 @@ export default () => {
     // console.log(formInicio, 'Hola');
     const email = document.querySelector('#email2').value;
     const password = document.querySelector('#password2').value;
-    console.log(email, 'email');
-    console.log(password, 'password');
+    // console.log(email, 'email');
+    // console.log(password, 'password');
     authIngreso(email, password);
   });
-  //console.log(divElemt);
+  // console.log(divElemt);
   return divElemt;
 };

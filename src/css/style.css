@@ -14,13 +14,13 @@
   --parrafos:'Mulish', sans-serif;
   --logo:'Zen Dots', cursive;;
 }
+
 *{
   box-sizing: border-box;
   /*1rem = 10px*/
   font-size: 62.5%;
   padding: 0px;
   margin: 0;
-
 }
 
 body {
@@ -36,9 +36,11 @@ body {
 
 .logo{
   font-family: var(--logo);
+  color: var(--write);
   font-size: 2rem;
-  
+  text-shadow: 1px 1.5px 3px var(--negro); 
 }
+
 .formContainer{
   justify-content: center;
 }
@@ -52,6 +54,7 @@ background-size: cover;
 width: 100%;
 background-color: var(--rojo);
 position:relative;
+
 }
 
 h1{
@@ -91,10 +94,12 @@ font-family: Arial, Helvetica, sans-serif;
   border: none;
   text-decoration-line: underline;
 }
+
 .write{
   color:var(--write);
   font-size: 1.5rem;
 }
+
 form{
   display: flex;
   justify-content: center; 
@@ -150,23 +155,6 @@ button:hover{
   background: var(--gray);
 }
 
-a{
-  border: 2px solid var(--negro);
-  border-radius: 10px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--write);
-  background:var(--negro);
-  width: 100%;
-  padding: 0.7em;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-a:hover{
-  background: var(--gray);
-}
-
 footer {
   text-align: center;
   font-family: var(--parrafos);
@@ -185,34 +173,44 @@ footer {
 }
 /* chat */
 
+.banner{
+  display: flex;
+  background-size: cover;
+  background-color: var(--rojo);
+  padding: 20em;
+  height: 100px;
+  overflow: hidden;
+}
+
+.iconos{
+  display: flex;
+}
+
 .volver{
   background: none;
   border: none;
 }
+
 .volver:hover{
   background: none;
 }
+
 .section-title {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    width: 99%;
-    margin-bottom: 1.5rem;
-    background-color: var(--write);
-    border-radius: 50px;
-    color:var(--negro);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 99%;
+  margin-bottom: 1.5rem;
+  background-color: var(--write);
+  border-radius: 30px;
+  color:var(--negro);
 }
 .avatar{
-width: 50px;
-height: 80px;
-display: flex;
-justify-content: center;
-align-items: flex-start;
-}
-
-.users img{
-  width:100%;
-  border-radius: 50%;
+  width: 50px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .container{
@@ -220,90 +218,78 @@ align-items: flex-start;
   height: 100px;
   width: 99%;
   display: flex; 
-  flex-wrap: wrap;   
-  justify-content: left;
+  justify-content: flex;
   align-items: center;
   border-radius: 15px;
   text-transform: capitalize;
+  
 }
-
-.container2{
-  background-color: var(--gris);
-  height: auto;
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 30px 20px 30px 20px;
-  gap: 20px;
-}
-.coments{
-  background-color: var(--gris);
-  height: 60px;
-  display: flex;
+.bodyChat{
+  display: flex; 
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 0 0 0 20px;
-  border-radius: 15px;
-  color: var(--negro);
-}
-
-.body-chat{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap:5px;
-}
-.users{
-  width: 70px;
-  height: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.input-coment{
-height: 100px;
-width: 99%;
-background: none;
-display: flex;
-flex-wrap: wrap;
-justify-content: baseline;
-gap: 2px;
-}
-
-#newComent{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
   width: 99%;
+  gap: 5px;
+}
+
+.users{
+  width:70px;
+  height: 70px;
+  position: absolute;
+  object-fit: cover;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.users img{
+  width:100%;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.inputComment{
+  width: 99%;
+  height: 50px;
+  display: flex;
+}
+
+#newComment{
+  display: flex;
+  padding: 20px;
+  width: 90%;
   height: 50px;
   outline: none;
   border: 0;
   font-size: 1.5rem;
+  overflow:auto;
   background: transparent;
   color: var(--negro);
   border-bottom: 2px solid var(--negro);
   transition-duration: 200ms;
+  margin: 0 0 5px 80px;  
 }
-#newComent::placeholder{
+
+#newComment::placeholder{
   color: var(--negro);
 }
-#newComent:focus{
-  border-bottom: var(--red);
 
-}
 .btnPost{
- width: 120px;
+  width: 80px;
   height:30px;
   font-size: 1rem;
   display:flex;
   justify-content:center;
-  align-items: center; 
+  align-items: center;
+  margin: 0 0 5px 80px;
+  overflow: hidden;  
+}
+
+.container2{
+  background-color: var(--gris);
+  width: 99%;
+  height: 100px;
+  display: flex;
+  margin-top: 10px;
+  border-radius: 15px;
 }
 
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 import { authIngreso } from '../lib/firebase';
 
 export default () => {
@@ -10,10 +11,10 @@ export default () => {
       <div class="formContainer">
       <h3>Bienvenidos</h3>
       <div class="formGroup">
-      <input type="text" id="email2" placeholder="Email"></div>
+      <input type="text" id="email2" placeholder="Email" required></div>
       <div class="formGroup">
       <input type="password" id="password2" placeholder="Contraseña" required></div>     
-      <button id="initialize" class="inicioSesion" type="submit">INICIAR SESION</button>
+      <button id="initialize" class="inicioSesion" type="button" value="validateMail" onclick="validateMail(form.email2.value)">INICIAR SESION</button>
       <p>¿No tienes una cuenta?  <a href="#/register" class="rojo">Regístrate</a></p></div>        
       </form>`;
   const divElemt = document.createElement('div');
@@ -23,12 +24,20 @@ export default () => {
   formInicio.addEventListener('click', (e) => {
     e.preventDefault();
     // console.log(formInicio, 'Hola');
-    const email = document.querySelector('#email2').value;
+    const email2 = document.querySelector('#email2').value;
     const password = document.querySelector('#password2').value;
     // console.log(email, 'email');
     // console.log(password, 'password');
-    authIngreso(email, password);
+    authIngreso(email2, password);
+
+    const expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    const valid = expReg.test(email2);
+    if (valid === true) {
+    } else {
+      alert('El correo electrónico NO es válido');
+    }
   });
   // console.log(divElemt);
+
   return divElemt;
 };

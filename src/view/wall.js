@@ -27,8 +27,7 @@ export default () => {
         <button class="post" id="buttonPost">Publicar</button>
       </div>
      </section>
-    </main>
-    <div class="container2"> 
+    </main> 
     </div>`;
 
   const divElemt = document.createElement('div');
@@ -47,9 +46,22 @@ export default () => {
   post.addEventListener('click', (e) => {
     e.preventDefault();
     const message = document.querySelector('#comments').value;
-    console.log(post);
+    // console.log(post);
     console.log(message);
   });
-
+  // crear un objeto con las propiedades
+  const usuarios = {
+    email: '',
+    name: '',
+  };
+  // agregar el objeto a una colección en Firestore
+  addDoc(dbRef, usuarios)
+    .then(docRef => {
+      console.log('Comentario agregado con ID:', docRef.id);
+      commentInput.value = ''; // limpia el input de comentarios
+    })
+    .catch((error) => {
+      console.error('Error al agregar comentario:', error);
+    });
   return divElemt;
 };

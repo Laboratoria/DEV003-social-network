@@ -54,7 +54,6 @@ background-size: cover;
 width: 100%;
 background-color: var(--rojo);
 position:relative;
-
 }
 
 h1{
@@ -112,6 +111,14 @@ form{
   text-align: center;
   box-shadow:var(--gray) 0 2px 4px 2px;
   overflow: hidden;
+}
+.warnings{
+  width:200px;
+  text-align: center;
+  margin: auto;
+  color: var(--negro);
+  padding-top: 20px;
+
 }
 
 @media(max-width:400px){

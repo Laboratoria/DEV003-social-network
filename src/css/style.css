@@ -286,13 +286,16 @@ footer {
   overflow: hidden;  
 }
 
-.container2{
+.chatUl{
   background-color: var(--gris);
-  width: 99%;
-  height: 100px;
-  display: flex;
-  margin-top: 10px;
+  opacity: .6;
+  height: 130px;
+  max-width: 99%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
+  margin-top: 20px;  
 }
 
 

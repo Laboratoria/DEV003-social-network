@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-import { auth } from './confirebase.js';
+import { collection, addDoc } from 'firebase/firestore';
+import { auth, db } from './confirebase.js';
 
 export const createUser = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
@@ -32,11 +32,13 @@ export const authIngreso = (email, password) => {
       const errorMessage = error.message;
     });
 };
+// agregar comentario en la base de datos
+export const publication = (message) => {
+  const dbRef = addDoc(collection(db, 'posts'), {
 
-export const post = (comment) => {
-  // Add a new cocument with a generated id.
-  const docRef = addDoc(collection(db, 'comentarios'), {
-    name: 'comment',
+    // email: '',
+    // name: '',
+    message,
   });
-  console.log('Document written with ID: ', docRef.id);
+  console.log(dbRef.id);
 };

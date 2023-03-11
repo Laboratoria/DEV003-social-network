@@ -1,3 +1,5 @@
+import { publication } from '../lib/firebase';
+
 export default () => {
   const viewWall = `<div class="banner">
       <div class="navbar2">
@@ -15,7 +17,7 @@ export default () => {
         </h3>
       </div>
       
-    <main class="container">
+  <main class="container">
      <section class="bodyChat">
       <div class="users">
          <img src="./css/img/andrea-piacquadio.jpg" alt="foto">  
@@ -25,43 +27,25 @@ export default () => {
       </div>
       <div class="btnPost">
         <button class="post" id="buttonPost">Publicar</button>
-      </div>
-     </section>
-    </main> 
+      </div> 
+     </section> 
+    </main>
+    <div class="chatUl"> 
+    <ul id="chatUl"></ul>
     </div>`;
 
+  // Crear un elemento HTML y agregarle el contenido de la vista de mensajería
   const divElemt = document.createElement('div');
   divElemt.innerHTML = viewWall;
-
-  /*  function cerrar() {
-    firebase.auth().signOut().then(() => {
-      // console.log('cerrar');
-    });
-
-     .catch((error) => {
-        // console.log(error);
-      }); */
 
   const post = divElemt.querySelector('#buttonPost');
   post.addEventListener('click', (e) => {
     e.preventDefault();
     const message = document.querySelector('#comments').value;
-    // console.log(post);
     console.log(message);
+    publication(message);
+    document.querySelector('#comments').value = ''; // limpia el input de comentarios
   });
-  // crear un objeto con las propiedades
-  const usuarios = {
-    email: '',
-    name: '',
-  };
-  // agregar el objeto a una colección en Firestore
-  addDoc(dbRef, usuarios)
-    .then(docRef => {
-      console.log('Comentario agregado con ID:', docRef.id);
-      commentInput.value = ''; // limpia el input de comentarios
-    })
-    .catch((error) => {
-      console.error('Error al agregar comentario:', error);
-    });
+
   return divElemt;
 };

@@ -12,13 +12,13 @@ export default () => {
       <input type="text" id="userEmail" placeholder="Email"></div>
       <div class="formGroup">
       <input type="password" id="registerPassword" placeholder="Contraseña" required></div>     
-      <button id="register">Registrate</button>
+      <button id="registerButton">Registrate</button>
       </div>
       </form>`;
   const divElemt = document.createElement('div');
   divElemt.innerHTML = register;
 
-  const form = divElemt.querySelector('#register');
+  const form = divElemt.querySelector('#registerButton');
   form.addEventListener('click', () => {
     // console.log(form, 'Hola');
     const userEmail = document.querySelector('#userEmail').value;

@@ -286,16 +286,20 @@ footer {
   overflow: hidden;  
 }
 
-.chatUl{
+#chatUl{
   background-color: var(--gris);
-  opacity: .6;
+
   height: 130px;
   max-width: 99%;
   display: flex; 
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  margin-top: 20px;  
+  margin-top: 20px;
+  font-family: var(--parrafos);
+  font-size: 12em; 
 }
-
+.messageContent{
+justify-content: center;
+}
 

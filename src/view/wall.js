@@ -1,3 +1,4 @@
+import { db } from '../lib/confirebase';
 import { publication } from '../lib/firebase';
 
 export default () => {
@@ -30,9 +31,9 @@ export default () => {
       </div> 
      </section> 
     </main>
-    <div class="chatUl"> 
-    <ul id="chatUl"></ul>
-    </div>`;
+    <ul id="chatUl">
+   
+    </ul>`;
 
   // Crear un elemento HTML y agregarle el contenido de la vista de mensajería
   const divElemt = document.createElement('div');

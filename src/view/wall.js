@@ -31,8 +31,9 @@ export default () => {
       </div> 
      </section> 
     </main>
+    
     <ul id="chatUl">
-   
+  
     </ul>`;
 
   // Crear un elemento HTML y agregarle el contenido de la vista de mensajería

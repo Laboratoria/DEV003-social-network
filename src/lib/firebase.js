@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { async } from 'regenerator-runtime';
 // import { async } from 'regenerator-runtime';
 import { auth, db } from './confirebase.js';
 
@@ -50,17 +51,16 @@ const showPosts = async () => {
   const ul = document.getElementById('chatUl');
   // luego itera sobre cada documento usando forEach
   querySnapshot.forEach((doc) => {
-    // para cada documento se obtiene el texto post doc.data().message y se agrega a la ul como un nuevo elemento li
+// para cada doc. se obtiene el texto post doc.data().message y se agrega a la ul como un nuevo elemento li
     const post = doc.data().message;
     const li = document.createElement('li');
-    li.innerHTML = `<span class='messageContent'>${post}</span>`;
+    li.textContent = post;
     ul.appendChild(li);
   });
 };
 
 // Llamar a la función showPosts cuando se carga la página
 window.addEventListener('load', showPosts);
-
 
 
 
@@ -74,15 +74,14 @@ const showPosts = async () => {
     // para cada documento se obtiene el texto post doc.data().message y se agrega a la ul como un nuevo elemento li
     const post = doc.data().message;
     const li = document.createElement('li');
-    li.textContent = post;
+    li.innerHTML = `<li>${post}</li>`;
     ul.appendChild(li);
   });
 };
 
 // Llamar a la función showPosts cuando se carga la página
-window.addEventListener('load', showPosts);
+window.addEventListener('load', showPosts); */
 
-li.innerHTML = `
+/* li.innerHTML = `
       <span class='messageContent'>${message}</span>
-    `;
-*/
+    `; */

@@ -20,12 +20,12 @@
   /*1rem = 10px*/
   font-size: 62.5%;
   padding: 0px;
-  margin: 0;
+  margin: 0px;
 }
 
 body {
   background-image: url('../css/img/fire.jpg') ;
-  background-repeat:no-repeat;
+ 
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -285,21 +285,26 @@ footer {
   margin: 0 0 5px 80px;
   overflow: hidden;  
 }
-
+@media(max-width:400px){
+ #chatUl{
+    width: 90%;
+  }
+}
 #chatUl{
-  background-color: var(--gris);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  height: 130px;
-  max-width: 99%;
+li{
+  background-color: var(--gris);
+  height: 30px;
+  width: 400px;
+  border-radius: 5px;
   display: flex; 
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
-  margin-top: 20px;
+  margin-top: 5px;
   font-family: var(--parrafos);
-  font-size: 12em; 
+  font-size: 8em;
 }
-.messageContent{
-justify-content: center;
-}
-

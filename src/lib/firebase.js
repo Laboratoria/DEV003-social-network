@@ -51,7 +51,7 @@ const showPosts = async () => {
   const ul = document.getElementById('chatUl');
   // luego itera sobre cada documento usando forEach
   querySnapshot.forEach((doc) => {
-// para cada doc. se obtiene el texto post doc.data().message y se agrega a la ul como un nuevo elemento li
+    // para cada doc. se obtiene el texto post doc.data().message y se agrega a la ul como un nuevo elemento li
     const post = doc.data().message;
     const li = document.createElement('li');
     li.textContent = post;
@@ -61,8 +61,6 @@ const showPosts = async () => {
 
 // Llamar a la función showPosts cuando se carga la página
 window.addEventListener('load', showPosts);
-
-
 
 /*
 // La función showPosts utiliza getDocs para obtener todos los documentos de la colección posts

@@ -35,14 +35,16 @@ export const authIngreso = (email, password) => {
     });
 };
 // agregar comentario en la base de datos
-export const publication = (message) => {
-  const dbRef = addDoc(collection(db, 'posts'), {
+export const publication = (name, message) => {
+  if (name && message) {
+    const dbRef = addDoc(collection(db, 'posts'), {
 
-    // email: '',
-    // name: '',
-    message,
-  });
-  console.log(dbRef.id);
+      // email,
+      name,
+      message,
+    });
+    console.log(dbRef.id);
+  }
 };
 
 // La función showPosts utiliza getDocs para obtener todos los documentos de la colección posts
@@ -52,15 +54,25 @@ const showPosts = async () => {
   // luego itera sobre cada documento usando forEach
   querySnapshot.forEach((doc) => {
     // para cada doc. se obtiene el texto post doc.data().message y se agrega a la ul como un nuevo elemento li
-    const post = doc.data().message;
+    const name = doc.data().name;
+    const message = doc.data().message;
     const li = document.createElement('li');
-    li.textContent = post;
+    li.textContent = `${name}: ${message}`;
     ul.appendChild(li);
   });
 };
 
 // Llamar a la función showPosts cuando se carga la página
 window.addEventListener('load', showPosts);
+
+const getCurrentUser = async () => {
+  const user = auth.currentUser;
+  if (user) {
+    await user.reload(); // actualizar la información del usuario
+    return user;
+  }
+  return null;
+};
 
 /*
 // La función showPosts utiliza getDocs para obtener todos los documentos de la colección posts

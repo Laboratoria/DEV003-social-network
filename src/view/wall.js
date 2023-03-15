@@ -21,9 +21,11 @@ export default () => {
   <main class="container">
      <section class="bodyChat">
       <div class="users">
-         <img src="./css/img/andrea-piacquadio.jpg" alt="foto">  
+         <img src="./css/img/andrea-piacquadio.jpg" alt="foto">
+         <p id="displayName"></p>  
       </div>
       <div class="comments" id='textComment'> 
+        <p id="name" type="text" placeholder="Nombre"></p>
         <input id="comments" type="text" placeholder="Nuevo Comentario">
       </div>
       <div class="btnPost">
@@ -32,8 +34,7 @@ export default () => {
      </section> 
     </main>
     <div class="chatUl">
-    <ul id="chatUl"></ul>
-    </div>`;
+    <ul id="chatUl"></ul></div>`;
 
   // Crear un elemento HTML y agregarle el contenido de la vista de mensajería
   const divElemt = document.createElement('div');
@@ -42,10 +43,11 @@ export default () => {
   const post = divElemt.querySelector('#buttonPost');
   post.addEventListener('click', (e) => {
     e.preventDefault();
+    const name = document.querySelector('#name').value;
     const message = document.querySelector('#comments').value;
-    console.log(message);
-    publication(message);
-    document.querySelector('#comments').value = ''; // limpia el input de comentarios
+    console.log(name, message);
+    publication(name, message);
+    divElemt.querySelector('#name, #comments').value = ''; // limpia el input de comentarios
   });
 
   return divElemt;

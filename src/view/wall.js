@@ -43,11 +43,11 @@ export default () => {
   const post = divElemt.querySelector('#buttonPost');
   post.addEventListener('click', (e) => {
     e.preventDefault();
-    const email = document.querySelector('#email').value;
+    //const email = document.querySelector('#email').value;
     const message = document.querySelector('#comments').value;
-    console.log(email, message);
-    publication(email, message);
-    divElemt.querySelector('#email, #comments').value = ''; // limpia el input de comentarios
+    console.log(message);
+    publication(message);
+    divElemt.querySelector('#comments').value = ''; // limpia el input de comentarios
   });
 
   return divElemt;

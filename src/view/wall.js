@@ -1,4 +1,3 @@
-import { db } from '../lib/confirebase';
 import { publication } from '../lib/firebase';
 
 export default () => {
@@ -13,6 +12,7 @@ export default () => {
    
       <div class="section-title">
         <h3>
+        
           <i class="fa-solid fa-comments"></i>
             Sistema de mensajería
         </h3>
@@ -25,7 +25,7 @@ export default () => {
          <p id="displayName"></p>  
       </div>
       <div class="comments" id='textComment'> 
-        <p id="name" type="text" placeholder="Nombre"></p>
+        <p id="email" type="text" placeholder="Email"></p>
         <input id="comments" type="text" placeholder="Nuevo Comentario">
       </div>
       <div class="btnPost">
@@ -43,11 +43,11 @@ export default () => {
   const post = divElemt.querySelector('#buttonPost');
   post.addEventListener('click', (e) => {
     e.preventDefault();
-    const name = document.querySelector('#name').value;
+    const email = document.querySelector('#email').value;
     const message = document.querySelector('#comments').value;
-    console.log(name, message);
-    publication(name, message);
-    divElemt.querySelector('#name, #comments').value = ''; // limpia el input de comentarios
+    console.log(email, message);
+    publication(email, message);
+    divElemt.querySelector('#email, #comments').value = ''; // limpia el input de comentarios
   });
 
   return divElemt;

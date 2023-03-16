@@ -1,7 +1,5 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
-import { async } from 'regenerator-runtime';
-// import { async } from 'regenerator-runtime';
 import { auth, db } from './confirebase.js';
 
 export const createUser = (email, password) => {
@@ -35,17 +33,23 @@ export const authIngreso = (email, password) => {
     });
 };
 // agregar comentario en la base de datos
-export const publication = (name, message) => {
-  if (name && message) {
+export const publication = (message) => {
+ // const user = getCurrentUser();
+  //console.log(user);
+  // console.log(auth.currentUser);
+  if (email && message) {
+    //   const email = user.email;
+    //  console.log(email);
     const dbRef = addDoc(collection(db, 'posts'), {
 
-      // email,
-      name,
+      //email,
+      email,
       message,
     });
     console.log(dbRef.id);
   }
 };
+
 
 // La función showPosts utiliza getDocs para obtener todos los documentos de la colección posts
 const showPosts = async () => {
@@ -54,10 +58,12 @@ const showPosts = async () => {
   // luego itera sobre cada documento usando forEach
   querySnapshot.forEach((doc) => {
     // para cada doc. se obtiene el texto post doc.data().message y se agrega a la ul como un nuevo elemento li
-    const name = doc.data().name;
+  
+    const email = doc.data().email;
     const message = doc.data().message;
     const li = document.createElement('li');
-    li.textContent = `${name}: ${message}`;
+    console.log(doc.data());
+    li.textContent = `${email}: ${message}`;
     ul.appendChild(li);
   });
 };

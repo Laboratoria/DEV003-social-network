@@ -315,29 +315,46 @@ footer {
 .chatUl{
   display:flex;
   flex-wrap: wrap;
-justify-content: center;
+  justify-content: center;
   height: 300px;
   overflow-y: scroll;
 }
 
+.email {
+ 
+  text-align: left;
+  width: 30em; /* ajuste el ancho según sus necesidades */
+  font-family: var(--parrafos);
+  font-size: 1em;
+}
+.message {
+ 
+  text-align: center;
+  margin-left: 20px; /* ajuste el margen según sus necesidades */
+  font-family: var(--parrafos);
+  font-size: 1.2em;
+}
 li{
   background-color: var(--gris);
   height: 90px;
   width: 360px;
   border-radius: 5px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-direction:column; 
   justify-content: space-around;
   align-items: center;
-  white-space: pre-line;
   margin-top: 5px;
   font-family: var(--parrafos);
   font-size: 12em;
+  text-align: center;
   margin: 0.8em;
   box-shadow:var(--negro) 0 1px 1px 2px;
 }
+li button2 {
+  float: right;
+    margin-right: 10px;
+}
 button2{
-  display:flex;
   border: 1px solid var(--negro);
   border-radius: 5px;
   text-decoration: none;
@@ -345,7 +362,7 @@ button2{
   color: var(--write);
   background:var(--negro);
   width: 5em;
-  padding: 0.5em;
+  padding: 0.4em;
   font-size: 1rem;
   cursor: pointer;
 }

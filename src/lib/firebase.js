@@ -60,6 +60,7 @@ export const publication = async (message) => {
       // uid,
       email,
       message,
+      likes: 0, // agregar propiedad 'likes' inicializada en 0
     });
     console.log(dbRef.id);
   }
@@ -76,6 +77,7 @@ const showPosts = async () => {
     const email = postDoc.data().email;
     const message = postDoc.data().message;
     // const uid = doc.data().uid;
+    const likes = postDoc.data().likes; // Obtener número de likes
     const li = document.createElement('li');
     const deleteBtn = document.createElement('button2');
     deleteBtn.textContent = 'Eliminar';
@@ -85,10 +87,28 @@ const showPosts = async () => {
       li.remove();
     });
     console.log(postDoc.data());
+    const likeBtn = document.createElement('button'); // Agregar botón de "Me gusta"
+    const heartIcon = document.createElement('img'); // crear una imagen para el corazón
+    heartIcon.src = 'src="./css/img/favorite_FILL1_wght700_GRAD200_opsz40.svg" alt="heat"';// definir la ruta de la imagen del corazón
+    heartIcon.classList.add('heart-icon'); // agregar una clase para dar estilo a la imagen
+    likeBtn.appendChild(heartIcon); // agregar la imagen al botón
+    likeBtn.classList.add('like-btn'); // agregar una clase para dar estilo al botón
+    likeBtn.textContent = `Me gusta (${likes})`;
+    likeBtn.addEventListener('click', async () => {
+      await updateLikes(postDoc.id, likes + 1); // Actualizar número de likes en la base de datos
+      likes++; // actualizar la variable local de likes
+      likeBtn.textContent = `Me gusta (${likes})`; // Actualizar número de likes en la interfaz de usuario
+    });
     li.innerHTML = `<span class="email">${email}:</span>
   <span class="message">${message}</span>`;
     li.appendChild(deleteBtn);
+    li.appendChild(likeBtn); // Agregar botón de "Me gusta"
     ul.appendChild(li);
+  });
+};
+export const updateLikes = async (id, likes) => {
+  await updateDoc(doc(db, 'posts', id), {
+    likes,
   });
 };
 

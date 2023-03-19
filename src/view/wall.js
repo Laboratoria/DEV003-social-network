@@ -22,7 +22,7 @@ export default () => {
      <section class="bodyChat">
       <div class="users">
          <img src="./css/img/andrea-piacquadio.jpg" alt="foto">
-         <p id="displayName"></p>  
+           
       </div>
       <div class="comments" id='textComment'> 
         <p id="email" type="text" placeholder="Email"></p>
@@ -34,7 +34,8 @@ export default () => {
      </section> 
     </main>
     <div class="chatUl">
-    <ul id="chatUl"></ul></div>`;
+    <ul id="chatUl"></ul></div>
+    <div class="btnLike"><img src="./css/img/favorite_FILL1_wght700_GRAD200_opsz40.svg" alt="heat" id="btnLike"></div>`;
 
   // Crear un elemento HTML y agregarle el contenido de la vista de mensajería
   const divElemt = document.createElement('div');

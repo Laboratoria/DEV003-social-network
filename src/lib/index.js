@@ -1,6 +1,6 @@
 // aqui exportaras las funciones que necesites
 
-let formAuthentication;
+// let formAuthentication;
 
 /* export function initialize() {
   formAuthentication = document.getElementById('form');
@@ -57,7 +57,5 @@ function post() {
 });
 
 }
-
-
 
 */

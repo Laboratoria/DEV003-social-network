@@ -44,7 +44,7 @@ export default () => {
   const post = divElemt.querySelector('#buttonPost');
   post.addEventListener('click', (e) => {
     e.preventDefault();
-    //const email = document.querySelector('#email').value;
+    // const email = document.querySelector('#email').value;
     const message = document.querySelector('#comments').value;
     console.log(message);
     publication(message);

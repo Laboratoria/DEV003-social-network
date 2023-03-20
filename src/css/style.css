@@ -12,7 +12,7 @@
   --gray:rgb(204, 201, 201);
   --titulos:'Arima Madurai',cursive;
   --parrafos:'Mulish', sans-serif;
-  --logo:'Zen Dots', cursive;;
+  --logo:'Zen Dots', cursive;
 }
 
 *{
@@ -39,10 +39,6 @@ body {
   color: var(--write);
   font-size: 2rem;
   text-shadow: 1px 1.5px 3px var(--negro); 
-}
-
-.formContainer{
-  justify-content: center;
 }
 
 .navbar{
@@ -126,11 +122,13 @@ form{
     width: 90%;
   }
 }
+
 .formContainer{
   margin-top: 2em;
   display: grid;
   grid-template-columns: 250px;
   gap: 16em;
+  justify-content: center;
 }
 
 input{
@@ -320,7 +318,6 @@ footer {
 }
 
 .email {
- 
   text-align: left;
   width: 30em; /* ajuste el ancho según sus necesidades */
   font-family: var(--parrafos);
@@ -329,7 +326,10 @@ footer {
 .message {
   font-weight: bold;
   text-align: center;
-  margin-left: 20px; /* ajuste el margen según sus necesidades */
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0 0 10px 20px;
   font-family: var(--parrafos);
   font-size: 1.2em;
 }
@@ -339,45 +339,41 @@ li{
   width: 360px;
   border-radius: 5px;
   display: flex;
-  flex-direction:column; 
+  flex-direction:row;
+  flex-wrap: wrap; 
   justify-content: space-around;
   align-items: center;
-  margin-top: 5px;
+  
   font-family: var(--parrafos);
   font-size: 12em;
   text-align: center;
   margin: 0.8em;
   box-shadow:var(--negro) 0 1px 1px 2px;
 }
-li button2 {
-  float: right;
-    margin-right: 10px;
-}
-button2{
-  border: 1px solid var(--negro);
+
+.delete-btn {
   border-radius: 5px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--write);
-  background:var(--negro);
-  width: 5em;
-  padding: 0.4em;
+  border: 1px solid var(--negro); 
+  background-color: var(--negro);
+  width: 7em;
   font-size: 1rem;
+  padding: 0.4em;
   cursor: pointer;
 }
-button2:hover{
+
+.delete-btn:hover{
   background: var(--gray);
-}
-.heart-icon {
-  width: 3em;
-  height: 3em;
-  margin-right: 2em;
 }
 
 .like-btn {
-  display: flex;
-  align-items: center;
+  border-radius: 5px;
+  border: 1px solid var(--negro); 
   background-color: var(--red);
-  border: none;
+  width: 7em;
+  font-size: 1rem;
+  padding: 0.4em;
   cursor: pointer;
+}
+.like-btn:hover{
+  background: var(--gray);
 }

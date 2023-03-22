@@ -79,7 +79,7 @@ h1,h2{
   } 
   .contenido{
    /* //background-color:var(--color-fondo);// */
-   background-color: blue;  
+   background-color: rgb(220, 220, 230);  
    margin-top: 100px;
      border-radius:var(--border-radius);
      font-family:var(--font-family);
@@ -98,11 +98,15 @@ h1,h2{
     right: -260px;
   } 
    #botonInic{
-    padding:var(--padding);
+  
     background-color:var(--color-boton);
     border-radius:var(--border-radius);
-    font-family:var(--font-family);
-    
+    font-family:var(--font-family); 
+    display: inline-block;
+    border: none;
+    text-align: center;
+    padding:var(--padding)
+   
   }
    #botonCrear{
     padding:var(--padding);
@@ -143,4 +147,9 @@ h1,h2{
       font-family:var(--font-family);
       position: relative;
       right:-250px;
+    }
+    #vercontraseña{
+      left:-130px;
+      width: 10px;
+     
     }

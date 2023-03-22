@@ -37,24 +37,20 @@ export default () => {
   botonRegistro.addEventListener('click', () => {
     const email = document.querySelector('#email').value;
     const contraseña = document.querySelector('#contraseña').value;
-    console.log(email, 'email');
-    console.log(contraseña, 'contraseña');
+    // console.log(email, 'email');
+    // console.log(contraseña, 'contraseña');
     authCorreo(email, contraseña).then((userCredential) => {
       // Signed in
       window.location.hash = '#/muro';
       const user = userCredential.user;
-      // ...
-      //ejemplo para cambiar de pag//
-      //changeView('home');
-      console.log(user);
+      // console.log(user);
     })
       .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-      // ..
-    });
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // console.log(errorCode);
+        // console.log(errorMessage);
+      });
   });
   return divElement;
 };

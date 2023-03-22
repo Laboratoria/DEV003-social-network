@@ -1,11 +1,11 @@
 import { componentes } from '../vistas/components.js';
 
 // eslint-disable-next-line consistent-return
-export const changeView =(hash) => {
+export const changeView = (hash) => {
   const container = document.getElementById('container');
   container.innerHTML = '';
   switch (hash) {
-    case'':
+    case '':
     case '/':
     case '#/login': {
       return container.appendChild(componentes.login());
@@ -19,6 +19,5 @@ export const changeView =(hash) => {
     default:
       break;
   }
-  console.log(hash);
+  // console.log(hash);
 };
-

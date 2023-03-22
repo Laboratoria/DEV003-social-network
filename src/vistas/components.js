@@ -6,7 +6,7 @@ import muro from './muro.js';
 // crear obejeto
 
 export const componentes = {
- login: login,
- registro:registro,
- muro:muro
+  login,
+  registro,
+  muro,
 };

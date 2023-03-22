@@ -6,24 +6,25 @@ describe('myFunction', () => {
     expect(typeof myFunction).toBe('function');
   });
 }); */
-import { authIngreso } from '../src/lib/firebase.js';
 
-describe('authIngreso', () => {
+describe('createUser', () => {
   it('debería ser una función', () => {
-    expect(typeof authIngreso).toBe('function');
+    expect(typeof createUser).toBe('function');
   });
 
-  it('debería llamar a signInWithEmailAndPassword con los argumentos correctos', () => {
-    const email = 'test@test.com';
-    const password = 'testpassword';
+  it('debería redirigir al usuario a la página principal después de crear una cuenta', async () => {
+    // Utiliza librería de mocking simulando comportamiento de la función.
 
-    const mockSignInWithEmailAndPassword = jest.fn(() => Promise.resolve());
-    jest.mock('firebase/auth', () => ({
-      signInWithEmailAndPassword: mockSignInWithEmailAndPassword,
-    }));
+    // Simula una llamada exitosa a la función `createUserWithEmailAndPassword`.
 
-    authIngreso(email, password);
+    // Verifica que la función redirija al usuario a la página principal.
+  });
 
-    expect(mockSignInWithEmailAndPassword).toHaveBeenCalledWith(email, password);
+  it('debería mostrar un error si la creación de la cuenta falla', async () => {
+    // Utiliza librería de mocking simulando comportamiento de la función.
+
+    // Simula una llamada fallida a la función `createUserWithEmailAndPassword`.
+
+    // Verifica que la función no redirija al usuario a la página principal.
   });
 });

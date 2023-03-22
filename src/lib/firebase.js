@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import {
-  collection, addDoc, getDocs, deleteDoc, doc, updateDoc,
+  collection, addDoc, getDocs, deleteDoc, doc, updateDoc, query, orderBy,
 } from 'firebase/firestore';
 import { auth, db } from './confirebase.js';
 
@@ -76,7 +76,7 @@ export const updateLikes = async (id, likes) => {
 // obtener y mostrar los comentarios de la base de datos
 // La función showPosts utiliza getDocs para obtener todos los documentos de la colección posts
 const showPosts = async () => {
-  const querySnapshot = await getDocs(collection(db, 'posts'));
+  const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('message', 'asc')));
   const ul = document.getElementById('chatUl');
   // luego itera sobre cada documento usando forEach
   querySnapshot.forEach((postDoc) => {
@@ -92,11 +92,10 @@ const showPosts = async () => {
     deleteBtn.classList.add('delete-btn');
     const likeBtn = document.createElement('button'); // Agregar botón de "Me gusta"
 
-    const heartIcon = document.createElement('img'); // crear una imagen para el corazón
+    // const heartIcon = document.createElement('img'); // crear una imagen para el corazón
+    // eartIcon.classList.add('heart-icon'); // agregar una clase para dar estilo a la imagen
+    // likeBtn.appendChild(heartIcon); // agregar la imagen al botón
 
-    heartIcon.classList.add('heart-icon'); // agregar una clase para dar estilo a la imagen
-
-    likeBtn.appendChild(heartIcon); // agregar la imagen al botón
     likeBtn.classList.add('like-btn'); // agregar una clase para dar estilo al botón
     likeBtn.textContent = `Me gusta (${likes})`;
     likeBtn.addEventListener('click', async () => {
@@ -116,7 +115,7 @@ const showPosts = async () => {
   <span class="message">${message}</span>`;
     li.appendChild(deleteBtn);
     li.appendChild(likeBtn); // Agregar botón de "Me gusta"
-    ul.appendChild(li);
+    ul.prepend(li);// Cambiar append por prepend para la lista descendente
   });
 };
 

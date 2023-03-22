@@ -1,5 +1,5 @@
 {
-    margin: 0px;
+    margin:0px;
     padding: 0px;
 }
 
@@ -15,15 +15,21 @@
 }
  
  header{
-    border:var(--border);
-    padding:.5em;
-    border-radius: 25px;
+    
+   }
+   nav{
+    text-align: center;
+    margin-left: 80px;
+    width: 700px;
+    position: relative; 
+     margin:auto; 
     background-color:var(--color-caja);
-    width:670px;
-    height:50px;
-    margin-left:0px;
-    margin-top:auto;
-   } 
+    padding:20px 10px;
+    margin-top: 100px;
+    border:var(--border);
+    display: flex;  
+    justify-content: center;
+  } 
 
    #logo{
     border: 6px ridge rgb(82, 21, 128);   
@@ -36,71 +42,76 @@
   background-color:var(--color-fondo);
   width: 700px;
   margin:auto;
-  border-radius: 4px;
-  margin-top: 10px;
-  padding: 10px 0px 10px 0px;
-  line-height: 20px;
-  font-size: 16px;
  } 
 
  .formulario{
-    width: 400px;
-    height:350px;
-    line-height: 10px;
-    font-size: 20px;
-    padding: 300px 0px 0px 150px;
-    text-align: center;
-   }
-  
-
-
-h1,h2{
-  text-align: center;
-  font-family:var(--font-family); 
-  align-items: center; 
-  display: flex;
-  justify-content: center;
+    line-height: 40px;
+    padding: 10px 0px 0px 150px;
+    width:340px;
+    margin:0 auto;
 
   }
+  .datos{
+    line-height: 20px;
+    padding: 0px 0px 0px 80px;
+    margin-top: -160px;
+  }
+
+h1,h2{
+  font-family:var(--font-family); 
+  align-items: center; 
+  }
+
   .cajaMuro{
       background-color:var(--color-fondo);
       left: 400px; 
       width: 700px;
       margin:auto;
-      /* border-radius: 4px; */
-      /* margin-top: 10px; */
-      /* padding: 10px 0px 10px 0px; */
-      /* line-height: 20px; */
-      /* font-size: 16px; */
    } 
-   #comentario{
-     background-color:var(--color-fondo);
-      width: 600px;
-      padding: 30px 50px;
-      margin-top: 100px;
-      border-radius:var(--border-radius);
-      font-family:var(--font-family);
-   } 
+   
+   #publicaciones1{
+    background-color:var(--color-fondo);
+     width: 600px;
+     padding: 30px 50px;
+     margin-top: 100px;
+     border-radius:var(--border-radius);
+     font-family:var(--font-family);
+  } 
+  .contenido{
+   /* //background-color:var(--color-fondo);// */
+   background-color: blue;  
+   margin-top: 100px;
+     border-radius:var(--border-radius);
+     font-family:var(--font-family);
+     padding: 10px 0px 0px 150px;
+  } 
+   .botones{
+    padding: 100px 150px;
+   }
+
    #botonRegis{
     padding:var(--padding);
     background-color:var(--color-boton);
     border-radius:var(--border-radius);
     font-family:var(--font-family);
-   } 
+    position: relative;
+    right: -260px;
+  } 
    #botonInic{
     padding:var(--padding);
     background-color:var(--color-boton);
     border-radius:var(--border-radius);
     font-family:var(--font-family);
-   
+    
   }
    #botonCrear{
     padding:var(--padding);
     background-color:var(--color-boton);
     border-radius:var(--border-radius);
     font-family:var(--font-family);
-   }
-   #botonA{
+    
+  }
+   #botonP{
       padding:var(--padding);
       background:var(--color-boton);
       border-radius:var(--border-radius);
@@ -115,7 +126,7 @@ h1,h2{
       border-radius:var(--border-radius);
       font-family:var(--font-family);
       position: relative;
-      left:-130px;
+      right:-550px;
     }
     #botonC{
       padding:var(--padding);
@@ -124,4 +135,12 @@ h1,h2{
       font-family:var(--font-family);
       position: relative;
       left:-130px;
+    }
+    #botonEdi{
+      padding:var(--padding);
+      background:var(--color-boton);
+      border-radius:var(--border-radius);
+      font-family:var(--font-family);
+      position: relative;
+      right:-250px;
     }

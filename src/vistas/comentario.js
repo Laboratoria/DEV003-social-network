@@ -1,3 +1,4 @@
+import registro from './registro.js';
 // crear vistas de bienvenida o login
 // muro, para comentarios
 // registro
@@ -9,4 +10,5 @@
 //   e.preventDefault();
 //   registro();
 //   console.log(registro)
-// });
+// }
+

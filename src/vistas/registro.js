@@ -2,10 +2,11 @@ import { authCorreo } from '../lib/functionFirebase';
 // formulario de datos a solicitud para registrace  registrarse
 export default () => {
   const registro = `
-    <header></header>
-    <nav>
-    <h1>ANIMAL LOVERS</h1>
-    </nav>
+    <header>
+      <nav>
+       <h1 class="titulo">ANIMAL LOVERS</h1>
+      </nav>
+    </header>
     <div class="cajaPrincipal">
       <div class="logo">
       <img src="../imagenes RS/logo final1.png" id="logo">
@@ -22,15 +23,12 @@ export default () => {
       <p>CORREO</p>
       <p>CONTRASEÑA</p>
       </div>
-     <div> 
+     <div class="botonRegistrar"> 
      <a href="#/login"type="button"  id="botonRegis">REGISTRAR</a>
     </div>   
     `;
-  const headerElement = document.createElement('header');
-  const navElement = document.createElement('nav');
+
   const divElement = document.createElement('div');
-  headerElement.innerHTML = registro;
-  navElement.innerHTML = registro;
   divElement.innerHTML = registro;
 
   const botonRegistro = divElement.querySelector('#botonRegis');

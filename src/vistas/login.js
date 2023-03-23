@@ -2,25 +2,28 @@ import { authSesion } from '../lib/functionFirebase';
 // formulario para que el usuario ingrese correo y contraseña 15.02
 export default () => {
   const login = `
-  <header></header>
-  <nav>
-  <h1>ANIMAL LOVERS</h1>
-  </nav>
-  <div class="cajaPrincipal">
-    <div class="logo">
-    <img src="../imagenes RS/logo final1.png" id="logo">
+  <header>
+    <nav>
+     <h1 class="titulo">ANIMAL LOVERS</h1>
+    </nav>
+  </header>
+  <div class="cajaLogin">
+     <div class="logo">
+     <img src="../imagenes RS/logo final1.png" id="logo">
    </div>
-   <div class="formulario">
-    <p>CORREO</p>
-    <input class="texto" id="email1"></input>
-    <p>CONTRASEÑA</p>
-    <input class="texto" id="contraseña1" placeholder="**********"></input>
-    <input type="chekbox"  id="vercontraseña" onclick="myFuction()">Ver Contrseña<br>
+   <div class="datos" >
+      <input class="datoLogin" id="email1"></input>
+      <input class="datoLogin" id="contraseña1" placeholder="**********"></input>
+   </div>
+   <div class="Login">
+      <p class="formularioLogin">CORREO</p>
+      <p class="formularioLogin">CONTRASEÑA</p>
     </div>
-   <div class="botones"> 
-   <a href="#/muro" type="button"  id="botonInic">INICIAR SESION</a>
-   <a href="#/registro" type="button"  id="botonCrear">CREAR CUENTA</a>
-   </div>
+
+      <input class="texto" type="chekbox"  id="vercontraseña" onclick="myFuction()">Ver Contrseña<br>
+    <div class="botones"> 
+      <a href="#/muro" type="button"  id="botonInic">INICIAR SESION</a>
+     <a href="#/registro" type="button"  id="botonCrear">CREAR CUENTA</a>
   </div>
   `;
   const divElement = document.createElement('div');
@@ -30,7 +33,6 @@ export default () => {
   divElement.innerHTML = login;
   // buttonInicicar.addEventListener("click",())
   const botonIngreso = divElement.querySelector('#botonInic');
-  const botonCrear = divElement.querySelector('#botonCrear');
   botonIngreso.addEventListener('click', () => {
     const email = document.querySelector('#email1').value;
     const contraseña = document.querySelector('#contraseña1').value;
@@ -41,7 +43,7 @@ export default () => {
     const valid = expresionContraseña.test(email);
     if (valid === true) {
     } else {
-      alert('correo no valido')
+      alert(' contraseña no valida');
     }
   });
 

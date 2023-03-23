@@ -4,12 +4,12 @@ export default () => {
   const muro = `
     <header>
       <nav>
-        <h1>ANIMAL LOVERS</h1>
+        <h1 class="titulo">ANIMAL LOVERS</h1>
       </nav>
     </header>
      <div class="cajaMuro">
-     <input class="texto" id="publicaciones1"></input>
-     <button type="button"  id="botonP">PUBLICAR</button>
+      <input class="texto" id="publicaciones1"></input>
+      <button type="button"  id="botonP">PUBLICAR</button>
      <div class="cajaPublicaciones">
      </div>
      </div>
@@ -25,26 +25,25 @@ export default () => {
 
   publicacionesPost().then((posteos) => {
     posteos.forEach((elemento) => {
-     // console.log(elemento.id,'id')
+      // console.log(elemento.id,'id')
       const caja = divElement.querySelector('.cajaPublicaciones');
       caja.innerHTML += `
         <div class="contenido">
-        <p>${elemento.contenido}</p>
+        <p class="coleccion">${elemento.contenido}</p>
         <button class="delete"  data-id="${elemento.id}" type="button"  id="botonE">ELIMINAR</button>
         </div>
         
         `;
-        console.log(caja, 'contenido');
-      })
+    //  console.log(caja, 'contenido');
+    });
 
     const botonEliminar = divElement.querySelectorAll('.delete');
     botonEliminar.forEach((elemento) => {
-      elemento.addEventListener('click',({target:{dataset}}) => {
-        eliminarPost(dataset.id); 
-       // console.log(eliminarPost);
-
-    })
-    })
+      elemento.addEventListener('click', ({ target: { dataset } }) => {
+        eliminarPost(dataset.id);
+        // console.log(eliminarPost);
+      });
+    });
   });
 
   return divElement;

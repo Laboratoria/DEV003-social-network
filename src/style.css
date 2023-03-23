@@ -2,35 +2,39 @@
     margin:0px;
     padding: 0px;
 }
-
+ body{
+  background: linear-gradient(rgb(41, 162, 237), rgb(192, 229, 255))
+ }
 
 :root{
 --color-boton:hsl(201, 37%, 55%);
 --padding:15px 32px;
---color-caja:#5ec6dc;
---border-radius:25px;
---font-family:Verdana;
---border:5px solid #58336d;
---color-fondo:aliceblue;
+--color-caja:linear-gradient(rgb(41, 162, 237), rgb(192, 229, 255)) ;
+--border-radius:30px;
+--font-family:Times;
+--border:5px ridge #58336d;
+--color-fondo:linear-gradient(rgb(41, 162, 237), rgb(192, 229, 255));
+--border-comen:5px solid #070707;
+--font-size:30px;
 }
  
- header{
-    
-   }
+
    nav{
     text-align: center;
-    margin-left: 80px;
-    width: 700px;
     position: relative; 
      margin:auto; 
     background-color:var(--color-caja);
     padding:20px 10px;
     margin-top: 100px;
-    border:var(--border);
-    display: flex;  
     justify-content: center;
+ font-size: var(--font-size);
   } 
 
+  .titulo{
+    font-family:var(--font-family); 
+    align-items: center; 
+    }
+  
    #logo{
     border: 6px ridge rgb(82, 21, 128);   
     -webkit-border-radius: 100%;
@@ -42,6 +46,17 @@
   background-color:var(--color-fondo);
   width: 700px;
   margin:auto;
+  border:var(--border);
+  border-radius:var(--border-radius);
+  border-top-width:20px;
+ } 
+ .cajaLogin{
+  background-color:var(--color-fondo);
+  width: 700px;
+  margin:auto;
+  border:var(--border);
+  border-radius:var(--border-radius);
+  border-top-width:20px;
  } 
 
  .formulario{
@@ -51,16 +66,31 @@
     margin:0 auto;
 
   }
+  .formularioLogin{
+    line-height: 40px;
+    margin:0 auto;
+    top:80px;
+    padding: 0px 0px 0px 80px;
+    position: relative;
+    right: -100px;
+  }
   .datos{
     line-height: 20px;
     padding: 0px 0px 0px 80px;
     margin-top: -160px;
   }
-
-h1,h2{
-  font-family:var(--font-family); 
-  align-items: center; 
+  .datoLogin{
+    top:150px;
+    line-height: 20px;
+    padding: 0px 0px 0px 80px;
+    margin-top: 20px;
+    border: 3px solid rgb(65, 159, 207);
+    position: relative;
+    display: block;
+    right: -220px;
   }
+
+
 
   .cajaMuro{
       background-color:var(--color-fondo);
@@ -76,19 +106,23 @@ h1,h2{
      margin-top: 100px;
      border-radius:var(--border-radius);
      font-family:var(--font-family);
+     border: 6px ridge rgb(132, 131, 133)
   } 
-  .contenido{
-   /* //background-color:var(--color-fondo);// */
-   background-color: rgb(220, 220, 230);  
-   margin-top: 100px;
-     border-radius:var(--border-radius);
+   .coleccion{
+     padding: 30px 50px;
+     width: 600px;
+     margin-top: 100px;
      font-family:var(--font-family);
-     padding: 10px 0px 0px 150px;
-  } 
-   .botones{
+     border-radius:var(--border-radius);
+     border: 6px ridge rgb(132, 131, 133)
+    } 
+      /*Botones */
+  .botones{
     padding: 100px 150px;
    }
-
+   .botonRegistrar{
+    padding: 80px 0px 100px;
+  }
    #botonRegis{
     padding:var(--padding);
     background-color:var(--color-boton);
@@ -96,9 +130,11 @@ h1,h2{
     font-family:var(--font-family);
     position: relative;
     right: -260px;
+    text-align: center;
   } 
+
    #botonInic{
-  
+    
     background-color:var(--color-boton);
     border-radius:var(--border-radius);
     font-family:var(--font-family); 
@@ -151,5 +187,4 @@ h1,h2{
     #vercontraseña{
       left:-130px;
       width: 10px;
-     
     }

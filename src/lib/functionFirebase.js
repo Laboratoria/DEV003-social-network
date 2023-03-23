@@ -29,7 +29,7 @@ export const authSesion = (email, contraseña) => {
 };
 
 // Para crear  documentos
-export const post = async (comentario) => {
+export const post = async (comentario,id) => {
   const docRef = await addDoc(collection(db, 'publicaciones'), {
     contenido: comentario,
   });
@@ -49,6 +49,6 @@ export const publicacionesPost = async () => {
   return posteos;
 };
 export const eliminarPost = (id) => {
- // console.log("=>", id)
-  deleteDoc(doc(db,'publicaciones',id));
+  // console.log("=>", id)
+  deleteDoc(doc(db, 'publicaciones', id));
 };

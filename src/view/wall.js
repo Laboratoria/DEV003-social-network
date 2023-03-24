@@ -35,7 +35,7 @@ export default () => {
     </main>
     <div class="chatUl">
     <ul id="chatUl"></ul></div>
-    <div class="btnLike"><img src="./css/img/favorite_FILL1_wght700_GRAD200_opsz40.svg" alt="heat" id="btnLike"></div>`;
+    </div>`;
 
   // Crear un elemento HTML y agregarle el contenido de la vista de mensajería
   const divElemt = document.createElement('div');

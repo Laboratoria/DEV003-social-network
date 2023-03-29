@@ -41,7 +41,7 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.innerHTML = viewWall;
 
-  const post = divElemt.querySelector('#buttonPost');// #ID que identifica un elemnto del DOM
+  const post = divElemt.querySelector('#buttonPost'); // #ID que identifica un elemnto del DOM
   post.addEventListener('click', (e) => {
     e.preventDefault();
     // const email = document.querySelector('#email').value;

@@ -5,6 +5,7 @@ import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: 'AIzaSyDOqcsR5E7aGB4jsqTR7R18zLRaAUICwaY',
   authDomain: 'chile-solidario.firebaseapp.com',
+  databaseURL: 'https://chile-solidario-default-rtdb.firebaseio.com',
   projectId: 'chile-solidario',
   storageBucket: 'chile-solidario.appspot.com',
   messagingSenderId: '211458870485',
@@ -15,4 +16,4 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const curretUser = auth.currentUser;
+export const currentUser = auth.currentUser;

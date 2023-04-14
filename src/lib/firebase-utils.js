@@ -1,0 +1,46 @@
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendEmailVerification,
+  signOut,
+  onAuthStateChanged,
+} from 'firebase/auth';
+
+import {
+  collection,
+  addDoc,
+  getDocs,
+  Timestamp,
+  orderBy,
+  doc,
+  updateDoc,
+  arrayRemove,
+  arrayUnion,
+  onSnapshot,
+  deleteDoc,
+  query,
+} from 'firebase/firestore';
+
+export {
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendEmailVerification,
+  signOut,
+  onAuthStateChanged,
+  collection,
+  addDoc,
+  getDocs,
+  Timestamp,
+  orderBy,
+  doc,
+  updateDoc,
+  arrayRemove,
+  arrayUnion,
+  onSnapshot,
+  deleteDoc,
+  query,
+};

@@ -76,13 +76,12 @@ export const updateLikes = async (id, likes) => {
 // obtener y mostrar los comentarios de la base de datos
 // La función showPosts utiliza getDocs para obtener todos los documentos de la colección posts
 const showPosts = async () => {
- 
   const querySnapshot = await getDocs(query(collection(db, 'posts'), orderBy('message', 'asc')));
   const ul = document.getElementById('chatUl');
   // luego itera sobre cada documento usando forEach
   querySnapshot.forEach((postDoc) => {
     // cada doc. obtiene post doc.data().message y se agrega a la ul como un nuevo elemento li
-    console.log(ul);
+    // console.log(ul);
     const email = postDoc.data().email;
     const message = postDoc.data().message;
     // const uid = doc.data().uid;

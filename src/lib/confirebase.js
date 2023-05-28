@@ -1,15 +1,14 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDOqcsR5E7aGB4jsqTR7R18zLRaAUICwaY',
-  authDomain: 'chile-solidario.firebaseapp.com',
-  databaseURL: 'https://chile-solidario-default-rtdb.firebaseio.com',
-  projectId: 'chile-solidario',
-  storageBucket: 'chile-solidario.appspot.com',
-  messagingSenderId: '211458870485',
-  appId: '1:211458870485:web:cb20e639de0d4025f0665c',
+  apiKey: "AIzaSyAChZgu6qKMj4KIjx1Fc7U3I-tMGsovLgc",
+  authDomain: "solidario-c5515.firebaseapp.com",
+  projectId: "solidario-c5515",
+  storageBucket: "solidario-c5515.appspot.com",
+  messagingSenderId: "646872881528",
+  appId: "1:646872881528:web:85a777136ba75bc117908d",
 };
 
 // Initialize Firebase

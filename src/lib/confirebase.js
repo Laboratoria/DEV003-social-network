@@ -1,18 +1,22 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAChZgu6qKMj4KIjx1Fc7U3I-tMGsovLgc",
-  authDomain: "solidario-c5515.firebaseapp.com",
-  projectId: "solidario-c5515",
-  storageBucket: "solidario-c5515.appspot.com",
-  messagingSenderId: "646872881528",
-  appId: "1:646872881528:web:85a777136ba75bc117908d",
+  apiKey: "AIzaSyD0K-XDmTKoYZNXG79vsg6OHkkCNWdsl90",
+  authDomain: "solidaridad-e33df.firebaseapp.com",
+  projectId: "solidaridad-e33df",
+  storageBucket: "solidaridad-e33df.appspot.com",
+  messagingSenderId: "280703507175",
+  appId: "1:280703507175:web:b3c11d9a44c15a73fd6042",
+  measurementId: "G-B9E64QFNGB",
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const currentUser = auth.currentUser;

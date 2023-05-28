@@ -1,4 +1,4 @@
-import { publication } from '../lib/firebase';
+import { publication } from "../lib/firebase";
 
 export default () => {
   const viewWall = `<div class="banner">
@@ -38,17 +38,18 @@ export default () => {
     </div>`;
 
   // Crear un elemento HTML y agregarle el contenido de la vista de mensajería
-  const divElemt = document.createElement('div');
+  const divElemt = document.createElement("div");
   divElemt.innerHTML = viewWall;
 
-  const post = divElemt.querySelector('#buttonPost'); // #ID que identifica un elemnto del DOM
-  post.addEventListener('click', (e) => {
+  console.log(divElemt, "hola Yandira");
+  const post = divElemt.querySelector("#buttonPost"); // #ID que identifica un elemnto del DOM
+  post.addEventListener("click", (e) => {
     e.preventDefault();
     // const email = document.querySelector('#email').value;
-    const message = document.querySelector('#comments').value;
+    const message = document.querySelector("#comments").value;
     console.log(message);
     publication(message);
-    divElemt.querySelector('#comments').value = ''; // limpia el input de comentarios
+    divElemt.querySelector("#comments").value = ""; // limpia el input de comentarios
   });
 
   return divElemt;

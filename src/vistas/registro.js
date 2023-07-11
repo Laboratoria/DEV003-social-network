@@ -4,28 +4,24 @@ export default () => {
   const registro = `
     <header>
       <nav>
-       <h1 class="titulo">ANIMAL LOVERS</h1>
       </nav>
     </header>
-    <div class="cajaPrincipal">
-      <div class="logo">
-      <img src="../imagenes RS/logo final1.png" id="logo">
+    <div class="cajaRegistro" id="cajaRegistro">
+      <div class="logoRegistro">
+      <img src="../imagenes RS/portada.webp" id="logoRegistro">
      </div>
-     <div class="formulario">
-      <input class="texto"></input>
-      <input class="texto"></input>
-      <input class="texto" id="email"></input>
-      <input class="texto" id="contraseña"></input>
+      <div class="formularioDatos">
+        <p id="correoRegistro">CORREO</p>
+         <input class="texto" id="correoRegistro2"></input>
+        <p id="contraseñaRegistro">CONTRASEÑA</p>
+          <input class="texto" id="contraseñaRegistro2"></input>
       </div> 
-      <div class="datos">
-      <p>NOMBRES</p>
-      <p>APELLIDOS</p>
-      <p>CORREO</p>
-      <p>CONTRASEÑA</p>
-      </div>
-     <div class="botonRegistrar"> 
-     <a href="#/login"type="button"  id="botonRegis">REGISTRAR</a>
-    </div>   
+
+     <div class="buttonRegistro"> 
+       <a href="#/login"type="button"  id="botonRegis">REGISTRAR</a>
+    </div> 
+    </div> 
+      
     `;
 
   const divElement = document.createElement('div');
@@ -44,7 +40,6 @@ export default () => {
       // console.log(user);
     })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         // console.log(errorCode);
         // console.log(errorMessage);

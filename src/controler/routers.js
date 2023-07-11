@@ -1,5 +1,4 @@
 import { componentes } from '../vistas/components.js';
-
 // eslint-disable-next-line consistent-return
 export const changeView = (hash) => {
   const container = document.getElementById('container');

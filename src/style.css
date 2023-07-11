@@ -3,8 +3,9 @@
     padding: 0px;
 }
  body{
-  background: linear-gradient(rgb(41, 162, 237), rgb(192, 229, 255))
- }
+  background: linear-gradient(rgb(238, 242, 244), rgb(192, 229, 255));
+  width: 100%;
+}
 
 :root{
 --color-boton:hsl(201, 37%, 55%);
@@ -17,81 +18,172 @@
 --border-comen:5px solid #070707;
 --font-size:30px;
 }
- 
 
    nav{
     text-align: center;
     position: relative; 
-     margin:auto; 
     background-color:var(--color-caja);
-    padding:20px 10px;
-    margin-top: 100px;
+     margin-top: 50px;
     justify-content: center;
- font-size: var(--font-size);
+    font-size: var(--font-size);
   } 
 
   .titulo{
     font-family:var(--font-family); 
     align-items: center; 
     }
-  
-   #logo{
-    border: 6px ridge rgb(82, 21, 128);   
-    -webkit-border-radius: 100%;
-    margin-top: 10px;
-    margin-left: 200px;
-    
+
+    /* Caja Login */
+    .cajaLogin{
+      background-color:var(--color-fondo);
+      width: 500px;
+      margin:auto;
+      height: 800px;
+      border:var(--border);
+      border-radius:var(--border-radius);
+      border-top-width:20px;
+     }
+     .logoLogin #logoLogin {
+      -webkit-border-radius:10%;
+      display:block;
+      margin: auto;
+      width: 95%;
+      height: 45%;
    }
- .cajaPrincipal{
-  background-color:var(--color-fondo);
-  width: 700px;
-  margin:auto;
-  border:var(--border);
-  border-radius:var(--border-radius);
-  border-top-width:20px;
- } 
- .cajaLogin{
-  background-color:var(--color-fondo);
-  width: 700px;
-  margin:auto;
-  border:var(--border);
-  border-radius:var(--border-radius);
-  border-top-width:20px;
- } 
 
- .formulario{
-    line-height: 40px;
-    padding: 10px 0px 0px 150px;
-    width:340px;
-    margin:0 auto;
+ 
 
+   .formularioLogin #correo{
+    margin-left: 50px;
+    /* padding: 30px; */
+    margin-top: 100px;
+    font-size: 20px;
   }
-  .formularioLogin{
-    line-height: 40px;
-    margin:0 auto;
-    top:80px;
-    padding: 0px 0px 0px 80px;
-    position: relative;
-    right: -100px;
-  }
-  .datos{
-    line-height: 20px;
-    padding: 0px 0px 0px 80px;
-    margin-top: -160px;
-  }
-  .datoLogin{
-    top:150px;
-    line-height: 20px;
-    padding: 0px 0px 0px 80px;
-    margin-top: 20px;
+
+  .formularioLogin  #email1{
+    padding: 20px 4px 0px 80px;
     border: 3px solid rgb(65, 159, 207);
     position: relative;
-    display: block;
-    right: -220px;
+    /* margin: auto; */
+    right:-200px;
+    top: -60px;
+    
   }
 
 
+   .formularioLogin #contraseña{
+    margin-left: 50px;
+    /* padding: 30px; */
+    top: 20px;
+    font-size: 20px;
+    
+  }
+  
+  .formularioLogin #contraseña1{
+    padding: 20px 4px 0px 80px;
+    border: 3px solid rgb(65, 159, 207);
+    position: relative;
+  top: -60px;
+    right:-200px;
+  } 
 
+
+  .button #botonInic{ 
+    background-color:var(--color-boton);
+    border-radius:var(--border-radius);
+    font-family:var(--font-family); 
+    border: none;
+    text-align: center;
+    padding:var(--padding);
+    width:100%;
+    font-size: 18px;
+    top: 70px;
+    position: relative;
+    margin-left: 30px;
+
+  }
+   .button #botonCrear{
+    padding:var(--padding);
+    background-color:var(--color-boton);
+    border-radius:var(--border-radius);
+    font-family:var(--font-family);
+   position: relative;
+   top: 70px;
+   width:100%;
+   font-size: 18px;
+   margin-left: 40px;
+  
+  }
+ 
+
+/* Caja Registro */
+
+.logoRegistro #logoRegistro{
+  -webkit-border-radius:10%;
+  display:block;
+  margin: auto;
+  width: 90%;
+  height: 45%;
+ }
+.cajaRegistro{
+    background-color:var(--color-fondo);
+    width: 500px;
+    margin:auto;
+    height: 700px;
+    border:var(--border);
+    border-radius:var(--border-radius);
+    border-top-width:20px;
+   }
+
+  .formularioDatos #correoRegistro{
+    margin-left: 50px;
+    /* padding: 30px; */
+    margin-top: 80px;
+    font-size: 20px;
+
+  }
+  .formularioDatos #correoRegistro2{ 
+    padding: 20px 4px 0px 80px;
+    border: 3px solid rgb(65, 159, 207);
+    position: relative;
+    margin: auto;
+    right:-200px;
+    top:-60px
+  }
+  .formularioDatos #contraseñaRegistro{
+    margin-left: 50px;
+    /* padding: 30px; */
+    margin-top: 20px;
+    font-size: 20px;
+
+  }
+
+ 
+  .formularioDatos #contraseñaRegistro2{ 
+    padding: 20px 4px 0px 80px;
+    border: 3px solid rgb(65, 159, 207);
+    position: relative;
+    margin: auto;
+    right:-200px;
+    top:-60px
+
+
+
+  }
+    .buttonRegistro #botonRegis{
+      padding:var(--padding);
+      background-color:var(--color-boton);
+      border-radius:var(--border-radius);
+      font-family:var(--font-family);
+     position: relative;
+     top: 70px;
+     width:100%;
+     font-size: 18px;
+     margin-left: 10px;
+  
+  } 
+  
+ 
   .cajaMuro{
       background-color:var(--color-fondo);
       left: 400px; 
@@ -99,58 +191,29 @@
       margin:auto;
    } 
    
-   #publicaciones1{
-    background-color:var(--color-fondo);
-     width: 600px;
-     padding: 30px 50px;
+  .cajaMuro #publicaciones1{
+     width: 700px;
+     height: 150px;
      margin-top: 100px;
      border-radius:var(--border-radius);
      font-family:var(--font-family);
-     border: 6px ridge rgb(132, 131, 133)
+     border: 3px ridge rgb(208, 205, 210);
+     text-align: center;
+     background-size: cover;
+
   } 
    .coleccion{
-     padding: 30px 50px;
+     padding: 40px 50px;
      width: 600px;
      margin-top: 100px;
      font-family:var(--font-family);
      border-radius:var(--border-radius);
-     border: 6px ridge rgb(132, 131, 133)
+     border: 6px ridge rgb(247, 244, 251);
+     text-align: justify;
+      background-color: rgb(248, 240, 240);
     } 
-      /*Botones */
-  .botones{
-    padding: 100px 150px;
-   }
-   .botonRegistrar{
-    padding: 80px 0px 100px;
-  }
-   #botonRegis{
-    padding:var(--padding);
-    background-color:var(--color-boton);
-    border-radius:var(--border-radius);
-    font-family:var(--font-family);
-    position: relative;
-    right: -260px;
-    text-align: center;
-  } 
+  
 
-   #botonInic{
-    
-    background-color:var(--color-boton);
-    border-radius:var(--border-radius);
-    font-family:var(--font-family); 
-    display: inline-block;
-    border: none;
-    text-align: center;
-    padding:var(--padding)
-   
-  }
-   #botonCrear{
-    padding:var(--padding);
-    background-color:var(--color-boton);
-    border-radius:var(--border-radius);
-    font-family:var(--font-family);
-    
-  }
    #botonP{
       padding:var(--padding);
       background:var(--color-boton);
@@ -160,31 +223,29 @@
       position: relative;
       right:-550px;
     }
-    #botonE{
-      padding:var(--padding);
-      background:var(--color-boton);
-      border-radius:var(--border-radius);
-      font-family:var(--font-family);
-      position: relative;
-      right:-550px;
+    .delete{
+      width: 40px;
+      height: 40px;
+      float:right;
+      background-position: center;
+      background-size:cover;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX_26o4m-LVE3UrLZY8gFceotrWU20hDZfRg&usqp=CAU");
+      border-radius: 50%;
     }
-    #botonC{
-      padding:var(--padding);
-      background:var(--color-boton);
-      border-radius:var(--border-radius);
-      font-family:var(--font-family);
-      position: relative;
-      left:-130px;
+    #eliImg{
+      width: 40px;
+      height: 40px;
     }
-    #botonEdi{
-      padding:var(--padding);
-      background:var(--color-boton);
-      border-radius:var(--border-radius);
-      font-family:var(--font-family);
-      position: relative;
-      right:-250px;
+    .editar{
+      padding:0;
+      float:right;
+      margin: 0;
     }
-    #vercontraseña{
-      left:-130px;
-      width: 10px;
+    #ediImg{
+      width: 40px;
+      height: 40px;
     }
+  
+   
+      
+   

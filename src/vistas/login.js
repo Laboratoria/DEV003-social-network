@@ -1,42 +1,49 @@
-import {authSesion } from '../lib/functionFirebase';
+import { authSesion } from "../lib/functionFirebase";
 // formulario para que el usuario ingrese correo y contraseña 15.02
-
 export default () => {
   const login = `
-  <div class="cajaPrincipal">
-   <header>
-    <h1>ANIMAL LOVERS</h1>
-     <div class="logo">
-    <img src="../imagenes RS/logo final1.png" id="logo">
-   </div>
-   </header>
-   </nav>
-   <div class="formulario">
-    
-    <p>CORREO</p>
-    <input class="texto" id="email1"></input>
-    <p>CONTRASEÑA</p>
-    <input class="texto" id="contraseña1"></input>
-   </div>
-   <div> 
-   <a href="#/muro"type="button"  id="botonI">INICIAR SESION</a>
-   <a href="#/registro"type="button"  id="boton">CREAR CUENTA</button>
-   </div>
+  <header>
+    <nav>
+    </nav>
+  </header>
+  <div class="cajaLogin">
+      <div class = "logoLogin">
+       <img src="../imagenes RS/portada.webp" id="logoLogin">
+       </div>
+
+        <div class="formularioLogin">
+          <p id="correo">CORREO</p>
+          <input class="texto" id="email1"></input>
+          <p  id="contraseña">CONTRASEÑA</p>
+          <input class="texto" id="contraseña1"></input>
+        </div>
+
+       <div class="button"> 
+       <a href="#/muro" type="button"  id="botonInic">INICIAR SESION</a>
+       <a href="#/registro" type="button"  id="botonCrear">CREAR CUENTA</a>
+       </div>
   </div>
   `;
+  const divElement = document.createElement("div");
+  divElement.innerHTML = login;
 
-  const divElement = document.createElement('div');
   //   divElement.classlist.add("position")
   divElement.innerHTML = login;
   // buttonInicicar.addEventListener("click",())
-  const botonIngreso = divElement.querySelector('#botonI');
+  const botonIngreso = divElement.querySelector("#botonInic");
   botonIngreso.addEventListener("click", () => {
     const email = document.querySelector("#email1").value;
-    const contraseña = document.querySelector('#contraseña1').value;
-    console.log(email, 'email');
-    console.log(contraseña, 'contraseña');
+    const contraseña = document.querySelector("#contraseña1").value;
+    // console.log(email, 'email');
+    // console.log(contraseña, 'contraseña');
     authSesion(email, contraseña);
+    const expresionContraseña =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ])+$/;
+    const valid = expresionContraseña.test(email);
+    if (valid === true) {
+    } else {
+      alert("contraseña no valida");
+    }
   });
-
   return divElement;
 };

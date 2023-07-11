@@ -1,42 +1,68 @@
-export default () => {
-    const muro = `
-    <div class="cajaMuro">
-     <header>
-      <h1>ANIMAL LOVERS</h1>
-       <div class="comentario"></div>
-     </div>
-     </header>
-     </nav>
-     <div>
-     <input class="texto" id="comentario"></input>
-     </div>
-     <button type="button"  id="botonA">AÑADIR</button>
-     </div>
-     <div> 
-     <button type="button"  id="botonE">ELIMINAR</button>
-     </div>
-     <div> 
-     <button type="button"  id="botonC">COMENTAR</button>
-     </div>
-    </div>
-    `;
-    const divElement = document.createElement('div');
-    //   divElement.classlist.add("position")
-    divElement.innerHTML = muro;
-    
+import { post, publicacionesPost, eliminarPost } from '../lib/functionFirebase';
 
-  const botonAñadir = divElement.querySelector('#botonA');
-  botonAñadir.addEventListener('click', () => {
-    console.log(botonAñadir);
-  })
-  const botonEliminar = divElement.querySelector('#botonE');
-  botonEliminar.addEventListener('click', () => {
-    console.log(botonEliminar);
-  })
-  const botonComentar = divElement.querySelector('#botonC');
-  botonComentar.addEventListener('click', () => {
-    console.log(botonComentar);
-  })
+export default () => {
+  const muro = `
+    <header>
+      <nav>
+        <h1 class="titulo">ANIMAL LOVERS</h1>
+      </nav>
+    </header>
+    <di class="cajaMuroC">
+     <div class="cajaMuro">
+      <input class="texto" id="publicaciones1"></input>
+      
+      <div button>
+      <button type="button"  id="botonP">PUBLICAR</button>
+      </div>
+     
+      <div class="cajaPublicaciones">
+     </div>
+
+     </div>
+     </div>
+     
+    `;
+  const divElement = document.createElement('div');
+  divElement.innerHTML = muro;
+
+  const botonPublicar = divElement.querySelector('#botonP');
+  botonPublicar.addEventListener('click', () => {
+    const publicar = document.querySelector('#publicaciones1').value;
+    post(publicar);
+  });
+
+  publicacionesPost().then((posteos) => {
+    posteos.forEach((elemento) => {
+      // console.log(elemento.id,'id')
+      const caja = divElement.querySelector('.cajaPublicaciones');
+      caja.innerHTML += `
+        <div class="contenido">
+          <p class="coleccion">${elemento.contenido}</p>
+        <button class="delete"  data-id="${elemento.id}" type="button"  id="botonE">
+        </button>
+        </div> 
+        `;
+    //  console.log(caja, 'contenido');
+    });
+
+    const botonEliminar = divElement.querySelectorAll('.delete');
+    botonEliminar.forEach((elemento) => {
+      elemento.addEventListener('click', ({ target: { dataset } }) => {
+       eliminarPost(dataset.id);
+       
+       
+       console.log(dataset.id);
+      });
+    });
+  //   const botonEdi = divElement.querySelectorAll('.editar');
+  //   botonEdi.forEach((elemento) => {
+  //     elemento.addEventListener('click', ({ target: { dataset } }) => {
+  //       console.log(dataset.id);
+  //       // console.log(eliminarPost);
+  //     });
+  //   });
+
+});
+
   return divElement;
-  };
-  
+};

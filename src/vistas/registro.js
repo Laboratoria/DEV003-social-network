@@ -8,8 +8,7 @@ export default () => {
     </header>
     <div class="cajaRegistro" id="cajaRegistro">
       <div class="logoRegistro">
-      <img src="../imagenes/animals-lover.jpg" id="logoRegistro">
-     </div>
+      </div>
       <div class="formularioDatos">
         <p id="correoRegistro">CORREO</p>
          <input class="texto" id="correoRegistro2"></input>

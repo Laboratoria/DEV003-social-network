@@ -8,7 +8,6 @@ export default () => {
   </header>
   <div class="cajaLogin">
       <div class = "logoLogin">
-       <img src="../imagenes/animals-lover.jpg" id="logoLogin">
        </div>
 
         <div class="formularioLogin">

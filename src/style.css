@@ -38,17 +38,19 @@
       background-color:var(--color-fondo);
       width: 500px;
       margin:auto;
-      height: 900px;
+      height: 850px;
       border:var(--border);
       border-radius:var(--border-radius);
       border-top-width:20px;
      }
-     .logoLogin #logoLogin {
+     .logoLogin  {
+      background-image: url(https://image.spreadshirtmedia.net/image-server/v1/products/T1459A839PA4459PT28D179305889W10000H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2/animal-lover-animal-lover-animal-love-dog-cat-sticker.jpg);
+      background-repeat: no-repeat;
       -webkit-border-radius:10%;
       display:block;
       margin: auto;
-      width: 95%;
-      height: 45%;
+      width: 500px;
+      height: 450px;
    }
 
  
@@ -97,7 +99,7 @@
     padding:var(--padding);
     width:100%;
     font-size: 18px;
-    top: 70px;
+    top: 40px;
     position: relative;
     margin-left: 30px;
 
@@ -108,7 +110,7 @@
     border-radius:var(--border-radius);
     font-family:var(--font-family);
    position: relative;
-   top: 70px;
+   top: 40px;
    width:100%;
    font-size: 18px;
    margin-left: 40px;
@@ -118,18 +120,20 @@
 
 /* Caja Registro */
 
-.logoRegistro #logoRegistro{
+.logoRegistro{
+  background-image: url(https://image.spreadshirtmedia.net/image-server/v1/products/T1459A839PA4459PT28D179305889W10000H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2/animal-lover-animal-lover-animal-love-dog-cat-sticker.jpg);
+  background-repeat: no-repeat;
   -webkit-border-radius:10%;
   display:block;
   margin: auto;
-  width: 90%;
-  height: 45%;
+  width: 500px;
+  height: 450px;
  }
 .cajaRegistro{
     background-color:var(--color-fondo);
     width: 500px;
     margin:auto;
-    height: 900px;
+    height: 750px;
     border:var(--border);
     border-radius:var(--border-radius);
     border-top-width:20px;
@@ -176,10 +180,9 @@
       border-radius:var(--border-radius);
       font-family:var(--font-family);
      position: relative;
-     top: 70px;
+     top: -10px;
      width:100%;
      font-size: 18px;
-     margin-left: 10px;
      margin-left: 180px;
   
   } 

@@ -1,0 +1,255 @@
+{
+    margin:0px;
+    padding: 0px;
+}
+ body{
+  background: linear-gradient(rgb(238, 242, 244), rgb(192, 229, 255));
+  width: 100%;
+}
+
+:root{
+--color-boton:hsl(201, 37%, 55%);
+--padding:15px 32px;
+--color-caja:linear-gradient(rgb(41, 162, 237), rgb(192, 229, 255)) ;
+--border-radius:30px;
+--font-family:Times;
+--border:5px ridge #58336d;
+--color-fondo:linear-gradient(rgb(41, 162, 237), rgb(192, 229, 255));
+--border-comen:5px solid #070707;
+--font-size:30px;
+}
+
+   nav{
+    text-align: center;
+    position: relative; 
+    background-color:var(--color-caja);
+     margin-top: 50px;
+    justify-content: center;
+    font-size: var(--font-size);
+  } 
+
+  .titulo{
+    font-family:var(--font-family); 
+    align-items: center; 
+    }
+
+    /* Caja Login */
+    .cajaLogin{
+      background-color:var(--color-fondo);
+      width: 500px;
+      margin:auto;
+      height: 850px;
+      border:var(--border);
+      border-radius:var(--border-radius);
+      border-top-width:20px;
+     }
+     .logoLogin  {
+      background-image: url(https://image.spreadshirtmedia.net/image-server/v1/products/T1459A839PA4459PT28D179305889W10000H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2/animal-lover-animal-lover-animal-love-dog-cat-sticker.jpg);
+      background-repeat: no-repeat;
+      -webkit-border-radius:10%;
+      display:block;
+      margin: auto;
+      width: 500px;
+      height: 450px;
+   }
+
+ 
+
+   .formularioLogin #correo{
+    margin-left: 50px;
+    /* padding: 30px; */
+    margin-top: 100px;
+    font-size: 20px;
+  }
+
+  .formularioLogin  #email1{
+    padding: 20px 4px 0px 80px;
+    border: 3px solid rgb(65, 159, 207);
+    position: relative;
+    /* margin: auto; */
+    right:-200px;
+    top: -60px;
+    
+  }
+
+
+   .formularioLogin #contraseña{
+    margin-left: 50px;
+    /* padding: 30px; */
+    top: 20px;
+    font-size: 20px;
+    
+  }
+  
+  .formularioLogin #contraseña1{
+    padding: 20px 4px 0px 80px;
+    border: 3px solid rgb(65, 159, 207);
+    position: relative;
+  top: -60px;
+    right:-200px;
+  } 
+
+
+  .button #botonInic{ 
+    background-color:var(--color-boton);
+    border-radius:var(--border-radius);
+    font-family:var(--font-family); 
+    border: none;
+    text-align: center;
+    padding:var(--padding);
+    width:100%;
+    font-size: 18px;
+    top: 40px;
+    position: relative;
+    margin-left: 30px;
+
+  }
+   .button #botonCrear{
+    padding:var(--padding);
+    background-color:var(--color-boton);
+    border-radius:var(--border-radius);
+    font-family:var(--font-family);
+   position: relative;
+   top: 40px;
+   width:100%;
+   font-size: 18px;
+   margin-left: 40px;
+  
+  }
+ 
+
+/* Caja Registro */
+
+.logoRegistro{
+  background-image: url(https://image.spreadshirtmedia.net/image-server/v1/products/T1459A839PA4459PT28D179305889W10000H10000/views/1,width=550,height=550,appearanceId=839,backgroundColor=F2F2F2/animal-lover-animal-lover-animal-love-dog-cat-sticker.jpg);
+  background-repeat: no-repeat;
+  -webkit-border-radius:10%;
+  display:block;
+  margin: auto;
+  width: 500px;
+  height: 450px;
+ }
+.cajaRegistro{
+    background-color:var(--color-fondo);
+    width: 500px;
+    margin:auto;
+    height: 750px;
+    border:var(--border);
+    border-radius:var(--border-radius);
+    border-top-width:20px;
+   }
+
+  .formularioDatos #correoRegistro{
+    margin-left: 50px;
+    /* padding: 30px; */
+    margin-top: 80px;
+    font-size: 20px;
+
+  }
+  .formularioDatos #correoRegistro2{ 
+    padding: 20px 4px 0px 80px;
+    border: 3px solid rgb(65, 159, 207);
+    position: relative;
+    margin: auto;
+    right:-200px;
+    top:-60px
+  }
+  .formularioDatos #contraseñaRegistro{
+    margin-left: 50px;
+    /* padding: 30px; */
+    margin-top: 20px;
+    font-size: 20px;
+
+  }
+
+ 
+  .formularioDatos #contraseñaRegistro2{ 
+    padding: 20px 4px 0px 80px;
+    border: 3px solid rgb(65, 159, 207);
+    position: relative;
+    margin: auto;
+    right:-200px;
+    top:-60px
+
+
+
+  }
+    .buttonRegistro #botonRegis{
+      padding:var(--padding);
+      background-color:var(--color-boton);
+      border-radius:var(--border-radius);
+      font-family:var(--font-family);
+     position: relative;
+     top: -10px;
+     width:100%;
+     font-size: 18px;
+     margin-left: 180px;
+  
+  } 
+  
+ 
+  .cajaMuro{
+      background-color:var(--color-fondo);
+      left: 400px; 
+      width: 700px;
+      margin:auto;
+   } 
+   
+  .cajaMuro #publicaciones1{
+     width: 700px;
+     height: 150px;
+     margin-top: 100px;
+     border-radius:var(--border-radius);
+     font-family:var(--font-family);
+     border: 3px ridge rgb(208, 205, 210);
+     text-align: center;
+     background-size: cover;
+
+  } 
+   .coleccion{
+     padding: 40px 50px;
+     width: 600px;
+     margin-top: 100px;
+     font-family:var(--font-family);
+     border-radius:var(--border-radius);
+     border: 6px ridge rgb(247, 244, 251);
+     text-align: justify;
+      background-color: rgb(248, 240, 240);
+    } 
+  
+
+   #botonP{
+      padding:var(--padding);
+      background:var(--color-boton);
+      border-radius:var(--border-radius);
+      font-family:var(--font-family);
+      margin-top: 50px;
+      position: relative;
+      right:-550px;
+    }
+    .delete{
+      width: 40px;
+      height: 40px;
+      float:right;
+      background-position: center;
+      background-size:cover;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX_26o4m-LVE3UrLZY8gFceotrWU20hDZfRg&usqp=CAU");
+      border-radius: 50%;
+    }
+    #eliImg{
+      width: 40px;
+      height: 40px;
+    }
+    .editar{
+      padding:0;
+      float:right;
+      margin: 0;
+    }
+    #ediImg{
+      width: 40px;
+      height: 40px;
+    }
+  
+   
+      
+   

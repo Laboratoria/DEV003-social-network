@@ -38,7 +38,7 @@
       background-color:var(--color-fondo);
       width: 500px;
       margin:auto;
-      height: 800px;
+      height: 900px;
       border:var(--border);
       border-radius:var(--border-radius);
       border-top-width:20px;
@@ -129,7 +129,7 @@
     background-color:var(--color-fondo);
     width: 500px;
     margin:auto;
-    height: 700px;
+    height: 900px;
     border:var(--border);
     border-radius:var(--border-radius);
     border-top-width:20px;
@@ -180,6 +180,7 @@
      width:100%;
      font-size: 18px;
      margin-left: 10px;
+     margin-left: 180px;
   
   } 
   

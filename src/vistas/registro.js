@@ -8,7 +8,7 @@ export default () => {
     </header>
     <div class="cajaRegistro" id="cajaRegistro">
       <div class="logoRegistro">
-      <img src="../imagenes RS/portada.webp" id="logoRegistro">
+      <img src="../imagenes RS/portada.png" id="logoRegistro">
      </div>
       <div class="formularioDatos">
         <p id="correoRegistro">CORREO</p>
